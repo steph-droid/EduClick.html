@@ -1,3 +1,79 @@
+:root {
+    --primary-color: #4CAF50;  /* Verde primario */
+    --secondary-color: #FFFFFF; /* Blanco */
+    --background-color: #F4F4F4; /* Fondo claro */
+    --text-color: #333333; /* Texto oscuro */
+    --footer-color: #222222; /* Fondo del pie de página */
+    --link-color: #FFFFFF; /* Color de los enlaces */
+}
+ 
+/* Estilo general del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+ 
+/* Encabezado */
+header {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 20px;
+    text-align: center;
+}
+ 
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+ 
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+ 
+nav ul li a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+ 
+/* Sección de servicios */
+.services {
+    padding: 20px;
+    background-color: var(--secondary-color);
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+ 
+.service img {
+    width: 100%;
+    border-radius: 8px;
+}
+ 
+.service h3 {
+    color: var(--primary-color);
+}
+ 
+.service p {
+    color: var(--text-color);
+}
+ 
+/* Pie de página */
+footer {
+    background-color: var(--footer-color);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+}
+tiene menú contextual
+
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
