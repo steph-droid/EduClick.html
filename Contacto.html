@@ -4,7 +4,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto - Aprende con Apoyo</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Definir las variables de colores */
+        :root {
+            --primary-color: #4CAF50;  /* Verde primario */
+            --secondary-color: #FFFFFF; /* Blanco */
+            --background-color: #F4F4F4; /* Fondo claro */
+            --text-color: #333333; /* Texto oscuro */
+            --footer-color: #222222; /* Fondo del pie de página */
+            --link-color: #FFFFFF; /* Color de los enlaces */
+        }
+
+        /* Estilo general del cuerpo */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Estilo para el header */
+        header {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Estilo para el menú de navegación */
+        nav {
+            background-color: var(--primary-color);
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav a {
+            color: var(--link-color);
+            text-decoration: none;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilo para las secciones */
+        section {
+            padding: 20px;
+        }
+
+        /* Estilo para el formulario */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        input[type="text"], input[type="email"], textarea {
+            padding: 8px;
+            margin: 5px 0 15px 0;
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        textarea {
+            width: 250px;
+        }
+
+        input[type="submit"] {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: darken(var(--primary-color), 10%);
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: var(--footer-color);
+            color: var(--secondary-color);
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -33,5 +131,3 @@
     </footer>
 </body>
 </html>
-
-
