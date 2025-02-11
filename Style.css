@@ -7,7 +7,7 @@
     --link-color: #FFFFFF; /* Color de los enlaces */
 }
  
-/* Estilo general del cuerpo */
+/ cuerpo /
 body {
     font-family: Arial, sans-serif;
     background-color: var(--background-color);
@@ -16,7 +16,7 @@ body {
     padding: 0;
 }
  
-/* Encabezado */
+/Encabezado/
 header {
     background-color: var(--primary-color);
     color: var(--secondary-color);
@@ -40,7 +40,7 @@ nav ul li a {
     font-weight: bold;
 }
  
-/* Sección de servicios */
+/Sección de servicios/
 .services {
     padding: 20px;
     background-color: var(--secondary-color);
@@ -71,7 +71,7 @@ footer {
     padding: 10px 0;
     position: relative;
 }
-tiene menú contextual
+menú contextual
 
 
 body {
