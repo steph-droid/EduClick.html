@@ -3,82 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nombre del Sitio</title>
+    <title>Servicios - Aprende con Apoyo</title>
     <style>
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #FFFFFF;
+            --background-color: #F4F4F4;
+            --text-color: #333333;
+            --footer-color: #222222;
+            --link-color: #FFFFFF;
+            --accent-color: #388E3C;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
         }
+
         header {
-            background-color: #4A90E2;
-            color: white;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: var(--secondary-color);
             padding: 20px;
             text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
         }
+
         nav {
-            background-color: #6FCF97;
-            padding: 10px;
             text-align: center;
+            padding: 10px;
+            background-color: var(--primary-color);
         }
-        nav a {
-            margin: 0 10px;
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: var(--link-color);
             text-decoration: none;
-            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
         }
-        section {
+
+        nav ul li a:hover {
+            color: #FFD700;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background: var(--secondary-color);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .services {
+            text-align: center;
             padding: 20px;
         }
-        footer {
-            background-color: #828282;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
+
+        .service {
+            background: var(--primary-color);
+            color: var(--secondary-color);
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .service img {
             width: 100%;
-            bottom: 0;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: var(--footer-color);
+            color: var(--secondary-color);
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.9em;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Bienvenido a Aprende con Apoyo</h1>
+        Aprende con Apoyo
     </header>
     <nav>
-        <a href="index.html">Inicio</a>
-        <a href="servicios.html">Servicios</a>
-        <a href="Registro.html">Registro</a>
-        <a href="Contacto.html">Contacto</a>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Registro.html">Registro</a></li>
+            <li><a href="Contacto.html">Contacto</a></li>
+        </ul>
     </nav>
-    <section>
-        <h2>Acerca de Nosotros</h2>
-        <p>Ofrecemos tutorías y apoyo académico personalizado para ayudarte a superar cualquier desafío en tus estudios! :D </p>
-        <h1>¿Quiénes somos?</h1>
-        <p>Somos un equipo dedicado a brindar apoyo educativo personalizado. Creemos que cada estudiante tiene un potencial único y nos comprometemos a ayudarte a alcanzar tus metas académicas.</p>
-        <h1>¿Qué ofrecemos?</h1>
-        <p>●Tutorias personalizadas: Clases adaptadas a tus necesidades en asignaturas clave como matemáticas, ciencias, idiomas, historia y más!!</p>
-        <p>●Asesoría para tareas y proyectos: Te guiamos paso a paso en la resolución de tareas y proyectos escolares.</p>
-        <p>●Preparaciónpara exámenes: Estrategias y prácticas para mejorar tus resultados en exámenes importantes.</p>
-        <p>●Desarrollo de habilidades de estudio: Técnicasde organización,  concentracióny manejo de tiempo para maximizar tu aprendizaje.</p>
-        <h1>¿Por qué elegirnos?</h1>
-        <p>●Tutoría online o presencial: Elige la modalidad que máste convenga!.</p>
-        <p>●Horarios flexibles: Nos adaptamos a tu disponibilidad 😊.</p>
-        <p>●Atención personalizada: Nos enfocamos en tus necesidades específicas para asegurar un progreso real.</p>
-        <h1>Nuestra misión...</h1>
-        <p>Queremos ser más que un servicio de tutoría, nos apasiona despertar interés por el aprendizaje, fomentar la autoconfianza y ayudar a nuestros estudiantes a alcanzar sus objetivos.</p>
-        <h1>¿Cómo funciona?</h1>
-        <p>1.-Evaluación inicial gratuita: Analizamos tus necesidades y metas académicas.</p>
-        <p>2.-Plan de estudios personalizados: Diseñamos un plan adaptado a tus objetivos.</p>
-        <p>3.-Sesiones dinámicas: Clases interactivas y material de apoyo para mantenerte motivado.</p>
-        <p>4.-Seguimiento y retroalimentación: Informes periódicos para medir tu progreso.</p>
-        <h1>.</h1>
-    </section>
+    <main>
+        <section class="services">
+            <h2>Nuestros Servicios</h2>
+            <div class="service">
+                <img src="math-tutoring.jpg" alt="Tutoría de Matemáticas">
+                <h3>Tutoría de Matemáticas</h3>
+                <p>Asesoramiento personalizado para mejorar tus habilidades matemáticas.</p>
+            </div>
+            <div class="service">
+                <img src="science-tutoring.jpg" alt="Tutoría de Ciencias">
+                <h3>Tutoría de Ciencias</h3>
+                <p>Comprende los conceptos científicos con la ayuda de nuestros expertos.</p>
+            </div>
+        </section>
+    </main>
     <footer>
         <p>&copy; 2024 Aprende con Apoyo. Todos los derechos reservados.</p>
     </footer>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </body>
 </html>
