@@ -23,56 +23,76 @@
         }
 
         header {
-            background: linear-gradient(90deg, #388E3C, #4CAF50);
+            background-color: var(--primary-color);
             color: var(--secondary-color);
             padding: 20px;
             text-align: center;
         }
 
         nav {
-            text-align: center;
-            padding: 10px;
             background-color: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         nav ul {
             list-style: none;
             padding: 0;
+            display: flex;
+            gap: 20px;
         }
 
         nav ul li {
-            display: inline;
-            margin-right: 15px;
+            position: relative;
         }
 
         nav ul li a {
-            color: var(--link-color);
             text-decoration: none;
+            color: var(--link-color);
             font-weight: bold;
+            padding: 10px 15px;
+            transition: background 0.3s ease-in-out;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
         }
 
         section {
             padding: 20px;
-            max-width: 900px;
-            margin: auto;
-            background-color: var(--secondary-color);
+        }
+
+        .services {
+            padding: 20px;
+            background-color: var(--primary-color);
+            margin: 20px auto;
+            max-width: 800px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: var(--secondary-color);
         }
 
-        .info-section h2 {
-            color: var(--primary-color);
+        .service img {
+            width: 100%;
+            border-radius: 8px;
         }
 
-        .info-section p {
-            line-height: 1.6;
+        .service h3 {
+            color: var(--secondary-color);
+        }
+
+        .service p {
+            color: var(--secondary-color);
         }
 
         footer {
             background-color: var(--footer-color);
             color: var(--secondary-color);
             text-align: center;
-            padding: 15px 0;
+            padding: 10px 0;
             position: relative;
             width: 100%;
             bottom: 0;
@@ -81,41 +101,34 @@
 </head>
 <body>
     <header>
-        <h1>Bienvenido a Aprende con Apoyo</h1>
+        <h1>Aprende con Apoyo</h1>
     </header>
     <nav>
         <ul>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="servicios.html">Servicios</a></li>
-            <li><a href="registro.html">Registro</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="Registro.html">Registro</a></li>
+            <li><a href="Contacto.html">Contacto</a></li>
         </ul>
     </nav>
-    <section class="info-section">
-        <h2>Acerca de Nosotros</h2>
-        <p>Ofrecemos tutorías y apoyo académico personalizado para ayudarte a superar cualquier desafío en tus estudios.</p>
-        <h2>¿Quiénes somos?</h2>
-        <p>Somos un equipo dedicado a brindar apoyo educativo personalizado. Creemos en el potencial de cada estudiante y trabajamos para que alcancen sus metas académicas.</p>
-        <h2>¿Qué ofrecemos?</h2>
-        <ul>
-            <li><strong>Tutorías personalizadas:</strong> Clases adaptadas a tus necesidades en asignaturas clave como matemáticas, ciencias e idiomas.</li>
-            <li><strong>Asesoría en tareas y proyectos:</strong> Te guiamos en la resolución de trabajos escolares.</li>
-            <li><strong>Preparación para exámenes:</strong> Estrategias efectivas para mejorar tus resultados.</li>
-            <li><strong>Desarrollo de habilidades de estudio:</strong> Técnicas para organización, concentración y gestión del tiempo.</li>
-        </ul>
-        <h2>¿Por qué elegirnos?</h2>
-        <ul>
-            <li><strong>Modalidad online o presencial:</strong> Elige la opción que más te convenga.</li>
-            <li><strong>Horarios flexibles:</strong> Nos adaptamos a tu disponibilidad.</li>
-            <li><strong>Atención personalizada:</strong> Nos enfocamos en tus necesidades para asegurar progreso real.</li>
-        </ul>
-        <h2>¿Cómo funciona?</h2>
-        <ol>
-            <li>Evaluación inicial gratuita.</li>
-            <li>Plan de estudios personalizado.</li>
-            <li>Sesiones dinámicas e interactivas.</li>
-            <li>Seguimiento y retroalimentación continua.</li>
-        </ol>
+    <main>
+        <section class="services">
+            <h2>Nuestros Servicios</h2>
+            <div class="service">
+                <img src="math-tutoring.jpg" alt="Tutoría de Matemáticas">
+                <h3>Tutoría de Matemáticas</h3>
+                <p>Asesoramiento personalizado para mejorar tus habilidades matemáticas.</p>
+            </div>
+            <div class="service">
+                <img src="science-tutoring.jpg" alt="Tutoría de Ciencias">
+                <h3>Tutoría de Ciencias</h3>
+                <p>Comprende los conceptos científicos con la ayuda de nuestros expertos.</p>
+            </div>
+        </section>
+    </main>
+    <section>
+        <h2>Servicios que Ofrecemos</h2>
+        <p>Ofrecemos tutorías en diversas materias como matemáticas, ciencias y más, para ayudarte a superar tus retos académicos.</p>
     </section>
     <footer>
         <p>&copy; 2024 Aprende con Apoyo. Todos los derechos reservados.</p>
