@@ -12,6 +12,7 @@
             --text-color: #333333;
             --footer-color: #222222;
             --link-color: #FFFFFF;
+            --hover-color: #367c39;
         }
 
         body {
@@ -33,7 +34,7 @@
             background-color: var(--primary-color);
             display: flex;
             justify-content: center;
-            padding: 10px 0;
+            padding: 15px 0;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
 
@@ -52,47 +53,51 @@
             text-decoration: none;
             color: var(--link-color);
             font-weight: bold;
-            padding: 10px 15px;
-            transition: background 0.3s ease-in-out;
+            padding: 12px 20px;
+            background-color: var(--primary-color);
             border-radius: 5px;
+            transition: background 0.3s ease-in-out;
         }
 
         nav ul li a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: var(--hover-color);
         }
 
-        section {
-            padding: 20px;
-        }
-
-        .services {
-            padding: 20px;
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
             background-color: var(--primary-color);
-            margin: 20px auto;
-            max-width: 800px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             color: var(--secondary-color);
         }
 
-        .service img {
-            width: 100%;
-            border-radius: 8px;
+        .hero h1 {
+            font-size: 2.8em;
         }
 
-        .service h3 {
-            color: var(--secondary-color);
+        .hero p {
+            font-size: 1.3em;
         }
 
-        .service p {
-            color: var(--secondary-color);
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .about, .why-choose, .mission, .how-it-works {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .about h2, .why-choose h2, .mission h2, .how-it-works h2 {
+            color: var(--primary-color);
         }
 
         footer {
             background-color: var(--footer-color);
             color: var(--secondary-color);
             text-align: center;
-            padding: 10px 0;
+            padding: 15px 0;
             position: relative;
             width: 100%;
             bottom: 0;
@@ -111,25 +116,44 @@
             <li><a href="Contacto.html">Contacto</a></li>
         </ul>
     </nav>
-    <main>
-        <section class="services">
-            <h2>Nuestros Servicios</h2>
-            <div class="service">
-                <img src="math-tutoring.jpg" alt="Tutoría de Matemáticas">
-                <h3>Tutoría de Matemáticas</h3>
-                <p>Asesoramiento personalizado para mejorar tus habilidades matemáticas.</p>
-            </div>
-            <div class="service">
-                <img src="science-tutoring.jpg" alt="Tutoría de Ciencias">
-                <h3>Tutoría de Ciencias</h3>
-                <p>Comprende los conceptos científicos con la ayuda de nuestros expertos.</p>
-            </div>
+    <section class="hero">
+        <h1>Bienvenido a Aprende con Apoyo</h1>
+        <p>Potenciamos tu aprendizaje con tutorías personalizadas en diversas materias.</p>
+    </section>
+    <main class="container">
+        <section class="about">
+            <h2>Acerca de Nosotros</h2>
+            <p>Ofrecemos tutorías y apoyo académico personalizado para ayudarte a superar cualquier desafío en tus estudios! :D</p>
+        </section>
+        <section class="about">
+            <h2>¿Quiénes somos?</h2>
+            <p>Somos un equipo dedicado a brindar apoyo educativo personalizado. Creemos que cada estudiante tiene un potencial único y nos comprometemos a ayudarte a alcanzar tus metas académicas.</p>
+        </section>
+        <section class="about">
+            <h2>¿Qué ofrecemos?</h2>
+            <p>●Tutorías personalizadas: Clases adaptadas a tus necesidades en asignaturas clave como matemáticas, ciencias, idiomas, historia y más!!</p>
+            <p>●Asesoría para tareas y proyectos: Te guiamos paso a paso en la resolución de tareas y proyectos escolares.</p>
+            <p>●Preparación para exámenes: Estrategias y prácticas para mejorar tus resultados en exámenes importantes.</p>
+            <p>●Desarrollo de habilidades de estudio: Técnicas de organización, concentración y manejo de tiempo para maximizar tu aprendizaje.</p>
+        </section>
+        <section class="why-choose">
+            <h2>¿Por qué elegirnos?</h2>
+            <p>●Tutoría online o presencial: ¡Elige la modalidad que más te convenga!</p>
+            <p>●Horarios flexibles: Nos adaptamos a tu disponibilidad 😊.</p>
+            <p>●Atención personalizada: Nos enfocamos en tus necesidades específicas para asegurar un progreso real.</p>
+        </section>
+        <section class="mission">
+            <h2>Nuestra misión...</h2>
+            <p>Queremos ser más que un servicio de tutoría, nos apasiona despertar interés por el aprendizaje, fomentar la autoconfianza y ayudar a nuestros estudiantes a alcanzar sus objetivos.</p>
+        </section>
+        <section class="how-it-works">
+            <h2>¿Cómo funciona?</h2>
+            <p>1.- Evaluación inicial gratuita: Analizamos tus necesidades y metas académicas.</p>
+            <p>2.- Plan de estudios personalizados: Diseñamos un plan adaptado a tus objetivos.</p>
+            <p>3.- Sesiones dinámicas: Clases interactivas y material de apoyo para mantenerte motivado.</p>
+            <p>4.- Seguimiento y retroalimentación: Informes periódicos para medir tu progreso.</p>
         </section>
     </main>
-    <section>
-        <h2>Servicios que Ofrecemos</h2>
-        <p>Ofrecemos tutorías en diversas materias como matemáticas, ciencias y más, para ayudarte a superar tus retos académicos.</p>
-    </section>
     <footer>
         <p>&copy; 2024 Aprende con Apoyo. Todos los derechos reservados.</p>
     </footer>
