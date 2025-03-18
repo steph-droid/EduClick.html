@@ -6,18 +6,18 @@
     <title>Aprende con Apoyo</title>
     <style>
         :root {
-            --primary-color: #4CAF50;
-            --secondary-color: #FFFFFF;
+            --primary-color: #2A9D8F;
+            --secondary-color: #E9C46A;
             --background-color: #F4F4F4;
-            --text-color: #333333;
-            --footer-color: #222222;
+            --text-color: #264653;
+            --footer-color: #1D3557;
             --link-color: #FFFFFF;
-            --hover-color: #367c39;
+            --hover-color: #E76F51;
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background-color: var(--background-color);
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #E9C46A, #F4A261);
             color: var(--text-color);
             margin: 0;
             padding: 0;
@@ -25,9 +25,11 @@
 
         header {
             background-color: var(--primary-color);
-            color: var(--secondary-color);
+            color: var(--link-color);
             padding: 20px;
             text-align: center;
+            font-size: 1.8em;
+            font-weight: bold;
         }
 
         nav {
@@ -45,75 +47,66 @@
             gap: 20px;
         }
 
-        nav ul li {
-            position: relative;
-        }
-
         nav ul li a {
             text-decoration: none;
             color: var(--link-color);
             font-weight: bold;
             padding: 12px 20px;
-            background-color: var(--primary-color);
+            background: var(--primary-color);
             border-radius: 5px;
-            transition: background 0.3s ease-in-out;
+            transition: background 0.3s;
         }
 
         nav ul li a:hover {
-            background-color: var(--hover-color);
+            background: var(--hover-color);
         }
 
         .hero {
             text-align: center;
-            padding: 60px 20px;
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
-        }
-
-        .hero h1 {
-            font-size: 2.8em;
-        }
-
-        .hero p {
-            font-size: 1.3em;
+            padding: 80px 20px;
+            background: url('https://source.unsplash.com/1600x900/?education,learning') no-repeat center center/cover;
+            color: var(--link-color);
+            font-size: 1.5em;
+            font-weight: bold;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         }
 
-        .about, .why-choose, .mission, .how-it-works {
+        section {
             text-align: center;
             padding: 40px;
         }
 
-        .about h2, .why-choose h2, .mission h2, .how-it-works h2 {
+        h2 {
             color: var(--primary-color);
         }
 
+        p {
+            font-size: 1.2em;
+        }
+
         footer {
-            background-color: var(--footer-color);
-            color: var(--secondary-color);
+            background: var(--footer-color);
+            color: var(--link-color);
             text-align: center;
-            padding: 15px 0;
-            position: relative;
-            width: 100%;
-            bottom: 0;
+            padding: 20px 0;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Aprende con Apoyo</h1>
-    </header>
+    <header>Aprende con Apoyo</header>
     <nav>
         <ul>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="servicios.html">Servicios</a></li>
-            <li><a href="Registro.html">Registro</a></li>
-            <li><a href="Contacto.html">Contacto</a></li>
         </ul>
     </nav>
     <section class="hero">
@@ -121,37 +114,29 @@
         <p>Potenciamos tu aprendizaje con tutorías personalizadas en diversas materias.</p>
     </section>
     <main class="container">
-        <section class="about">
+        <section>
             <h2>Acerca de Nosotros</h2>
-            <p>Ofrecemos tutorías y apoyo académico personalizado para ayudarte a superar cualquier desafío en tus estudios! :D</p>
+            <p>Ofrecemos tutorías y apoyo académico personalizado para ayudarte a superar cualquier desafío en tus estudios.</p>
         </section>
-        <section class="about">
-            <h2>¿Quiénes somos?</h2>
-            <p>Somos un equipo dedicado a brindar apoyo educativo personalizado. Creemos que cada estudiante tiene un potencial único y nos comprometemos a ayudarte a alcanzar tus metas académicas.</p>
-        </section>
-        <section class="about">
+        <section>
             <h2>¿Qué ofrecemos?</h2>
-            <p>●Tutorías personalizadas: Clases adaptadas a tus necesidades en asignaturas clave como matemáticas, ciencias, idiomas, historia y más!!</p>
-            <p>●Asesoría para tareas y proyectos: Te guiamos paso a paso en la resolución de tareas y proyectos escolares.</p>
-            <p>●Preparación para exámenes: Estrategias y prácticas para mejorar tus resultados en exámenes importantes.</p>
-            <p>●Desarrollo de habilidades de estudio: Técnicas de organización, concentración y manejo de tiempo para maximizar tu aprendizaje.</p>
+            <p>📚 Tutorías en matemáticas, ciencias, idiomas e historia.</p>
+            <p>📝 Asesoría para tareas y proyectos.</p>
+            <p>🎯 Preparación para exámenes.</p>
+            <p>📖 Técnicas de estudio y organización.</p>
         </section>
-        <section class="why-choose">
+        <section>
             <h2>¿Por qué elegirnos?</h2>
-            <p>●Tutoría online o presencial: ¡Elige la modalidad que más te convenga!</p>
-            <p>●Horarios flexibles: Nos adaptamos a tu disponibilidad 😊.</p>
-            <p>●Atención personalizada: Nos enfocamos en tus necesidades específicas para asegurar un progreso real.</p>
+            <p>✅ Tutoría online o presencial.</p>
+            <p>🕒 Horarios flexibles.</p>
+            <p>🎯 Atención personalizada.</p>
         </section>
-        <section class="mission">
-            <h2>Nuestra misión...</h2>
-            <p>Queremos ser más que un servicio de tutoría, nos apasiona despertar interés por el aprendizaje, fomentar la autoconfianza y ayudar a nuestros estudiantes a alcanzar sus objetivos.</p>
-        </section>
-        <section class="how-it-works">
+        <section>
             <h2>¿Cómo funciona?</h2>
-            <p>1.- Evaluación inicial gratuita: Analizamos tus necesidades y metas académicas.</p>
-            <p>2.- Plan de estudios personalizados: Diseñamos un plan adaptado a tus objetivos.</p>
-            <p>3.- Sesiones dinámicas: Clases interactivas y material de apoyo para mantenerte motivado.</p>
-            <p>4.- Seguimiento y retroalimentación: Informes periódicos para medir tu progreso.</p>
+            <p>1️⃣ Evaluación inicial gratuita.</p>
+            <p>2️⃣ Plan de estudios personalizado.</p>
+            <p>3️⃣ Clases dinámicas e interactivas.</p>
+            <p>4️⃣ Seguimiento y retroalimentación.</p>
         </section>
     </main>
     <footer>
