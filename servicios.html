@@ -6,83 +6,97 @@
     <title>Aprende con Apoyo</title>
     <style>
         :root {
-            --primary-color: #4CAF50;
-            --secondary-color: #FFFFFF;
-            --background-color: #F4F4F4;
-            --text-color: #333333;
-            --footer-color: #222222;
-            --button-gradient: linear-gradient(45deg, #4CAF50, #2E7D32);
-        }
+    --primary-color: #2A9D8F;
+    --secondary-color: #E9C46A;
+    --background-color: #F4F4F4;
+    --text-color: #264653;
+    --footer-color: #1D3557;
+    --link-color: #FFFFFF;
+    --hover-color: #E76F51;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-        }
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #E9C46A, #F4A261);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
 
-        header {
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
-            padding: 20px;
-            text-align: center;
-        }
+header {
+    background-color: var(--primary-color);
+    color: var(--link-color);
+    padding: 20px;
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: bold;
+}
 
-        nav {
-            text-align: center;
-            padding: 10px;
-            background-color: var(--primary-color);
-        }
+nav {
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
 
-        nav ul li {
-            display: inline;
-            margin-right: 15px;
-        }
+nav ul li a {
+    text-decoration: none;
+    color: var(--link-color);
+    font-weight: bold;
+    padding: 12px 20px;
+    background: var(--primary-color);
+    border-radius: 5px;
+    transition: background 0.3s;
+}
 
-        nav ul li a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            font-weight: bold;
-        }
+nav ul li a:hover {
+    background: var(--hover-color);
+}
 
-        .hero {
-            text-align: center;
-            padding: 60px 20px;
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
-        }
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: url('https://source.unsplash.com/1600x900/?education,learning') no-repeat center center/cover;
+    color: var(--link-color);
+    font-size: 1.5em;
+    font-weight: bold;
+}
 
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: var(--secondary-color);
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-        h2 {
-            color: var(--primary-color);
-        }
+h2 {
+    color: var(--primary-color);
+}
 
-        p {
-            font-size: 1.1em;
-        }
+p {
+    font-size: 1.1em;
+}
 
-        footer {
-            background-color: var(--footer-color);
-            color: var(--secondary-color);
-            text-align: center;
-            padding: 10px 0;
-            position: relative;
-            width: 100%;
-        }
+footer {
+    background-color: var(--footer-color);
+    color: var(--link-color);
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+}
+
+        
     </style>
 </head>
 <body>
