@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios - Aprende con Apoyo</title>
+    <title>Aprende con Apoyo</title>
     <style>
         :root {
             --primary-color: #4CAF50;
@@ -51,50 +51,28 @@
             font-weight: bold;
         }
 
-        section {
-            padding: 20px;
+        .hero {
             text-align: center;
+            padding: 60px 20px;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
         }
 
-        .services {
-            background-color: var(--primary-color);
-            margin: 20px auto;
+        .container {
             max-width: 800px;
+            margin: 20px auto;
             padding: 20px;
+            background-color: var(--secondary-color);
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .service img {
-            width: 100%;
-            border-radius: 8px;
+        h2 {
+            color: var(--primary-color);
         }
 
-        .service h3 {
-            color: var(--secondary-color);
-        }
-
-        .buttons {
-            margin-top: 20px;
-        }
-
-        .buttons a {
-            display: inline-block;
-            padding: 15px 30px;
-            margin: 10px;
-            background: var(--button-gradient);
-            color: var(--secondary-color);
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 18px;
-            font-weight: bold;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .buttons a:hover {
-            transform: scale(1.05);
-            background: linear-gradient(45deg, #388E3C, #1B5E20);
+        p {
+            font-size: 1.1em;
         }
 
         footer {
@@ -113,33 +91,26 @@
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
-        
+                <li><a href="servicios.html">Servicios</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <section class="services">
-            <h2>Nuestros Servicios</h2>
-            <div class="service">
-                <img src="math-tutoring.jpg" alt="Tutoría de Matemáticas">
-                <h3>Tutoría de Matemáticas</h3>
-                <p>Asesoramiento personalizado para mejorar tus habilidades matemáticas.</p>
-            </div>
-            <div class="service">
-                <img src="science-tutoring.jpg" alt="Tutoría de Ciencias">
-                <h3>Tutoría de Ciencias</h3>
-                <p>Comprende los conceptos científicos con la ayuda de nuestros expertos.</p>
-            </div>
-            <div class="service">
-                <img src="language-tutoring.jpg" alt="Tutoría de Idiomas">
-                <h3>Tutoría de Idiomas</h3>
-                <p>Mejora tu nivel de inglés, francés u otros idiomas con nuestros tutores.</p>
-            </div>
+    <section class="hero">
+        <h1>Bienvenido a Aprende con Apoyo</h1>
+        <p>Potenciamos tu aprendizaje con tutorías personalizadas en diversas materias.</p>
+    </section>
+    <main class="container">
+        <section>
+            <h2>Acerca de Nosotros</h2>
+            <p>Ofrecemos tutorías y apoyo académico personalizado para ayudarte a superar cualquier desafío en tus estudios.</p>
         </section>
-        <div class="buttons">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSclDKPXZ5s31UO-u9H9-D1c46j3esR0BKMVieMePqZ9J6XQfQ/viewform?usp=header" target="_blank">Contáctanos</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeJNaH64gJ1s06feeNp4so9dH3fm8PunXV1XhYo7nV9LYYGng/viewform?usp=header" target="_blank">Registro</a>
-        </div>
+        <section>
+            <h2>¿Qué ofrecemos?</h2>
+            <p>📚 Tutorías en matemáticas, ciencias, idiomas e historia.</p>
+            <p>📝 Asesoría para tareas y proyectos.</p>
+            <p>🎯 Preparación para exámenes.</p>
+            <p>📖 Técnicas de estudio y organización.</p>
+        </section>
     </main>
     <footer>
         <p>&copy; 2024 Aprende con Apoyo. Todos los derechos reservados.</p>
