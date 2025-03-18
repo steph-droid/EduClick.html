@@ -11,7 +11,7 @@
             --background-color: #F4F4F4;
             --text-color: #333333;
             --footer-color: #222222;
-            --link-color: #FFFFFF;
+            --button-gradient: linear-gradient(45deg, #4CAF50, #2E7D32);
         }
 
         body {
@@ -46,7 +46,7 @@
         }
 
         nav ul li a {
-            color: var(--link-color);
+            color: var(--secondary-color);
             text-decoration: none;
             font-weight: bold;
         }
@@ -74,27 +74,27 @@
             color: var(--secondary-color);
         }
 
-        .service p {
-            color: var(--text-color);
-        }
-
         .buttons {
             margin-top: 20px;
         }
 
         .buttons a {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 15px 30px;
             margin: 10px;
-            background-color: var(--footer-color);
+            background: var(--button-gradient);
             color: var(--secondary-color);
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 8px;
+            font-size: 18px;
             font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
 
         .buttons a:hover {
-            background-color: #444;
+            transform: scale(1.05);
+            background: linear-gradient(45deg, #388E3C, #1B5E20);
         }
 
         footer {
@@ -104,7 +104,6 @@
             padding: 10px 0;
             position: relative;
             width: 100%;
-            bottom: 0;
         }
     </style>
 </head>
@@ -139,7 +138,7 @@
             </div>
         </section>
         <div class="buttons">
-            <a href="jjj" target="_blank">Contáctanos</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSclDKPXZ5s31UO-u9H9-D1c46j3esR0BKMVieMePqZ9J6XQfQ/viewform?usp=header" target="_blank">Contáctanos</a>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSeJNaH64gJ1s06feeNp4so9dH3fm8PunXV1XhYo7nV9LYYGng/viewform?usp=header" target="_blank">Registro</a>
         </div>
     </main>
@@ -148,6 +147,3 @@
     </footer>
 </body>
 </html>
-
-
-
