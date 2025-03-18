@@ -5,17 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios - Aprende con Apoyo</title>
     <style>
-        /* Definir las variables de colores */
         :root {
-            --primary-color: #4CAF50;  
-            --secondary-color: #FFFFFF; 
-            --background-color: #F4F4F4; 
-            --text-color: #333333; 
-            --footer-color: #222222; 
-            --link-color: #FFFFFF; 
+            --primary-color: #4CAF50;
+            --secondary-color: #FFFFFF;
+            --background-color: #F4F4F4;
+            --text-color: #333333;
+            --footer-color: #222222;
+            --link-color: #FFFFFF;
         }
 
-        
         body {
             font-family: Arial, sans-serif;
             background-color: var(--background-color);
@@ -24,7 +22,6 @@
             padding: 0;
         }
 
-       
         header {
             background-color: var(--primary-color);
             color: var(--secondary-color);
@@ -32,7 +29,6 @@
             text-align: center;
         }
 
-       
         nav {
             text-align: center;
             padding: 10px;
@@ -55,38 +51,52 @@
             font-weight: bold;
         }
 
-        
         section {
             padding: 20px;
+            text-align: center;
         }
 
-       
         .services {
-            padding: 20px;
             background-color: var(--primary-color);
             margin: 20px auto;
             max-width: 800px;
+            padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-       
         .service img {
             width: 100%;
             border-radius: 8px;
         }
 
-        
         .service h3 {
             color: var(--secondary-color);
         }
 
-      
         .service p {
             color: var(--text-color);
         }
 
-        
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .buttons a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: var(--footer-color);
+            color: var(--secondary-color);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .buttons a:hover {
+            background-color: #444;
+        }
+
         footer {
             background-color: var(--footer-color);
             color: var(--secondary-color);
@@ -122,12 +132,17 @@
                 <h3>Tutoría de Ciencias</h3>
                 <p>Comprende los conceptos científicos con la ayuda de nuestros expertos.</p>
             </div>
+            <div class="service">
+                <img src="language-tutoring.jpg" alt="Tutoría de Idiomas">
+                <h3>Tutoría de Idiomas</h3>
+                <p>Mejora tu nivel de inglés, francés u otros idiomas con nuestros tutores.</p>
+            </div>
         </section>
+        <div class="buttons">
+            <a href="#" target="_blank">Contáctanos</a>
+            <a href="#" target="_blank">Registro</a>
+        </div>
     </main>
-    <section>
-        <h2>Servicios que Ofrecemos</h2>
-        <p>Ofrecemos tutorías en diversas materias como matemáticas, ciencias y más, para ayudarte a superar tus retos académicos.</p>
-    </section>
     <footer>
         <p>&copy; 2024 Aprende con Apoyo. Todos los derechos reservados.</p>
     </footer>
