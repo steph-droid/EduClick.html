@@ -139,6 +139,52 @@
             <p>4️⃣ Seguimiento y retroalimentación.</p>
         </section>
     </main>
+        <footer>
+        <p>&copy; 2024 Aprende con Apoyo. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Crear el mensaje tipo marquesina
+        const marquesina = document.createElement('div');
+        marquesina.textContent = '🎉 ¡Bienvenido a Aprende con Apoyo! Explora nuestros servicios y mejora tu aprendizaje hoy mismo. 🎓';
+        marquesina.style.position = 'fixed';
+        marquesina.style.bottom = '0';
+        marquesina.style.width = '100%';
+        marquesina.style.backgroundColor = '#2A9D8F';
+        marquesina.style.color = 'white';
+        marquesina.style.padding = '10px';
+        marquesina.style.fontSize = '1em';
+        marquesina.style.whiteSpace = 'nowrap';
+        marquesina.style.overflow = 'hidden';
+        marquesina.style.boxShadow = '0 -2px 5px rgba(0,0,0,0.2)';
+
+        const text = document.createElement('div');
+        text.textContent = marquesina.textContent;
+        text.style.display = 'inline-block';
+        text.style.paddingLeft = '100%';
+        text.style.animation = 'scroll-left 15s linear infinite';
+
+        marquesina.innerHTML = '';
+        marquesina.appendChild(text);
+        document.body.appendChild(marquesina);
+
+        // Animación con CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes scroll-left {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(-100%);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
+
     <footer>
         <p>&copy; 2024 Aprende con Apoyo. Todos los derechos reservados.</p>
     </footer>
