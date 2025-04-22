@@ -95,6 +95,34 @@
             position: relative;
             width: 100%;
         }
+        .hero-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-hero {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+    border: 2px solid var(--text-color);
+}
+
+.btn-hero:hover {
+    background-color: var(--hover-color);
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 0 16px rgba(231, 111, 81, 0.8);
+}
+
     </style>
 </head>
 <body>
