@@ -99,6 +99,47 @@
             padding: 20px 0;
             margin-top: 20px;
         }
+
+        /* Estilos del carrusel */
+        .carrusel-contenedor {
+            position: relative;
+            max-width: 800px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .carrusel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carrusel img {
+            min-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .anterior, .siguiente {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            border-radius: 50%;
+        }
+
+        .anterior {
+            left: 10px;
+        }
+
+        .siguiente {
+            right: 10px;
+        }
     </style>
 </head>
 <body>
@@ -118,6 +159,25 @@
             <h2>Acerca de Nosotros</h2>
             <p>Ofrecemos tutorías y apoyo académico personalizado para ayudarte a superar cualquier desafío en tus estudios.</p>
         </section>
+
+        <!-- Aquí inserté el carrusel 👇 -->
+        <section id="carrusel">
+            <h2>Explora nuestras tutorías</h2>
+            <div class="carrusel-contenedor">
+                <button class="anterior">&#10094;</button>
+                <div class="carrusel">
+                    <img src="img/Alien1.jpg" alt="Alien 1">
+                    <img src="img/Alien2.jpg" alt="Alien 2">
+                    <img src="img/Alien3.jpg" alt="Alien 3">
+                    <img src="img/Alien4.jpg" alt="Alien 4">
+                    <img src="img/Alien5.jpg" alt="Alien 5">
+                    <img src="img/Alien6.jpg" alt="Alien 6">
+                </div>
+                <button class="siguiente">&#10095;</button>
+            </div>
+        </section>
+        <!-- Hasta aquí el carrusel 👆 -->
+
         <section>
             <h2>¿Qué ofrecemos?</h2>
             <p>📚 Tutorías en matemáticas, ciencias, idiomas e historia.</p>
@@ -140,8 +200,37 @@
         </section>
     </main>
 
+    <footer>
+        <p>&copy; 2024 Aprende con Apoyo. Todos los derechos reservados.</p>
+    </footer>
+
     <script>
-        // Crear el mensaje tipo marquesina
+        // Carrusel
+        const carrusel = document.querySelector('.carrusel');
+        const imagenes = document.querySelectorAll('.carrusel img');
+        const anterior = document.querySelector('.anterior');
+        const siguiente = document.querySelector('.siguiente');
+
+        let contador = 0;
+
+        function mostrarImagen() {
+            const ancho = imagenes[0].clientWidth;
+            carrusel.style.transform = `translateX(${-contador * ancho}px)`;
+        }
+
+        siguiente.addEventListener('click', () => {
+            contador = (contador + 1) % imagenes.length;
+            mostrarImagen();
+        });
+
+        anterior.addEventListener('click', () => {
+            contador = (contador - 1 + imagenes.length) % imagenes.length;
+            mostrarImagen();
+        });
+
+        window.addEventListener('resize', mostrarImagen);
+
+        // Marquesina
         const marquesina = document.createElement('div');
         marquesina.textContent = '🎉 ¡Bienvenido a Aprende con Apoyo! Explora nuestros servicios y mejora tu aprendizaje hoy mismo. 🎓';
         marquesina.style.position = 'fixed';
@@ -165,7 +254,6 @@
         marquesina.appendChild(text);
         document.body.appendChild(marquesina);
 
-        // Animación con CSS
         const style = document.createElement('style');
         style.textContent = `
             @keyframes scroll-left {
@@ -182,8 +270,4 @@
 </body>
 </html>
 
-    <footer>
-        <p>&copy; 2024 Aprende con Apoyo. Todos los derechos reservados.</p>
-    </footer>
-</body>
-</html>
+      
