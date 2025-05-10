@@ -1,112 +1,121 @@
+<!-- HTML COMPLETO REESTILIZADO Y PROFESIONALIZADO -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Aprende con Apoyo</title>
     <style>
         :root {
             --primary-color: #2A9D8F;
             --secondary-color: #E9C46A;
-            --background-color: #F4F4F4;
+            --accent-color: #F4A261;
             --text-color: #264653;
-            --footer-color: #1D3557;
-            --link-color: #FFFFFF;
+            --light-color: #FFFFFF;
+            --dark-bg: #1D3557;
             --hover-color: #E76F51;
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #E9C46A, #F4A261);
-            color: var(--text-color);
             margin: 0;
-            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: var(--light-color);
+            color: var(--text-color);
         }
 
         header {
             background-color: var(--primary-color);
-            color: var(--link-color);
-            padding: 20px;
+            color: var(--light-color);
+            padding: 30px 20px;
             text-align: center;
-            font-size: 1.8em;
-            font-weight: bold;
+            font-size: 2em;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
         nav {
-            background-color: var(--primary-color);
             display: flex;
             justify-content: center;
-            padding: 15px 0;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: var(--dark-bg);
+            padding: 10px 0;
         }
 
         nav ul {
             list-style: none;
-            padding: 0;
             display: flex;
-            gap: 20px;
+            gap: 30px;
+            padding: 0;
+            margin: 0;
         }
 
         nav ul li a {
+            color: var(--light-color);
             text-decoration: none;
-            color: var(--link-color);
-            font-weight: bold;
-            padding: 12px 20px;
-            background: var(--primary-color);
-            border-radius: 5px;
-            transition: background 0.3s;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 6px;
+            transition: 0.3s ease;
         }
 
         nav ul li a:hover {
-            background: var(--hover-color);
+            background-color: var(--hover-color);
         }
 
         .hero {
-            text-align: center;
-            padding: 80px 20px;
             background: url('https://source.unsplash.com/1600x900/?education,learning') no-repeat center center/cover;
-            color: var(--link-color);
-            font-size: 1.5em;
-            font-weight: bold;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: 700;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
         }
 
         .container {
             max-width: 1100px;
-            margin: 0 auto;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            margin: auto;
+            padding: 40px 20px;
         }
 
         section {
-            text-align: center;
-            padding: 40px;
+            margin-bottom: 50px;
         }
 
         h2 {
             color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.6em;
         }
 
         p {
-            font-size: 1.2em;
+            font-size: 1.1em;
+            line-height: 1.6;
         }
 
-        footer {
-            background: var(--footer-color);
-            color: var(--link-color);
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 20px;
+        .tarjetas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
         }
 
-        /* Estilos del carrusel */
+        .tarjeta {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-5px);
+        }
+
         .carrusel-contenedor {
             position: relative;
-            max-width: 800px;
-            margin: 20px auto;
             overflow: hidden;
-            border-radius: 10px;
+            border-radius: 12px;
+            max-width: 100%;
         }
 
         .carrusel {
@@ -115,21 +124,20 @@
         }
 
         .carrusel img {
-            min-width: 100%;
-            height: auto;
-            border-radius: 5px;
+            width: 100%;
+            border-radius: 10px;
         }
 
         .anterior, .siguiente {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.5);
             color: white;
             border: none;
-            padding: 10px;
+            padding: 12px;
+            font-size: 20px;
             cursor: pointer;
-            font-size: 24px;
             border-radius: 50%;
         }
 
@@ -139,6 +147,42 @@
 
         .siguiente {
             right: 10px;
+        }
+
+        footer {
+            background-color: var(--dark-bg);
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+            font-size: 0.95em;
+        }
+
+        .marquesina {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px;
+            font-weight: bold;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .marquesina div {
+            display: inline-block;
+            white-space: nowrap;
+            animation: scroll-left 15s linear infinite;
+        }
+
+        @keyframes scroll-left {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
         }
     </style>
 </head>
@@ -150,17 +194,18 @@
             <li><a href="servicios.html">Servicios</a></li>
         </ul>
     </nav>
+
     <section class="hero">
-        <h1>Bienvenido a Aprende con Apoyo</h1>
-        <p>Potenciamos tu aprendizaje con tutorías personalizadas en diversas materias.</p>
+        <h1>Potencia tu aprendizaje con nosotros</h1>
+        <p>Clases, asesoría y herramientas para tu éxito académico.</p>
     </section>
+
     <main class="container">
         <section>
             <h2>Acerca de Nosotros</h2>
             <p>Ofrecemos tutorías y apoyo académico personalizado para ayudarte a superar cualquier desafío en tus estudios.</p>
         </section>
 
-        <!-- Aquí inserté el carrusel 👇 -->
         <section id="carrusel">
             <h2>Explora nuestras tutorías</h2>
             <div class="carrusel-contenedor">
@@ -176,36 +221,46 @@
                 <button class="siguiente">&#10095;</button>
             </div>
         </section>
-        <!-- Hasta aquí el carrusel 👆 -->
 
         <section>
             <h2>¿Qué ofrecemos?</h2>
-            <p>📚 Tutorías en matemáticas, ciencias, idiomas e historia.</p>
-            <p>📝 Asesoría para tareas y proyectos.</p>
-            <p>🎯 Preparación para exámenes.</p>
-            <p>📖 Técnicas de estudio y organización.</p>
+            <div class="tarjetas">
+                <div class="tarjeta">📚 Tutorías en matemáticas, ciencias, idiomas e historia.</div>
+                <div class="tarjeta">📝 Asesoría para tareas y proyectos.</div>
+                <div class="tarjeta">🎯 Preparación para exámenes.</div>
+                <div class="tarjeta">📖 Técnicas de estudio y organización.</div>
+            </div>
         </section>
+
         <section>
             <h2>¿Por qué elegirnos?</h2>
-            <p>✅ Tutoría online o presencial.</p>
-            <p>🕒 Horarios flexibles.</p>
-            <p>🎯 Atención personalizada.</p>
+            <div class="tarjetas">
+                <div class="tarjeta">✅ Tutoría online o presencial.</div>
+                <div class="tarjeta">🕒 Horarios flexibles.</div>
+                <div class="tarjeta">🎯 Atención personalizada.</div>
+            </div>
         </section>
+
         <section>
             <h2>¿Cómo funciona?</h2>
-            <p>1️⃣ Evaluación inicial gratuita.</p>
-            <p>2️⃣ Plan de estudios personalizado.</p>
-            <p>3️⃣ Clases dinámicas e interactivas.</p>
-            <p>4️⃣ Seguimiento y retroalimentación.</p>
+            <div class="tarjetas">
+                <div class="tarjeta">1️⃣ Evaluación inicial gratuita.</div>
+                <div class="tarjeta">2️⃣ Plan de estudios personalizado.</div>
+                <div class="tarjeta">3️⃣ Clases dinámicas e interactivas.</div>
+                <div class="tarjeta">4️⃣ Seguimiento y retroalimentación.</div>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Aprende con Apoyo. Todos los derechos reservados.</p>
+        &copy; 2024 Aprende con Apoyo. Todos los derechos reservados.
     </footer>
 
+    <div class="marquesina">
+        <div>🎉 ¡Bienvenido a Aprende con Apoyo! Explora nuestros servicios y mejora tu aprendizaje hoy mismo. 🎓</div>
+    </div>
+
     <script>
-        // Carrusel
         const carrusel = document.querySelector('.carrusel');
         const imagenes = document.querySelectorAll('.carrusel img');
         const anterior = document.querySelector('.anterior');
@@ -229,45 +284,6 @@
         });
 
         window.addEventListener('resize', mostrarImagen);
-
-        // Marquesina
-        const marquesina = document.createElement('div');
-        marquesina.textContent = '🎉 ¡Bienvenido a Aprende con Apoyo! Explora nuestros servicios y mejora tu aprendizaje hoy mismo. 🎓';
-        marquesina.style.position = 'fixed';
-        marquesina.style.bottom = '0';
-        marquesina.style.width = '100%';
-        marquesina.style.backgroundColor = '#2A9D8F';
-        marquesina.style.color = 'white';
-        marquesina.style.padding = '10px';
-        marquesina.style.fontSize = '1em';
-        marquesina.style.whiteSpace = 'nowrap';
-        marquesina.style.overflow = 'hidden';
-        marquesina.style.boxShadow = '0 -2px 5px rgba(0,0,0,0.2)';
-
-        const text = document.createElement('div');
-        text.textContent = marquesina.textContent;
-        text.style.display = 'inline-block';
-        text.style.paddingLeft = '100%';
-        text.style.animation = 'scroll-left 15s linear infinite';
-
-        marquesina.innerHTML = '';
-        marquesina.appendChild(text);
-        document.body.appendChild(marquesina);
-
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes scroll-left {
-                0% {
-                    transform: translateX(0);
-                }
-                100% {
-                    transform: translateX(-100%);
-                }
-            }
-        `;
-        document.head.appendChild(style);
     </script>
 </body>
 </html>
-
-      
