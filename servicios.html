@@ -1,4 +1,4 @@
-<!-- HTML COMPLETO CON DISEÑO EDUCLICK DESTACADO, VIDEO INTRO CON AUTOPLAY Y MUTE, Y CARRUSEL -->
+<!-- HTML COMPLETO CON DISEÑO EDUCLICK DESTACADO, VIDEO INTRO CON AUTOPLAY Y CONTROLES DE VOLUMEN, Y CARRUSEL -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -90,61 +90,32 @@
     section:nth-of-type(even) { background: var(--bg-alt); }
     h2 { color: var(--primary-color); margin-bottom: 1rem; font-size: 1.8rem; }
     p { font-size: 1.1rem; margin-bottom: 1rem; }
-    /* Video Intro fijo con autoplay y mute */
+    /* Video Intro fijo con autoplay y controles */
     .video-intro {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 2rem;
+      display: flex; justify-content: center; margin-bottom: 2rem;
     }
     .video-intro video {
-      width: 100%;
-      max-width: 800px;
+      width: 100%; max-width: 800px;
       border-radius: 1rem;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
     /* Carrusel */
     .carrusel-contenedor {
-      position: relative;
-      overflow: hidden;
-      border-radius: 1rem;
-      margin-bottom: 2rem;
+      position: relative; overflow: hidden; border-radius: 1rem; margin-bottom: 2rem;
     }
-    .carrusel {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-    .carrusel img {
-      width: 100%;
-      object-fit: cover;
-    }
+    .carrusel { display: flex; transition: transform 0.5s ease-in-out; }
+    .carrusel img { width: 100%; object-fit: cover; }
     .anterior, .siguiente {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0,0,0,0.5);
-      color: var(--card-bg);
-      border: none;
-      padding: 0.75rem;
-      font-size: 1.5rem;
-      cursor: pointer;
-      border-radius: 50%;
-      transition: background 0.3s;
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(0,0,0,0.5); color: var(--card-bg);
+      border: none; padding: 0.75rem; font-size: 1.5rem;
+      cursor: pointer; border-radius: 50%; transition: background 0.3s;
     }
-    .anterior:hover, .siguiente:hover {
-      background: rgba(0,0,0,0.7);
-    }
-    .anterior {
-      left: 1rem;
-    }
-    .siguiente {
-      right: 1rem;
-    }
+    .anterior:hover, .siguiente:hover { background: rgba(0,0,0,0.7); }
+    .anterior { left: 1rem; } .siguiente { right: 1rem; }
     footer {
-      background: var(--text-color);
-      color: var(--card-bg);
-      text-align: center;
-      padding: 1.5rem 1rem;
-      font-size: 0.9rem;
+      background: var(--text-color); color: var(--card-bg);
+      text-align: center; padding: 1.5rem 1rem; font-size: 0.9rem;
     }
   </style>
 </head>
@@ -156,18 +127,15 @@
       <li><a href="servicios.html">Servicios</a></li>
     </ul>
   </nav>
-
   <div class="hero-buttons">
     <a href="#" class="btn-hero">📨 Contáctanos</a>
     <a href="#" class="btn-hero">📝 Registro</a>
   </div>
-
   <main class="container">
-    <!-- Video Intro Fijo con autoplay y mute -->
+    <!-- Video Intro Fijo con autoplay y controles -->
     <section class="video-intro" aria-label="Video Introductorio">
-      <video src="Educlickintro (1) (1) (1).mp4" autoplay muted loop></video>
+      <video src="Educlickintro (1) (1) (1).mp4" autoplay controls loop></video>
     </section>
-
     <!-- Carrusel de Infografías -->
     <section aria-label="Infografías">
       <h2>Infografías Destacadas</h2>
@@ -182,9 +150,7 @@
       </div>
     </section>
   </main>
-
   <footer>&copy; 2024 Aprende con Apoyo. Todos los derechos reservados.</footer>
-
   <script>
     // Carrusel de infografías
     const carrusel = document.querySelector('.carrusel');
