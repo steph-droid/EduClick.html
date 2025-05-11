@@ -1,4 +1,4 @@
-<!-- HTML COMPLETO CON PALETA EDUCLICK Y NAV DESTACADA -->
+<!-- HTML COMPLETO CON PALETA EDUCLICK Y NAV SIN CONTACTO -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,16 +8,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-color: #1B6E67;   /* teal oscuro */
-      --secondary-color: #F2C14E; /* amarillo cálido */
-      --accent-color: #E07A5F;    /* coral suave */
-      --bg-main: #FAF3E0;         /* crema ligera */
-      --bg-alt: #E8F6F3;          /* verde agua pálido */
-      --text-color: #2F2D2E;      /* gris muy oscuro */
-      --card-bg: #FFFFFF;         /* blanco puro */
-      --hover-color: #E07A5F;     /* coral suave */
+      --primary-color: #1B6E67;
+      --secondary-color: #F2C14E;
+      --accent-color: #E07A5F;
+      --bg-main: #FAF3E0;
+      --bg-alt: #E8F6F3;
+      --text-color: #2F2D2E;
+      --card-bg: #FFFFFF;
+      --hover-color: #E07A5F;
     }
-
     * { box-sizing: border-box; }
     body {
       margin: 0;
@@ -26,7 +25,6 @@
       color: var(--text-color);
       line-height: 1.6;
     }
-
     header {
       background-color: var(--primary-color);
       color: var(--card-bg);
@@ -36,8 +34,7 @@
       font-weight: 700;
       letter-spacing: 1px;
     }
-
-    /* Barra de navegación destacada */
+    /* Barra de navegación sin Contacto */
     nav {
       background: var(--secondary-color);
       max-width: 800px;
@@ -67,7 +64,6 @@
       background: var(--hover-color);
       color: #fff;
     }
-
     .hero {
       background: url('https://source.unsplash.com/1600x900/?books,study') no-repeat center center/cover;
       color: var(--card-bg);
@@ -77,23 +73,19 @@
       font-weight: 700;
       text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
     }
-
     .container { max-width: 1100px; margin: auto; padding: 2rem 1rem; }
-
     section {
       margin-bottom: 3rem;
       padding: 2rem 1rem;
       border-radius: 1rem;
     }
     section:nth-of-type(even) { background: var(--bg-alt); }
-
     h2 {
       color: var(--primary-color);
       margin-bottom: 1rem;
       font-size: 1.8rem;
     }
     p { font-size: 1.1rem; margin-bottom: 1rem; }
-
     .tarjetas {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -110,37 +102,6 @@
       transform: translateY(-5px);
       box-shadow: 0 8px 16px rgba(0,0,0,0.12);
     }
-
-    .carrusel-contenedor {
-      position: relative;
-      overflow: hidden;
-      border-radius: 1rem;
-    }
-    .carrusel { display: flex; transition: transform 0.5s ease-in-out; }
-    .carrusel img { width: 100%; object-fit: cover; }
-    .anterior, .siguiente {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      background: rgba(0,0,0,0.5);
-      color: var(--card-bg);
-      border: none;
-      padding: 0.75rem;
-      font-size: 1.5rem;
-      cursor: pointer;
-      border-radius: 50%;
-      transition: background 0.3s;
-    }
-    .anterior:hover, .siguiente:hover { background: rgba(0,0,0,0.7); }
-    .anterior { left: 1rem; }
-    .siguiente { right: 1rem; }
-
-    footer {
-      background: var(--text-color);
-      color: var(--card-bg);
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.95rem;
-    }
-
     .marquesina {
       position: fixed; bottom: 0; width: 100%;
       background: var(--secondary-color);
@@ -156,16 +117,21 @@
       animation: scroll-left 15s linear infinite;
     }
     @keyframes scroll-left { from { transform: translateX(100%);} to { transform: translateX(-100%);} }
+    footer {
+      background: var(--text-color);
+      color: var(--card-bg);
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.95rem;
+    }
   </style>
 </head>
 <body>
   <header>Educlick</header>
-
   <nav>
     <ul>
       <li><a href="#" class="active">Inicio</a></li>
       <li><a href="servicios.html">Servicios</a></li>
-      <li><a href="Contacto.html">Contacto</a></li>
     </ul>
   </nav>
 
@@ -196,24 +162,10 @@
       <p><strong>Duración:</strong> ⏱️ 30, 45 o 60 minutos por sesión. Horarios adaptables.</p>
     </section>
 
-    <!-- Secciones restantes (Quiénes somos, Beneficios, Contacto, FAQ) siguen igual -->
+    <!-- Secciones restantes (Quiénes somos, Beneficios, FAQ) siguen igual -->
   </main>
 
   <div class="marquesina"><div>🎉 ¡Bienvenido a Educlick! Mejora tu aprendizaje hoy mismo. 🎓</div></div>
-    <footer>&copy; 2025 Educlick. Todos los derechos reservados.</footer>
-
-  <script>
-    const carousel = document.querySelector('.carrusel');
-    const imgs = document.querySelectorAll('.carrusel img');
-    const prev = document.querySelector('.anterior');
-    const next = document.querySelector('.siguiente');
-    let count = 0;
-    function show(){ carousel.style.transform = `translateX(${-count * imgs[0].clientWidth}px)`; }
-    if (next && prev && imgs.length) {
-      next.addEventListener('click', () => { count = (count + 1) % imgs.length; show(); });
-      prev.addEventListener('click', () => { count = (count - 1 + imgs.length) % imgs.length; show(); });
-      window.addEventListener('resize', show);
-    }
-  </script>
+  <footer>&copy; 2025 Educlick. Todos los derechos reservados.</footer>
 </body>
 </html>
