@@ -3,124 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro - Aprende con Apoyo</title>
+    <title>Aprende con Apoyo</title>
     <style>
-       
         :root {
-            --primary-color: #4CAF50;  /* Verde primario */
-            --secondary-color: #FFFFFF; /* Blanco */
-            --background-color: #F4F4F4; /* Fondo claro */
-            --text-color: #333333; /* Texto oscuro */
-            --footer-color: #222222; /* Fondo del pie de página */
-            --link-color: #FFFFFF; /* Color de los enlaces */
+            --primary-color: #2A9D8F;
+            --secondary-color: #E9C46A;
+            --background-color: #F4F4F4;
+            --text-color: #264653;
+            --footer-color: #1D3557;
+            --link-color: #FFFFFF;
+            --hover-color: #E76F51;
         }
 
-       
         body {
-            font-family: Arial, sans-serif;
-            background-color: var(--background-color);
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #E9C46A, #F4A261);
             color: var(--text-color);
             margin: 0;
             padding: 0;
         }
 
-       
         header {
             background-color: var(--primary-color);
-            color: var(--secondary-color);
+            color: var(--link-color);
             padding: 20px;
             text-align: center;
+            font-size: 1.8em;
+            font-weight: bold;
         }
 
-        
         nav {
             background-color: var(--primary-color);
-            text-align: center;
-            padding: 10px;
-        }
-
-        nav a {
-            color: var(--link-color);
-            text-decoration: none;
-            font-weight: bold;
-            margin-right: 15px;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        /* Estilo para las secciones */
-        section {
-            padding: 20px;
-        }
-
-     
-        form {
             display: flex;
-            flex-direction: column;
-            align-items: flex-start;
+            justify-content: center;
+            padding: 15px 0;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        label {
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--link-color);
             font-weight: bold;
-            margin-top: 10px;
+            padding: 12px 20px;
+            background: var(--primary-color);
+            border-radius: 5px;
+            transition: background 0.3s;
         }
 
-        input[type="text"], input[type="email"], input[type="password"] {
-            padding: 8px;
-            margin: 5px 0 15px 0;
-            width: 250px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+        nav ul li a:hover {
+            background: var(--hover-color);
         }
 
-        input[type="submit"] {
-            background-color: var(--primary-color);
-            color: var(--secondary-color);
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: url('https://source.unsplash.com/1600x900/?education,learning') no-repeat center center/cover;
+            color: var(--link-color);
+            font-size: 1.5em;
+            font-weight: bold;
         }
 
-        input[type="submit"]:hover {
-            background-color: darken(var(--primary-color), 10%);
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        /* Pie de página */
+        h2 {
+            color: var(--primary-color);
+        }
+
+        p {
+            font-size: 1.1em;
+        }
+
         footer {
             background-color: var(--footer-color);
-            color: var(--secondary-color);
+            color: var(--link-color);
             text-align: center;
             padding: 10px 0;
             position: relative;
             width: 100%;
-            bottom: 0;
         }
+        .hero-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-hero {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+    border: 2px solid var(--text-color);
+}
+
+.btn-hero:hover {
+    background-color: var(--hover-color);
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 0 16px rgba(231, 111, 81, 0.8);
+}
+
     </style>
 </head>
 <body>
     <header>
-        <h1>Registro de Usuario</h1>
+        <h1>Aprende con Apoyo</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav>
-        <a href="index.html">Inicio</a>
-        <a href="servicios.html">Servicios</a>
-        <a href="Contacto.html">Contacto</a>
-    </nav>
-    <section>
-        <h2>Formulario de Registro</h2>
-        <form action="#" method="post">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required><br><br>
-            <label for="correo">Correo Electrónico:</label>
-            <input type="email" id="correo" name="correo" required><br><br>
-            <label for="contraseña">Contraseña:</label>
-            <input type="password" id="contraseña" name="contraseña" required><br><br>
-            <input type="submit" value="Registrarse">
-        </form>
+    <section class="hero">
+        <h1>Bienvenido a Aprende con Apoyo</h1>
+        <p>Potenciamos tu aprendizaje con tutorías personalizadas en diversas materias.</p>
     </section>
+    <div class="hero-buttons">
+    <a href="https://docs.google.com/forms/d/1dG2OX5zLOy_uveoNXrLQ-lKnmSXAaUnMA9lbBowSKts/edit" target="_blank" class="btn-hero">📨 Contáctanos</a>
+    <a href="https://docs.google.com/forms/d/1098WlM_DhFxbw4BF6ZTXJ_ea4_yGRctt6oClg9E5Lrw/edit" target="_blank" class="btn-hero">📝 Registro</a>
+</div>
+    <main class="container">
+        <section>
+            <h2>Acerca de Nosotros</h2>
+            <p>Ofrecemos tutorías y apoyo académico personalizado para ayudarte a superar cualquier desafío en tus estudios.</p>
+        </section>
+        <section>
+            <h2>¿Qué ofrecemos?</h2>
+            <p>📚 Tutorías en matemáticas, ciencias, idiomas e historia.</p>
+            <p>📝 Asesoría para tareas y proyectos.</p>
+            <p>🎯 Preparación para exámenes.</p>
+            <p>📖 Técnicas de estudio y organización.</p>
+        </section>
+    </main>
     <footer>
         <p>&copy; 2024 Aprende con Apoyo. Todos los derechos reservados.</p>
     </footer>
