@@ -1,4 +1,4 @@
-<!-- HTML COMPLETO CON DISEÑO EDUCLICK DESTACADO, VIDEO INTRO CON AUTOPLAY Y CONTROLES DE VOLUMEN, Y CARRUSEL -->
+<!-- HTML COMPLETO CON DISEÑO EDUCLICK DESTACADO, VIDEO INTRO CON AUTOPLAY Y CONTROLES, Y CARRUSEL ADAPTABLE -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -99,12 +99,24 @@
       border-radius: 1rem;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    /* Carrusel */
+    /* Carrusel adaptable de infografías */
     .carrusel-contenedor {
-      position: relative; overflow: hidden; border-radius: 1rem; margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+      border-radius: 1rem;
+      margin-bottom: 2rem;
+      max-height: 60vh; /* altura máxima relativa a la ventana */
     }
-    .carrusel { display: flex; transition: transform 0.5s ease-in-out; }
-    .carrusel img { width: 100%; object-fit: cover; }
+    .carrusel {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .carrusel img {
+      width: 100%;
+      height: auto;
+      max-height: 60vh;
+      object-fit: contain;
+    }
     .anterior, .siguiente {
       position: absolute; top: 50%; transform: translateY(-50%);
       background: rgba(0,0,0,0.5); color: var(--card-bg);
@@ -128,8 +140,8 @@
     </ul>
   </nav>
   <div class="hero-buttons">
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSclDKPXZ5s31UO-u9H9-D1c46j3esR0BKMVieMePqZ9J6XQfQ/viewform?usp=header" class="btn-hero">📨 Contáctanos</a>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeJNaH64gJ1s06feeNp4so9dH3fm8PunXV1XhYo7nV9LYYGng/viewform?usp=header" class="btn-hero">📝 Registro</a>
+    <a href="#" class="btn-hero">📨 Contáctanos</a>
+    <a href="#" class="btn-hero">📝 Registro</a>
   </div>
   <main class="container">
     <!-- Video Intro Fijo con autoplay y controles -->
@@ -158,9 +170,7 @@
     const prev = document.querySelector('.anterior');
     const next = document.querySelector('.siguiente');
     let idx = 0;
-    function mostrar() {
-      carrusel.style.transform = `translateX(${-idx * imgs[0].clientWidth}px)`;
-    }
+    function mostrar() { carrusel.style.transform = `translateX(${-idx * imgs[0].clientWidth}px)`; }
     if(prev && next && imgs.length) {
       next.addEventListener('click', () => { idx = (idx + 1) % imgs.length; mostrar(); });
       prev.addEventListener('click', () => { idx = (idx - 1 + imgs.length) % imgs.length; mostrar(); });
