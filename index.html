@@ -1,4 +1,4 @@
-<!-- HTML COMPLETO CON PALETA EDUCLICK Y NAV SIN CONTACTO -->
+<!-- HTML COMPLETO CON PALETA EDUCLICK, NAV DESTACADA, SECCIONES COMPLETAS Y REDES -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -23,23 +23,20 @@
       font-family: 'Poppins', sans-serif;
       background: var(--bg-main);
       color: var(--text-color);
-      line-height: 1.6;
     }
     header {
       background-color: var(--primary-color);
       color: var(--card-bg);
-      padding: 2rem 1rem;
+      padding: 2rem;
       text-align: center;
       font-size: 2.2rem;
       font-weight: 700;
-      letter-spacing: 1px;
     }
-    /* Barra de navegación sin Contacto */
     nav {
       background: var(--secondary-color);
-      max-width: 800px;
-      margin: 1.5rem auto;
-      padding: 0.75rem 1rem;
+      max-width: 900px;
+      margin: 1rem auto;
+      padding: 0.75rem;
       border-radius: 0.75rem;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
@@ -57,7 +54,7 @@
       font-weight: 600;
       padding: 0.5rem 1rem;
       border-radius: 0.5rem;
-      transition: background 0.3s, color 0.3s;
+      transition: background 0.3s;
     }
     nav ul li a:hover,
     nav ul li a.active {
@@ -65,55 +62,48 @@
       color: #fff;
     }
     .hero {
-      background: url('https://source.unsplash.com/1600x900/?books,study') no-repeat center center/cover;
+      background: url('https://source.unsplash.com/1600x900/?education,learning') no-repeat center/cover;
       color: var(--card-bg);
-      padding: 6rem 1rem;
       text-align: center;
+      padding: 6rem 1rem;
       font-size: 1.75rem;
       font-weight: 700;
       text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
     }
-    .container { max-width: 1100px; margin: auto; padding: 2rem 1rem; }
-    section {
-      margin-bottom: 3rem;
-      padding: 2rem 1rem;
-      border-radius: 1rem;
-    }
+    .container { max-width: 900px; margin: auto; padding: 2rem 1rem; }
+    section { margin-bottom: 3rem; padding: 2rem 1rem; border-radius: 1rem; }
     section:nth-of-type(even) { background: var(--bg-alt); }
-    h2 {
-      color: var(--primary-color);
-      margin-bottom: 1rem;
-      font-size: 1.8rem;
-    }
+    h2 { color: var(--primary-color); margin-bottom: 1rem; font-size: 1.8rem; }
     p { font-size: 1.1rem; margin-bottom: 1rem; }
-    .tarjetas {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-    }
+    .tarjetas { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
     .tarjeta {
       background: var(--card-bg);
       padding: 1.5rem;
       border-radius: 1rem;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: transform 0.3s;
     }
-    .tarjeta:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+    .tarjeta:hover { transform: translateY(-5px); }
+    .social-media ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
     }
+    .social-media ul li a {
+      font-size: 1.5rem;
+      color: var(--text-color);
+      transition: color 0.3s;
+    }
+    .social-media ul li a:hover { color: var(--hover-color); }
     .marquesina {
       position: fixed; bottom: 0; width: 100%;
       background: var(--secondary-color);
       color: var(--text-color);
-      padding: 0.75rem 1rem;
       text-align: center;
+      padding: 0.75rem;
       font-weight: 600;
-      overflow: hidden;
-    }
-    .marquesina div {
-      display: inline-block;
-      white-space: nowrap;
       animation: scroll-left 15s linear infinite;
     }
     @keyframes scroll-left { from { transform: translateX(100%);} to { transform: translateX(-100%);} }
@@ -121,7 +111,7 @@
       background: var(--text-color);
       color: var(--card-bg);
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 2rem;
       font-size: 0.95rem;
     }
   </style>
@@ -134,19 +124,16 @@
       <li><a href="servicios.html">Servicios</a></li>
     </ul>
   </nav>
-
-  <section class="hero">
+  <div class="hero">
     <h1>🧠 Bienvenid@ a Educlick</h1>
     <p>📚 Conectamos aprendizaje con resultados reales</p>
-  </section>
-
+  </div>
   <main class="container">
     <section aria-label="Acerca de Nosotros">
       <h2>Acerca de Nosotros</h2>
       <p>En <strong>Educlick</strong>, somos un equipo de tutores apasionados por la enseñanza. Nuestro objetivo es acompañar a estudiantes de primaria, secundaria y preparatoria en su proceso académico, brindando tutorías personalizadas, apoyo emocional y estrategias efectivas de estudio.</p>
       <p>Ya sea que necesites ayuda puntual con una materia, preparación para exámenes o reforzar tus bases, estamos aquí para apoyarte con clases claras, dinámicas y adaptadas a tu estilo de aprendizaje.</p>
     </section>
-
     <section id="servicios" aria-label="Qué ofrecemos">
       <h2>🔍 ¿Qué ofrecemos?</h2>
       <div class="tarjetas">
@@ -161,10 +148,45 @@
       <p><strong>Modalidades:</strong> 💻 Online (Zoom, Meet) / 📍 Presenciales según tu ubicación.</p>
       <p><strong>Duración:</strong> ⏱️ 30, 45 o 60 minutos por sesión. Horarios adaptables.</p>
     </section>
-
-    <!-- Secciones restantes (Quiénes somos, Beneficios, FAQ) siguen igual -->
+    <section aria-label="Quiénes somos">
+      <h2>🧑‍🏫 ¿Quiénes somos?</h2>
+      <p>Somos estudiantes y profesionales comprometidos con la educación personalizada. Contamos con experiencia en docencia, habilidades pedagógicas y verdadera vocación de enseñar.</p>
+      <ul>
+        <li>• Acompañamiento académico personalizado</li>
+        <li>• Técnicas de estudio efectivas</li>
+        <li>• Comunicación clara y respetuosa</li>
+        <li>• Motivación y confianza continua</li>
+      </ul>
+    </section>
+    <section aria-label="Beneficios">
+      <h2>⭐ Beneficios de Educlick</h2>
+      <div class="tarjetas">
+        <div class="tarjeta">✨ Atención individual o grupos reducidos</div>
+        <div class="tarjeta">✨ Avances visibles desde la primera sesión</div>
+        <div class="tarjeta">✨ Seguimiento constante</div>
+        <div class="tarjeta">✨ Precios justos y accesibles</div>
+        <div class="tarjeta">✨ Material de apoyo exclusivo</div>
+        <div class="tarjeta">✨ Diagnóstico inicial gratuito</div>
+      </div>
+    </section>
+    <section aria-label="Preguntas Frecuentes">
+      <h2>❓ Preguntas Frecuentes</h2>
+      <ul class="tarjetas">
+        <li class="tarjeta"><strong>¿Cuál es el costo por sesión?</strong><br>Varía según duración y modalidad. Contáctanos para cotización.</li>
+        <li class="tarjeta"><strong>¿Qué niveles atienden?</strong><br>Primaria, secundaria y preparatoria.</li>
+        <li class="tarjeta"><strong>¿Sesiones individuales o grupales?</strong><br>Ambas opciones disponibles.</li>
+        <li class="tarjeta"><strong>¿Puedo cancelar?</strong><br>Sí, con mínimo 12 h de antelación.</li>
+      </ul>
+    </section>
   </main>
-
+  <!-- Enlaces a redes sociales -->
+  <section class="social-media">
+    <ul>
+      <li><a href="https://facebook.com/tuPagina" target="_blank" aria-label="Facebook">📘</a></li>
+      <li><a href="https://twitter.com/tuUsuario" target="_blank" aria-label="Twitter">🐦</a></li>
+      <li><a href="https://instagram.com/tuUsuario" target="_blank" aria-label="Instagram">📸</a></li>
+    </ul>
+  </section>
   <div class="marquesina"><div>🎉 ¡Bienvenido a Educlick! Mejora tu aprendizaje hoy mismo. 🎓</div></div>
   <footer>&copy; 2025 Educlick. Todos los derechos reservados.</footer>
 </body>
