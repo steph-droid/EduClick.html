@@ -1,303 +1,219 @@
-<!-- HTML COMPLETO CON COLORES DE FONDO PLANOS -->
+<!-- HTML COMPLETO CON PALETA EUCLICK LLAMATIVA -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Aprende con Apoyo</title>
+  <title>Educlick - Aprende con Apoyo</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-  ...
-  --soft-bg: #e6f0ed; /* antes era #FAF9F6 */
-  --alt-section-bg: #dcefed; /* tono más cercano al verde suave */
-}
-
-body {
-  ...
-  background: var(--soft-bg);
-}
-
-.tarjeta {
-  background: #f0f8f7; /* en lugar de #fff */
-}
-
-      --primary-color: #2A9D8F;
-      --secondary-color: #E9C46A;
-      --accent-color: #F4A261;
-      --text-color: #264653;
-      --light-color: #FFFFFF;
-      --dark-bg: #1D3557;
-      --hover-color: #E76F51;
-      --soft-bg: #FAF9F6;
-      --alt-section-bg: #F0F4F8;
+      --primary-color: #1B6E67;   /* teal oscuro */
+      --secondary-color: #F2C14E; /* amarillo cálido */
+      --accent-color: #E07A5F;    /* coral suave */
+      --bg-main: #FAF3E0;         /* crema ligera */
+      --bg-alt: #E8F6F3;          /* verde agua pálido */
+      --text-color: #2F2D2E;      /* gris muy oscuro */
+      --card-bg: #FFFFFF;         /* blanco puro */
+      --hover-color: #E07A5F;     /* coral suave */
     }
 
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: var(--soft-bg);
+      background: var(--bg-main);
       color: var(--text-color);
+      line-height: 1.6;
     }
 
     header {
       background-color: var(--primary-color);
-      color: var(--light-color);
-      padding: 30px 20px;
+      color: var(--card-bg);
+      padding: 2rem 1rem;
       text-align: center;
-      font-size: 2em;
+      font-size: 2.2rem;
       font-weight: 700;
       letter-spacing: 1px;
     }
 
     nav {
+      background-color: var(--text-color);
       display: flex;
       justify-content: center;
-      background-color: var(--dark-bg);
-      padding: 10px 0;
+      padding: 0.75rem 0;
     }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 30px;
-      padding: 0;
-      margin: 0;
-    }
-
+    nav ul { display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0; }
     nav ul li a {
-      color: var(--light-color);
+      color: var(--card-bg);
       text-decoration: none;
       font-weight: 600;
-      padding: 10px 20px;
-      border-radius: 6px;
-      transition: 0.3s ease;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      transition: background 0.3s;
     }
-
-    nav ul li a:hover {
-      background-color: var(--hover-color);
-    }
+    nav ul li a:hover { background: var(--hover-color); }
 
     .hero {
-      background: url('https://source.unsplash.com/1600x900/?education,learning') no-repeat center center/cover;
-      color: white;
-      padding: 100px 20px;
+      background: url('https://source.unsplash.com/1600x900/?books,study') no-repeat center center/cover;
+      color: var(--card-bg);
+      padding: 6rem 1rem;
       text-align: center;
-      font-size: 1.8em;
+      font-size: 1.75rem;
       font-weight: 700;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+      text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
     }
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 40px 20px;
-    }
+    .container { max-width: 1100px; margin: auto; padding: 2rem 1rem; }
 
     section {
-      margin-bottom: 50px;
-      padding: 30px 20px;
-      border-radius: 12px;
+      margin-bottom: 3rem;
+      padding: 2rem 1rem;
+      border-radius: 1rem;
     }
-
-    section:nth-child(even) {
-      background-color: var(--alt-section-bg);
-    }
+    section:nth-of-type(even) { background: var(--bg-alt); }
 
     h2 {
       color: var(--primary-color);
-      margin-bottom: 15px;
-      font-size: 1.6em;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
     }
-
-    p {
-      font-size: 1.1em;
-      line-height: 1.6;
-    }
+    p { font-size: 1.1rem; margin-bottom: 1rem; }
 
     .tarjetas {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
     }
-
     .tarjeta {
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 1rem;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: transform 0.3s;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
-
     .tarjeta:hover {
       transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.12);
     }
 
     .carrusel-contenedor {
       position: relative;
       overflow: hidden;
-      border-radius: 12px;
-      max-width: 100%;
+      border-radius: 1rem;
     }
-
-    .carrusel {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .carrusel img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
+    .carrusel { display: flex; transition: transform 0.5s ease-in-out; }
+    .carrusel img { width: 100%; object-fit: cover; }
     .anterior, .siguiente {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+      position: absolute; top: 50%; transform: translateY(-50%);
       background: rgba(0,0,0,0.5);
-      color: white;
+      color: var(--card-bg);
       border: none;
-      padding: 12px;
-      font-size: 20px;
+      padding: 0.75rem;
+      font-size: 1.5rem;
       cursor: pointer;
       border-radius: 50%;
+      transition: background 0.3s;
     }
-
-    .anterior { left: 10px; }
-    .siguiente { right: 10px; }
+    .anterior:hover, .siguiente:hover { background: rgba(0,0,0,0.7); }
+    .anterior { left: 1rem; }
+    .siguiente { right: 1rem; }
 
     footer {
-      background-color: var(--dark-bg);
-      color: white;
+      background: var(--text-color);
+      color: var(--card-bg);
       text-align: center;
-      padding: 25px;
-      margin-top: 40px;
-      font-size: 0.95em;
+      padding: 2rem 1rem;
+      font-size: 0.95rem;
     }
 
     .marquesina {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background-color: var(--primary-color);
-      color: white;
-      padding: 12px;
-      font-weight: bold;
+      position: fixed; bottom: 0; width: 100%;
+      background: var(--secondary-color);
+      color: var(--text-color);
+      padding: 0.75rem 1rem;
       text-align: center;
+      font-weight: 600;
       overflow: hidden;
-      z-index: 999;
     }
-
     .marquesina div {
       display: inline-block;
       white-space: nowrap;
       animation: scroll-left 15s linear infinite;
     }
-
-    @keyframes scroll-left {
-      from { transform: translateX(100%); }
-      to { transform: translateX(-100%); }
-    }
+    @keyframes scroll-left { from { transform: translateX(100%);} to { transform: translateX(-100%);} }
   </style>
 </head>
 <body>
-  <header>Aprende con Apoyo</header>
-  <nav>
-    <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="servicios.html">Servicios</a></li>
-    </ul>
-  </nav>
+  <header>Educlick</header>
+  <nav><ul><li><a href="#">Inicio</a></li><li><a href="#servicios">Servicios</a></li></ul></nav>
 
   <section class="hero">
-    <h1>Potencia tu aprendizaje con nosotros</h1>
-    <p>Clases, asesoría y herramientas para tu éxito académico.</p>
+    <h1>🧠 Bienvenid@ a Educlick</h1>
+    <p>📚 Conectamos aprendizaje con resultados reales</p>
   </section>
 
   <main class="container">
-    <section>
+    <section aria-label="Acerca de Nosotros">
       <h2>Acerca de Nosotros</h2>
-      <p>Ofrecemos tutorías y apoyo académico personalizado para ayudarte a superar cualquier desafío en tus estudios.</p>
+      <p>En <strong>Educlick</strong>, somos un equipo de tutores apasionados por la enseñanza. Nuestro objetivo es acompañar a estudiantes de primaria, secundaria y preparatoria en su proceso académico, brindando tutorías personalizadas, apoyo emocional y estrategias efectivas de estudio.</p>
+      <p>Ya sea que necesites ayuda puntual con una materia, preparación para exámenes o reforzar tus bases, estamos aquí para apoyarte con clases claras, dinámicas y adaptadas a tu estilo de aprendizaje.</p>
     </section>
 
-    <section id="carrusel">
-      <h2>Explora nuestras tutorías</h2>
-      <div class="carrusel-contenedor">
-        <button class="anterior">&#10094;</button>
-        <div class="carrusel">
-          <img src="img/Alien1.jpg" alt="Alien 1">
-          <img src="img/Alien2.jpg" alt="Alien 2">
-          <img src="img/Alien3.jpg" alt="Alien 3">
-          <img src="img/Alien4.jpg" alt="Alien 4">
-          <img src="img/Alien5.jpg" alt="Alien 5">
-          <img src="img/Alien6.jpg" alt="Alien 6">
-        </div>
-        <button class="siguiente">&#10095;</button>
-      </div>
-    </section>
-
-    <section>
-      <h2>¿Qué ofrecemos?</h2>
+    <section id="servicios" aria-label="Qué ofrecemos">
+      <h2>🔍 ¿Qué ofrecemos?</h2>
       <div class="tarjetas">
-        <div class="tarjeta">📚 Tutorías en matemáticas, ciencias, idiomas e historia.</div>
-        <div class="tarjeta">📝 Asesoría para tareas y proyectos.</div>
-        <div class="tarjeta">🎯 Preparación para exámenes.</div>
-        <div class="tarjeta">📖 Técnicas de estudio y organización.</div>
+        <div class="tarjeta">✅ Matemáticas</div>
+        <div class="tarjeta">✅ Biología</div>
+        <div class="tarjeta">✅ Historia</div>
+        <div class="tarjeta">✅ Física y Química (básico)</div>
+        <div class="tarjeta">✅ Español y redacción</div>
+        <div class="tarjeta">✅ Inglés (básico-intermedio)</div>
+        <div class="tarjeta">✅ Asesoría en tareas, proyectos y organización escolar</div>
       </div>
+      <p><strong>Modalidades:</strong> 💻 Online (Zoom, Meet) / 📍 Presenciales según tu ubicación.</p>
+      <p><strong>Duración:</strong> ⏱️ 30, 45 o 60 minutos por sesión. Horarios adaptables.</p>
     </section>
 
-    <section>
-      <h2>¿Por qué elegirnos?</h2>
-      <div class="tarjetas">
-        <div class="tarjeta">✅ Tutoría online o presencial.</div>
-        <div class="tarjeta">🕒 Horarios flexibles.</div>
-        <div class="tarjeta">🎯 Atención personalizada.</div>
-      </div>
+    <section aria-label="Quiénes somos">
+      <h2>🧑‍🏫 ¿Quiénes somos?</h2>
+      <p>Somos estudiantes y profesionales comprometidos con la educación personalizada. Contamos con experiencia en docencia, habilidades pedagógicas y verdadera vocación de enseñanza.</p>
+      <p><strong>Nuestro enfoque:</strong></p>
+      <ul>
+        <li>• Acompañamiento académico personalizado</li>
+        <li>• Técnicas de estudio efectivas</li>
+        <li>• Comunicación clara y respetuosa</li>
+        <li>• Motivación y confianza continua</li>
+      </ul>
     </section>
 
-    <section>
-      <h2>¿Cómo funciona?</h2>
-      <div class="tarjetas">
-        <div class="tarjeta">1️⃣ Evaluación inicial gratuita.</div>
-        <div class="tarjeta">2️⃣ Plan de estudios personalizado.</div>
-        <div class="tarjeta">3️⃣ Clases dinámicas e interactivas.</div>
-        <div class="tarjeta">4️⃣ Seguimiento y retroalimentación.</div>
-      </div>
+    <section aria-label="Beneficios">
+      <h2>⭐ Beneficios de Educlick</h2>
+      <ul class="tarjetas">
+        <li class="tarjeta">✨ Atención individual o grupos reducidos</li>
+        <li class="tarjeta">✨ Avances visibles desde la primera sesión</li>
+        <li class="tarjeta">✨ Seguimiento constante</li>
+        <li class="tarjeta">✨ Precios justos y accesibles</li>
+        <li class="tarjeta">✨ Material de apoyo exclusivo</li>
+        <li class="tarjeta">✨ Diagnóstico inicial gratuito</li>
+      </ul>
     </section>
   </main>
 
-  <footer>
-    &copy; 2024 Aprende con Apoyo. Todos los derechos reservados.
-  </footer>
+  <footer>&copy; 2025 Educlick. Todos los derechos reservados.</footer>
 
-  <div class="marquesina">
-    <div>🎉 ¡Bienvenido a Aprende con Apoyo! Explora nuestros servicios y mejora tu aprendizaje hoy mismo. 🎓</div>
-  </div>
+  <div class="marquesina"><div>🎉 ¡Bienvenido a Educlick! Mejora tu aprendizaje hoy mismo. 🎓</div></div>
 
   <script>
-    const carrusel = document.querySelector('.carrusel');
-    const imagenes = document.querySelectorAll('.carrusel img');
-    const anterior = document.querySelector('.anterior');
-    const siguiente = document.querySelector('.siguiente');
-
-    let contador = 0;
-
-    function mostrarImagen() {
-      const ancho = imagenes[0].clientWidth;
-      carrusel.style.transform = `translateX(${-contador * ancho}px)`;
-    }
-
-    siguiente.addEventListener('click', () => {
-      contador = (contador + 1) % imagenes.length;
-      mostrarImagen();
-    });
-
-    anterior.addEventListener('click', () => {
-      contador = (contador - 1 + imagenes.length) % imagenes.length;
-      mostrarImagen();
-    });
-
-    window.addEventListener('resize', mostrarImagen);
+    const carousel = document.querySelector('.carrusel');
+    const imgs = document.querySelectorAll('.carrusel img');
+    const prev = document.querySelector('.anterior');
+    const next = document.querySelector('.siguiente');
+    let count = 0;
+    function show(){ carousel.style.transform = `translateX(${-count * imgs[0].clientWidth}px)`; }
+    next.addEventListener('click', () => { count = (count + 1) % imgs.length; show(); });
+    prev.addEventListener('click', () => { count = (count - 1 + imgs.length) % imgs.length; show(); });
+    window.addEventListener('resize', show);
   </script>
 </body>
 </html>
