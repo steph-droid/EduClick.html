@@ -1,4 +1,4 @@
-<!-- HTML COMPLETO CON DISEÑO EDUCLICK DESTACADO, CARRUSEL Y SECCIÓN DE SUBIDA Y PREVISUALIZACIÓN DE VIDEO -->
+<!-- HTML COMPLETO CON DISEÑO EDUCLICK DESTACADO, VIDEO INTRO CON AUTOPLAY Y MUTE, Y CARRUSEL -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -90,6 +90,15 @@
     section:nth-of-type(even) { background: var(--bg-alt); }
     h2 { color: var(--primary-color); margin-bottom: 1rem; font-size: 1.8rem; }
     p { font-size: 1.1rem; margin-bottom: 1rem; }
+    /* Video Intro fijo con autoplay y mute */
+    .video-intro {
+      display: flex; justify-content: center; margin-bottom: 2rem;
+    }
+    .video-intro video {
+      width: 100%; max-width: 800px;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
     /* Carrusel */
     .carrusel-contenedor { position: relative; overflow: hidden; border-radius: 1rem; margin-bottom: 2rem; }
     .carrusel { display: flex; transition: transform 0.5s ease-in-out; }
@@ -102,17 +111,6 @@
     }
     .anterior:hover, .siguiente:hover { background: rgba(0,0,0,0.7); }
     .anterior { left: 1rem; } .siguiente { right: 1rem; }
-    /* Sección de Subida y Previsualización de Video */
-    .video-upload {
-      display: flex; flex-direction: column; align-items: center; gap: 1rem;
-    }
-    .video-upload input[type="file"] {
-      padding: 0.5rem; border-radius: 0.5rem; border: 1px solid #ccc;
-    }
-    .video-preview {
-      max-width: 100%; border-radius: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      display: none;
-    }
     footer {
       background: var(--text-color); color: var(--card-bg);
       text-align: center; padding: 1.5rem 1rem; font-size: 0.9rem;
@@ -127,17 +125,18 @@
       <li><a href="servicios.html">Servicios</a></li>
     </ul>
   </nav>
+
   <div class="hero-buttons">
-    <a href="https://docs.google.com/forms/d/1dG2OX5zLOy_uveoNXrLQ-lKnmSXAaUnMA9lbBowSKts/edit" target="_blank" class="btn-hero">📨 Contáctanos</a>
-    <a href="https://docs.google.com/forms/d/1098WlM_DhFxbw4BF6ZTXJ_ea4_yGRctt6oClg9E5Lrw/edit" target="_blank" class="btn-hero">📝 Registro</a>
+    <a href="#" class="btn-hero">📨 Contáctanos</a>
+    <a href="#" class="btn-hero">📝 Registro</a>
   </div>
+
   <main class="container">
-    <!-- Sección de Subida y Previsualización de Video -->
-    <section aria-label="Subir y ver video" class="video-upload">
-      <h2>📹 Subir y previsualizar tu video</h2>
-      <input type="file" accept="video/*" id="videoInput" />
-      <video controls id="videoPreview" class="video-preview"></video>
+    <!-- Video Intro Fijo con autoplay y mute -->
+    <section class="video-intro" aria-label="Video Introductorio">
+      <video src="Educlickintro.mp4" autoplay muted loop></video>
     </section>
+
     <!-- Carrusel de Infografías -->
     <section aria-label="Infografías">
       <h2>Infografías Destacadas</h2>
@@ -147,14 +146,17 @@
           <img src="img/info1.jpg" alt="Infografía 1">
           <img src="img/info2.jpg" alt="Infografía 2">
           <img src="img/info3.jpg" alt="Infografía 3">
-        </div>
+        </
+div>
         <button class="siguiente">&#10095;</button>
       </div>
     </section>
   </main>
+
   <footer>&copy; 2024 Aprende con Apoyo. Todos los derechos reservados.</footer>
+
   <script>
-    // Carrusel
+    // Carrusel de infografías
     const carrusel = document.querySelector('.carrusel');
     const imgs = document.querySelectorAll('.carrusel img');
     const prev = document.querySelector('.anterior');
@@ -166,17 +168,6 @@
       prev.addEventListener('click', () => { idx = (idx - 1 + imgs.length) % imgs.length; mostrar(); });
       window.addEventListener('resize', mostrar);
     }
-    // Previsualización de video
-    const videoInput = document.getElementById('videoInput');
-    const videoPreview = document.getElementById('videoPreview');
-    videoInput.addEventListener('change', () => {
-      const file = videoInput.files[0];
-      if(file) {
-        const url = URL.createObjectURL(file);
-        videoPreview.src = url;
-        videoPreview.style.display = 'block';
-      }
-    });
   </script>
 </body>
 </html>
