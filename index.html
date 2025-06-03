@@ -1,11 +1,9 @@
-<!-- HTML COMPLETO CON PALETA EDUCLICK, NAV DESTACADA, SECCIONES COMPLETAS Y REDES -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Educlick - Aprende con Apoyo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary-color: #1B6E67;
@@ -17,7 +15,9 @@
       --card-bg: #FFFFFF;
       --hover-color: #E07A5F;
     }
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -57,12 +57,12 @@
       transition: background 0.3s;
     }
     nav ul li a:hover,
-    nav ul li a.active {
+nav ul li a.active {
       background: var(--hover-color);
       color: #fff;
     }
     .hero {
-      background: url('https://source.unsplash.com/1600x900/?education,learning') no-repeat center/cover;
+background: url('https://source.unsplash.com/1600x900/?education,learning') no-repeat center/cover;
       color: var(--card-bg);
       text-align: center;
       padding: 6rem 1rem;
@@ -70,12 +70,33 @@
       font-weight: 700;
       text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
     }
-    .container { max-width: 900px; margin: auto; padding: 2rem 1rem; }
-    section { margin-bottom: 3rem; padding: 2rem 1rem; border-radius: 1rem; }
-    section:nth-of-type(even) { background: var(--bg-alt); }
-    h2 { color: var(--primary-color); margin-bottom: 1rem; font-size: 1.8rem; }
-    p { font-size: 1.1rem; margin-bottom: 1rem; }
-    .tarjetas { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+    section {
+      margin-bottom: 3rem;
+      padding: 2rem 1rem;
+      border-radius: 1rem;
+    }
+    section:nth-of-type(even) {
+      background: var(--bg-alt);
+    }
+    h2 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    .tarjetas {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
     .tarjeta {
       background: var(--card-bg);
       padding: 1.5rem;
@@ -83,7 +104,9 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       transition: transform 0.3s;
     }
-    .tarjeta:hover { transform: translateY(-5px); }
+    .tarjeta:hover {
+      transform: translateY(-5px);
+    }
     .social-media ul {
       list-style: none;
       padding: 0;
@@ -96,9 +119,13 @@
       color: var(--text-color);
       transition: color 0.3s;
     }
-    .social-media ul li a:hover { color: var(--hover-color); }
+    .social-media ul li a:hover {
+      color: var(--hover-color);
+    }
     .marquesina {
-      position: fixed; bottom: 0; width: 100%;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
       background: var(--secondary-color);
       color: var(--text-color);
       text-align: center;
@@ -106,7 +133,10 @@
       font-weight: 600;
       animation: scroll-left 15s linear infinite;
     }
-    @keyframes scroll-left { from { transform: translateX(100%);} to { transform: translateX(-100%);} }
+    @keyframes scroll-left {
+      from { transform: translateX(100%); }
+      to   { transform: translateX(-100%); }
+    }
     footer {
       background: var(--text-color);
       color: var(--card-bg);
@@ -120,21 +150,24 @@
   <header>Educlick</header>
   <nav>
     <ul>
-      <li><a href="#" class="active">Inicio</a></li>
+      <li><a href="index.html" class="active">Inicio</a></li>
       <li><a href="servicios.html">Servicios</a></li>
-      <li><a href="Blog.html">Blog</a></li>
+      <li><a href="blog.html">Blog</a></li>
     </ul>
   </nav>
+ 
   <div class="hero">
     <h1>🧠 Bienvenid@ a Educlick</h1>
     <p>📚 Conectamos aprendizaje con resultados reales</p>
   </div>
+ 
   <main class="container">
     <section aria-label="Acerca de Nosotros">
       <h2>Acerca de Nosotros</h2>
       <p>En <strong>Educlick</strong>, somos un equipo de tutores apasionados por la enseñanza. Nuestro objetivo es acompañar a estudiantes de primaria, secundaria y preparatoria en su proceso académico, brindando tutorías personalizadas, apoyo emocional y estrategias efectivas de estudio.</p>
       <p>Ya sea que necesites ayuda puntual con una materia, preparación para exámenes o reforzar tus bases, estamos aquí para apoyarte con clases claras, dinámicas y adaptadas a tu estilo de aprendizaje.</p>
     </section>
+ 
     <section id="servicios" aria-label="Qué ofrecemos">
       <h2>🔍 ¿Qué ofrecemos?</h2>
       <div class="tarjetas">
@@ -149,6 +182,7 @@
       <p><strong>Modalidades:</strong> 💻 Online (Zoom, Meet) / 📍 Presenciales según tu ubicación.</p>
       <p><strong>Duración:</strong> ⏱️ 30, 45 o 60 minutos por sesión. Horarios adaptables.</p>
     </section>
+ 
     <section aria-label="Quiénes somos">
       <h2>🧑‍🏫 ¿Quiénes somos?</h2>
       <p>Somos estudiantes y profesionales comprometidos con la educación personalizada. Contamos con experiencia en docencia, habilidades pedagógicas y verdadera vocación de enseñar.</p>
@@ -159,6 +193,7 @@
         <li>• Motivación y confianza continua</li>
       </ul>
     </section>
+ 
     <section aria-label="Beneficios">
       <h2>⭐ Beneficios de Educlick</h2>
       <div class="tarjetas">
@@ -170,6 +205,7 @@
         <div class="tarjeta">✨ Diagnóstico inicial gratuito</div>
       </div>
     </section>
+ 
     <section aria-label="Preguntas Frecuentes">
       <h2>❓ Preguntas Frecuentes</h2>
       <ul class="tarjetas">
@@ -180,15 +216,17 @@
       </ul>
     </section>
   </main>
+ 
   <!-- Enlaces a redes sociales -->
   <section class="social-media">
     <ul>
-      <li><a href="https://facebook.com/tuPagina" target="_blank" aria-label="Facebook">📘</a></li>
-      <li><a href="https://twitter.com/tuUsuario" target="_blank" aria-label="Twitter">🐦</a></li>
-      <li><a href="https://instagram.com/tuUsuario" target="_blank" aria-label="Instagram">📸</a></li>
     </ul>
   </section>
-  <div class="marquesina"><div>🎉 ¡Bienvenido a Educlick! Mejora tu aprendizaje hoy mismo. 🎓</div></div>
+ 
+  <div class="marquesina">
+    <div>🎉 ¡Bienvenido a Educlick! Mejora tu aprendizaje hoy mismo. 🎓</div>
+  </div>
+ 
   <footer>&copy; 2024 Educlick. Todos los derechos reservados.</footer>
 </body>
 </html>
