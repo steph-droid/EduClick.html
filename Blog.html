@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog - Aprende con Apoyo</title>
+  <style>
+    :root {
+      --primary-color: #1B6E67;
+      --secondary-color: #F2C14E;
+      --accent-color: #E07A5F;
+      --bg-main: #FAF3E0;
+      --bg-alt: #E8F6F3;
+      --text-color: #2F2D2E;
+      --card-bg: #FFFFFF;
+      --hover-color: #E07A5F;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-main);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+    header {
+      background-color: var(--primary-color);
+      color: var(--card-bg);
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 700;
+    }
+    nav {
+      background: var(--secondary-color);
+      max-width: 800px;
+      margin: 1rem auto;
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      transition: background 0.3s, color 0.3s;
+    }
+nav ul li a:hover, nav ul li a.active {
+      background: var(--hover-color);
+      color: #fff;
+    }
+    .hero-buttons {
+      display: none; /* Ocultamos en la página de blog */
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+    section {
+      margin-bottom: 3rem;
+      padding: 2rem 1rem;
+      border-radius: 1rem;
+    }
+    section:nth-of-type(even) {
+      background: var(--bg-alt);
+    }
+    h2 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      text-align: center;
+    }
+    .entrada {
+      background: var(--card-bg);
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .entrada h3 {
+      color: var(--accent-color);
+      margin-bottom: 0.5rem;
+      font-size: 1.4rem;
+    }
+    .entrada p {
+      margin-bottom: 0.75rem;
+    }
+    .entrada a {
+      color: var(--primary-color);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .entrada a:hover {
+      color: var(--hover-color);
+    }
+    footer {
+      background: var(--text-color);
+      color: var(--card-bg);
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>Aprende con Apoyo</header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+    </ul>
+  </nav>
+ 
+  <main class="container">
+    <section>
+      <h2>¡Bienvenido al Blog!</h2>
+      <div class="entrada">
+        <h3>¿Cómo influyen las redes sociales en la autoestima de los jóvenes?</h3>
+        <p>Exploramos el impacto emocional y psicológico que tienen las redes sociales en los adolescentes, con consejos prácticos para mantener una autoestima saludable.</p>
+        <a href="#">Leer más...</a>
+      </div>
+      <div class="entrada">
+        <h3>Hábitos sostenibles para estudiantes con poco tiempo</h3>
+        <p>Descubre consejos fáciles y rápidos para adoptar un estilo de vida más ecológico, desde casa o la escuela, sin requerir mucho tiempo ni recursos.</p>
+        <a href="#">Leer más...</a>
+      </div>
+      <!-- Agrega más entradas aquí -->
+    </section>
+  </main>
+ 
+  <footer>&copy; 2024 Aprende con Apoyo. Todos los derechos reservados.</footer>
+</body>
+</html>
