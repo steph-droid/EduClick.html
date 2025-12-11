@@ -1,4 +1,4 @@
-<!-- HTML COMPLETO CON DISEÑO EDUCLICK DESTACADO, VIDEO INTRO CON AUTOPLAY Y CONTROLES, Y CARRUSEL ADAPTABLE -->
+<!-- HTML COMPLETO CORREGIDO - CARRUSEL FUNCIONAL Y SIN RECORTES -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aprende con Apoyo - Educlick</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --primary-color: #1B6E67;
@@ -17,7 +18,9 @@
       --card-bg: #FFFFFF;
       --hover-color: #E07A5F;
     }
+
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -25,6 +28,7 @@
       color: var(--text-color);
       line-height: 1.6;
     }
+
     header {
       background-color: var(--primary-color);
       color: var(--card-bg);
@@ -33,6 +37,7 @@
       font-size: 2.2rem;
       font-weight: 700;
     }
+
     nav {
       background: var(--secondary-color);
       max-width: 800px;
@@ -41,6 +46,7 @@
       border-radius: 0.75rem;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
+
     nav ul {
       display: flex;
       justify-content: center;
@@ -49,6 +55,7 @@
       margin: 0;
       padding: 0;
     }
+
     nav ul li a {
       color: var(--text-color);
       text-decoration: none;
@@ -57,11 +64,13 @@
       border-radius: 0.5rem;
       transition: background 0.3s, color 0.3s;
     }
+
     nav ul li a:hover,
     nav ul li a.active {
       background: var(--hover-color);
       color: #fff;
     }
+
     .hero-buttons {
       margin: 2rem auto;
       display: flex;
@@ -70,6 +79,7 @@
       flex-wrap: wrap;
       max-width: 800px;
     }
+
     .btn-hero {
       background: var(--secondary-color);
       color: var(--text-color);
@@ -80,59 +90,106 @@
       transition: transform 0.3s;
       border: 2px solid var(--text-color);
     }
+
     .btn-hero:hover {
       background: var(--hover-color);
       color: #fff;
       transform: scale(1.05);
     }
-    .container { max-width: 1000px; margin: auto; padding: 2rem 1rem; }
-    section { margin-bottom: 3rem; padding: 2rem 1rem; border-radius: 1rem; }
-    section:nth-of-type(even) { background: var(--bg-alt); }
-    h2 { color: var(--primary-color); margin-bottom: 1rem; font-size: 1.8rem; }
-    p { font-size: 1.1rem; margin-bottom: 1rem; }
-    /* Video Intro fijo con autoplay y controles */
-    .video-intro {
-      display: flex; justify-content: center; margin-bottom: 2rem;
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem 1rem;
     }
+
+    section {
+      margin-bottom: 3rem;
+      padding: 2rem 1rem;
+      border-radius: 1rem;
+    }
+
+    section:nth-of-type(even) { background: var(--bg-alt); }
+
+    h2 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    p { font-size: 1.1rem; margin-bottom: 1rem; }
+
+    /* VIDEO */
+    .video-intro {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
     .video-intro video {
-      width: 100%; max-width: 800px;
+      width: 100%;
+      max-width: 800px;
       border-radius: 1rem;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    /* Carrusel adaptable de infografías */
+
+    /* CARRUSEL SIN RECORTES Y TOTALMENTE FUNCIONAL */
     .carrusel-contenedor {
       position: relative;
       overflow: hidden;
       border-radius: 1rem;
       margin-bottom: 2rem;
-      max-height: 60vh; /* altura máxima relativa a la ventana */
+      height: auto; /* Ya no se corta nada */
     }
+
     .carrusel {
       display: flex;
       transition: transform 0.5s ease-in-out;
     }
+
     .carrusel img {
       width: 100%;
       height: auto;
-      max-height: 60vh;
+      min-width: 100%; /* para que el slider siempre avance correctamente */
       object-fit: contain;
     }
+
     .anterior, .siguiente {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      background: rgba(0,0,0,0.5); color: var(--card-bg);
-      border: none; padding: 0.75rem; font-size: 1.5rem;
-      cursor: pointer; border-radius: 50%; transition: background 0.3s;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: var(--card-bg);
+      border: none;
+      padding: 0.75rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background 0.3s;
+      z-index: 10;
     }
-    .anterior:hover, .siguiente:hover { background: rgba(0,0,0,0.7); }
-    .anterior { left: 1rem; } .siguiente { right: 1rem; }
+
+    .anterior:hover, .siguiente:hover {
+      background: rgba(0,0,0,0.7);
+    }
+
+    .anterior { left: 1rem; }
+    .siguiente { right: 1rem; }
+
     footer {
-      background: var(--text-color); color: var(--card-bg);
-      text-align: center; padding: 1.5rem 1rem; font-size: 0.9rem;
+      background: var(--text-color);
+      color: var(--card-bg);
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.9rem;
     }
+
   </style>
 </head>
+
 <body>
   <header>Aprende con Apoyo</header>
+
   <nav>
     <ul>
       <li><a href="index.html" class="active">Inicio</a></li>
@@ -140,20 +197,26 @@
       <li><a href="Blog.html">Blog</a></li>
     </ul>
   </nav>
+
   <div class="hero-buttons">
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSfd-GHozfVuDCuadGUvky06RrYiOepWkEe5aSGPNmso46Kn5w/viewform?usp=header" class="btn-hero">📨 Contáctanos</a>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSfEGl2Wwos2RHQTzVLdAHliOBFYrSbMhFWeCvDAEbc-anSLHw/viewform?usp=header" class="btn-hero">📝 Registro</a>
   </div>
+
   <main class="container">
-    <!-- Video Intro Fijo con autoplay y controles -->
+
+    <!-- VIDEO -->
     <section class="video-intro" aria-label="Video Introductorio">
       <video src="Educlickintro (1) (1) (1).mp4" autoplay controls loop></video>
     </section>
-    <!-- Carrusel de Infografías -->
+
+    <!-- CARRUSEL -->
     <section aria-label="Infografías">
       <h2>Infografías Destacadas</h2>
+
       <div class="carrusel-contenedor">
         <button class="anterior">&#10094;</button>
+
         <div class="carrusel">
           <img src="Tips de estudio_20250511_085742_0000.png" alt="Infografía 1">
           <img src="Gestión del tiempo _20250511_090742_0000.png" alt="Infografía 2">
@@ -162,30 +225,42 @@
           <img src="Infografía Verde_20251210_171504_0000.png" alt="Infografía 5">
           <img src="Café_20251210_171644_0000.png" alt="Infografía 6">
         </div>
+
         <button class="siguiente">&#10095;</button>
       </div>
     </section>
+
   </main>
+
   <footer>&copy; 2024 Aprende con Apoyo. Todos los derechos reservados.</footer>
+
   <script>
-    // Carrusel de infografías
+    // CARRUSEL
     const carrusel = document.querySelector('.carrusel');
     const imgs = document.querySelectorAll('.carrusel img');
     const prev = document.querySelector('.anterior');
     const next = document.querySelector('.siguiente');
+
     let idx = 0;
-    function mostrar() { carrusel.style.transform = `translateX(${-idx * imgs[0].clientWidth}px)`; }
+
+    function mostrar() {
+      carrusel.style.transform = `translateX(${-idx * imgs[0].clientWidth}px)`;
+    }
+
     if(prev && next && imgs.length) {
-      next.addEventListener('click', () => { idx = (idx + 1) % imgs.length; mostrar(); });
-      prev.addEventListener('click', () => { idx = (idx - 1 + imgs.length) % imgs.length; mostrar(); });
+      next.addEventListener('click', () => {
+        idx = (idx + 1) % imgs.length;
+        mostrar();
+      });
+
+      prev.addEventListener('click', () => {
+        idx = (idx - 1 + imgs.length) % imgs.length;
+        mostrar();
+      });
+
       window.addEventListener('resize', mostrar);
     }
   </script>
+
 </body>
 </html>
-
-
-
-
-
-
