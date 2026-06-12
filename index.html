@@ -1,232 +1,307 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Educlick - Aprende con Apoyo</title>
-  <style>
-    :root {
-      --primary-color: #1B6E67;
-      --secondary-color: #F2C14E;
-      --accent-color: #E07A5F;
-      --bg-main: #FAF3E0;
-      --bg-alt: #E8F6F3;
-      --text-color: #2F2D2E;
-      --card-bg: #FFFFFF;
-      --hover-color: #E07A5F;
-    }
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: var(--bg-main);
-      color: var(--text-color);
-    }
-    header {
-      background-color: var(--primary-color);
-      color: var(--card-bg);
-      padding: 2rem;
-      text-align: center;
-      font-size: 2.2rem;
-      font-weight: 700;
-    }
-    nav {
-      background: var(--secondary-color);
-      max-width: 900px;
-      margin: 1rem auto;
-      padding: 0.75rem;
-      border-radius: 0.75rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    nav ul {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    nav ul li a {
-      color: var(--text-color);
-      text-decoration: none;
-      font-weight: 600;
-      padding: 0.5rem 1rem;
-      border-radius: 0.5rem;
-      transition: background 0.3s;
-    }
-    nav ul li a:hover,
-nav ul li a.active {
-      background: var(--hover-color);
-      color: #fff;
-    }
-    .hero {
-background: url('https://source.unsplash.com/1600x900/?education,learning') no-repeat center/cover;
-      color: var(--card-bg);
-      text-align: center;
-      padding: 6rem 1rem;
-      font-size: 1.75rem;
-      font-weight: 700;
-      text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 2rem 1rem;
-    }
-    section {
-      margin-bottom: 3rem;
-      padding: 2rem 1rem;
-      border-radius: 1rem;
-    }
-    section:nth-of-type(even) {
-      background: var(--bg-alt);
-    }
-    h2 {
-      color: var(--primary-color);
-      margin-bottom: 1rem;
-      font-size: 1.8rem;
-    }
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
-    }
-    .tarjetas {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-    }
-    .tarjeta {
-      background: var(--card-bg);
-      padding: 1.5rem;
-      border-radius: 1rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: transform 0.3s;
-    }
-    .tarjeta:hover {
-      transform: translateY(-5px);
-    }
-    .social-media ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-    }
-    .social-media ul li a {
-      font-size: 1.5rem;
-      color: var(--text-color);
-      transition: color 0.3s;
-    }
-    .social-media ul li a:hover {
-      color: var(--hover-color);
-    }
-    .marquesina {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background: var(--secondary-color);
-      color: var(--text-color);
-      text-align: center;
-      padding: 0.75rem;
-      font-weight: 600;
-      animation: scroll-left 15s linear infinite;
-    }
-    @keyframes scroll-left {
-      from { transform: translateX(100%); }
-      to   { transform: translateX(-100%); }
-    }
-    footer {
-      background: var(--text-color);
-      color: var(--card-bg);
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.95rem;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Alliance pour la Vie et la Xénogreffe</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#040b1d;
+color:white;
+overflow-x:hidden;
+}
+
+/* Fondo */
+
+.hero{
+height:100vh;
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+overflow:hidden;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at 20% 20%, rgba(37,99,235,.4), transparent 40%),
+radial-gradient(circle at 80% 40%, rgba(16,185,129,.3), transparent 40%),
+radial-gradient(circle at 50% 80%, rgba(96,165,250,.25), transparent 40%);
+animation:pulse 10s infinite alternate;
+}
+
+@keyframes pulse{
+from{
+transform:scale(1);
+}
+to{
+transform:scale(1.15);
+}
+}
+
+/* Partículas */
+
+.particle{
+position:absolute;
+background:white;
+border-radius:50%;
+opacity:.3;
+animation:float 20s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+}
+100%{
+transform:translateY(-100vh);
+}
+}
+
+.hero-content{
+position:relative;
+z-index:5;
+max-width:900px;
+padding:20px;
+}
+
+.badge{
+display:inline-block;
+padding:10px 20px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,.15);
+border-radius:999px;
+margin-bottom:25px;
+font-size:.9rem;
+}
+
+h1{
+font-family:'Poppins',sans-serif;
+font-size:5rem;
+font-weight:800;
+line-height:1.1;
+margin-bottom:20px;
+}
+
+.gradient{
+background:linear-gradient(
+90deg,
+#60A5FA,
+#10B981
+);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.subtitle{
+font-size:1.25rem;
+line-height:1.8;
+color:#cbd5e1;
+margin-bottom:40px;
+}
+
+.buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:16px 35px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+transition:.4s;
+}
+
+.btn-primary{
+background:linear-gradient(
+90deg,
+#2563EB,
+#10B981
+);
+color:white;
+}
+
+.btn-primary:hover{
+transform:translateY(-5px);
+box-shadow:0 15px 30px rgba(37,99,235,.4);
+}
+
+.btn-secondary{
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.15);
+backdrop-filter:blur(10px);
+color:white;
+}
+
+.btn-secondary:hover{
+background:rgba(255,255,255,.1);
+}
+
+.glass-card{
+position:absolute;
+width:220px;
+padding:20px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,.15);
+border-radius:25px;
+}
+
+.card1{
+left:5%;
+top:25%;
+}
+
+.card2{
+right:5%;
+bottom:25%;
+}
+
+.glass-card i{
+font-size:2rem;
+margin-bottom:10px;
+color:#60A5FA;
+}
+
+.glass-card h3{
+margin-bottom:10px;
+}
+
+.stats{
+display:flex;
+justify-content:center;
+gap:60px;
+margin-top:70px;
+flex-wrap:wrap;
+}
+
+.stat h2{
+font-size:2.5rem;
+color:#60A5FA;
+}
+
+.stat p{
+color:#94a3b8;
+}
+
+@media(max-width:768px){
+
+h1{
+font-size:3rem;
+}
+
+.subtitle{
+font-size:1rem;
+}
+
+.glass-card{
+display:none;
+}
+
+}
+
+</style>
 </head>
+
 <body>
-  <header>Educlick</header>
-  <nav>
-    <ul>
-      <li><a href="index.html" class="active">Inicio</a></li>
-      <li><a href="servicios.html">Servicios</a></li>
-      <li><a href="Blog.html">Blog</a></li>
-    </ul>
-  </nav>
- 
-  <div class="hero">
-    <h1>🧠 Bienvenid@ a Educlick</h1>
-    <p>📚 Conectamos aprendizaje con resultados reales</p>
-  </div>
- 
-  <main class="container">
-    <section aria-label="Acerca de Nosotros">
-      <h2>Acerca de Nosotros</h2>
-      <p>En <strong>Educlick</strong>, somos un equipo de tutores apasionados por la enseñanza. Nuestro objetivo es acompañar a estudiantes de primaria, secundaria y preparatoria en su proceso académico, brindando tutorías personalizadas, apoyo emocional y estrategias efectivas de estudio.</p>
-      <p>Ya sea que necesites ayuda puntual con una materia, preparación para exámenes o reforzar tus bases, estamos aquí para apoyarte con clases claras, dinámicas y adaptadas a tu estilo de aprendizaje.</p>
-    </section>
- 
-    <section id="servicios" aria-label="Qué ofrecemos">
-      <h2>🔍 ¿Qué ofrecemos?</h2>
-      <div class="tarjetas">
-        <div class="tarjeta">✅ Matemáticas</div>
-        <div class="tarjeta">✅ Biología</div>
-        <div class="tarjeta">✅ Historia</div>
-        <div class="tarjeta">✅ Física y Química (básico)</div>
-        <div class="tarjeta">✅ Español y redacción</div>
-        <div class="tarjeta">✅ Inglés (básico-intermedio)</div>
-        <div class="tarjeta">✅ Asesoría en tareas, proyectos y organización escolar</div>
-      </div>
-      <p><strong>Modalidades:</strong> 💻 Online (Zoom, Meet) / 📍 Presenciales según tu ubicación.</p>
-      <p><strong>Duración:</strong> ⏱️ 30, 45 o 60 minutos por sesión. Horarios adaptables.</p>
-    </section>
- 
-    <section aria-label="Quiénes somos">
-      <h2>🧑‍🏫 ¿Quiénes somos?</h2>
-      <p>Somos estudiantes y profesionales comprometidos con la educación personalizada. Contamos con experiencia en docencia, habilidades pedagógicas y verdadera vocación de enseñar.</p>
-      <ul>
-        <li>• Acompañamiento académico personalizado</li>
-        <li>• Técnicas de estudio efectivas</li>
-        <li>• Comunicación clara y respetuosa</li>
-        <li>• Motivación y confianza continua</li>
-      </ul>
-    </section>
- 
-    <section aria-label="Beneficios">
-      <h2>⭐ Beneficios de Educlick</h2>
-      <div class="tarjetas">
-        <div class="tarjeta">✨ Atención individual o grupos reducidos</div>
-        <div class="tarjeta">✨ Avances visibles desde la primera sesión</div>
-        <div class="tarjeta">✨ Seguimiento constante</div>
-        <div class="tarjeta">✨ Precios justos y accesibles</div>
-        <div class="tarjeta">✨ Material de apoyo exclusivo</div>
-        <div class="tarjeta">✨ Diagnóstico inicial gratuito</div>
-      </div>
-    </section>
- 
-    <section aria-label="Preguntas Frecuentes">
-      <h2>❓ Preguntas Frecuentes</h2>
-      <ul class="tarjetas">
-        <li class="tarjeta"><strong>¿Cuál es el costo por sesión?</strong><br>Varía según duración y modalidad. Contáctanos para cotización.</li>
-        <li class="tarjeta"><strong>¿Qué niveles atienden?</strong><br>Primaria, secundaria y preparatoria.</li>
-        <li class="tarjeta"><strong>¿Sesiones individuales o grupales?</strong><br>Ambas opciones disponibles.</li>
-        <li class="tarjeta"><strong>¿Puedo cancelar?</strong><br>Sí, con mínimo 12 h de antelación.</li>
-      </ul>
-    </section>
-  </main>
- 
-  <!-- Enlaces a redes sociales -->
-  <section class="social-media">
-    <ul>
-    </ul>
-  </section>
- 
-  <div class="marquesina">
-    <div>🎉 ¡Bienvenido a Educlick! Mejora tu aprendizaje hoy mismo. 🎓</div>
-  </div>
- 
-  <footer>&copy; 2024 Educlick. Todos los derechos reservados.</footer>
+
+<div class="hero">
+
+<div class="particle" style="width:5px;height:5px;left:10%;animation-duration:12s;"></div>
+<div class="particle" style="width:7px;height:7px;left:25%;animation-duration:20s;"></div>
+<div class="particle" style="width:4px;height:4px;left:40%;animation-duration:15s;"></div>
+<div class="particle" style="width:6px;height:6px;left:60%;animation-duration:22s;"></div>
+<div class="particle" style="width:8px;height:8px;left:80%;animation-duration:18s;"></div>
+
+<div class="glass-card card1">
+<i class="fa-solid fa-heart-pulse"></i>
+<h3>Sauver des vies</h3>
+<p>Une nouvelle chance pour les patients.</p>
+</div>
+
+<div class="glass-card card2">
+<i class="fa-solid fa-dna"></i>
+<h3>Innovation</h3>
+<p>La science transforme le futur.</p>
+</div>
+
+<div class="hero-content">
+
+<div class="badge">
+🧬 Association Médicale Internationale
+</div>
+
+<h1>
+Alliance pour la Vie et la
+<span class="gradient">Xénogreffe</span>
+</h1>
+
+<p class="subtitle">
+Les organes de porcs peuvent-ils sauver des vies humaines ?
+Découvrez les avancées scientifiques, les enjeux éthiques
+et les possibilités de la médecine du futur.
+</p>
+
+<div class="buttons">
+
+<a href="#" class="btn btn-primary">
+Découvrir
+</a>
+
+<a href="#" class="btn btn-secondary">
+Notre Mission
+</a>
+
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<h2>100K+</h2>
+<p>Patients en attente</p>
+</div>
+
+<div class="stat">
+<h2>2022</h2>
+<p>Première greffe historique</p>
+</div>
+
+<div class="stat">
+<h2>∞</h2>
+<p>Possibilités futures</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </body>
 </html>
