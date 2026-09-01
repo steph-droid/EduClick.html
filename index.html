@@ -1,164 +1,232 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alliance pour la Vie et la Xénogreffe</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Educlick - Aprende con Apoyo</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Inter,sans-serif;background:#050816;color:white;overflow-x:hidden}
-html{scroll-behavior:smooth}
-section{padding:90px 10%}
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;background:radial-gradient(circle at top,#1e3a8a,#050816)}
-.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle,#60a5fa33,transparent 60%)}
-.hero-content{position:relative;max-width:900px}
-h1{font-family:Poppins,sans-serif;font-size:4.5rem}
-.gradient{background:linear-gradient(90deg,#60a5fa,#10b981);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.subtitle{margin:25px 0;color:#d1d5db;font-size:1.2rem}
-.btn{display:inline-block;padding:15px 30px;border-radius:40px;background:linear-gradient(90deg,#2563eb,#10b981);color:white;text-decoration:none;margin:10px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
-.card{background:rgba(255,255,255,.07);backdrop-filter:blur(12px);padding:25px;border-radius:20px;border:1px solid rgba(255,255,255,.1)}
-.card:hover{transform:translateY(-8px);transition:.3s}
-h2{font-family:Poppins,sans-serif;font-size:2.5rem;margin-bottom:25px;color:#60a5fa}
-.timeline{border-left:3px solid #60a5fa;padding-left:25px}
-.timeline div{margin:25px 0}
-.stats{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;margin-top:40px}
-.stat{text-align:center}
-.stat h3{font-size:2rem;color:#60a5fa}
-footer{padding:40px;text-align:center;background:#030712}
-@media(max-width:768px){h1{font-size:2.8rem} section{padding:70px 7%}}
+:root {
+--primary-color: #1B6E67;
+--secondary-color: #F2C14E;
+--accent-color: #E07A5F;
+--bg-main: #FAF3E0;
+--bg-alt: #E8F6F3;
+--text-color: #2F2D2E;
+--card-bg: #FFFFFF;
+--hover-color: #E07A5F;
+}
+* {
+box-sizing: border-box;
+}
+body {
+margin: 0;
+font-family: 'Poppins', sans-serif;
+background: var(--bg-main);
+color: var(--text-color);
+}
+header {
+background-color: var(--primary-color);
+color: var(--card-bg);
+padding: 2rem;
+text-align: center;
+font-size: 2.2rem;
+font-weight: 700;
+}
+nav {
+background: var(--secondary-color);
+max-width: 900px;
+margin: 1rem auto;
+padding: 0.75rem;
+border-radius: 0.75rem;
+box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+nav ul {
+display: flex;
+justify-content: center;
+gap: 2rem;
+list-style: none;
+margin: 0;
+padding: 0;
+}
+nav ul li a {
+color: var(--text-color);
+text-decoration: none;
+font-weight: 600;
+padding: 0.5rem 1rem;
+border-radius: 0.5rem;
+transition: background 0.3s;
+}
+nav ul li a:hover,
+nav ul li a.active {
+background: var(--hover-color);
+color: #fff;
+}
+.hero {
+background: url('https://source.unsplash.com/1600x900/?education,learning') no-repeat center/cover;
+color: var(--card-bg);
+text-align: center;
+padding: 6rem 1rem;
+font-size: 1.75rem;
+font-weight: 700;
+text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
+}
+.container {
+max-width: 900px;
+margin: auto;
+padding: 2rem 1rem;
+}
+section {
+margin-bottom: 3rem;
+padding: 2rem 1rem;
+border-radius: 1rem;
+}
+section:nth-of-type(even) {
+background: var(--bg-alt);
+}
+h2 {
+color: var(--primary-color);
+margin-bottom: 1rem;
+font-size: 1.8rem;
+}
+p {
+font-size: 1.1rem;
+margin-bottom: 1rem;
+}
+.tarjetas {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+gap: 1.5rem;
+}
+.tarjeta {
+background: var(--card-bg);
+padding: 1.5rem;
+border-radius: 1rem;
+box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+transition: transform 0.3s;
+}
+.tarjeta:hover {
+transform: translateY(-5px);
+}
+.social-media ul {
+list-style: none;
+padding: 0;
+display: flex;
+justify-content: center;
+gap: 1.5rem;
+}
+.social-media ul li a {
+font-size: 1.5rem;
+color: var(--text-color);
+transition: color 0.3s;
+}
+.social-media ul li a:hover {
+color: var(--hover-color);
+}
+.marquesina {
+position: fixed;
+bottom: 0;
+width: 100%;
+background: var(--secondary-color);
+color: var(--text-color);
+text-align: center;
+padding: 0.75rem;
+font-weight: 600;
+animation: scroll-left 15s linear infinite;
+}
+@keyframes scroll-left {
+from { transform: translateX(100%); }
+to { transform: translateX(-100%); }
+}
+footer {
+background: var(--text-color);
+color: var(--card-bg);
+text-align: center;
+padding: 2rem;
+font-size: 0.95rem;
+}
 </style>
 </head>
 <body>
+<header>Educlick</header>
+<nav>
+<ul>
+<li><a href="index.html" class="active">Inicio</a></li>
+<li><a href="servicios.html">Servicios</a></li>
+<li><a href="Blog.html">Blog</a></li>
+</ul>
+</nav>
 
-<section class="hero">
-<div class="hero-content">
-<h1>Alliance pour la Vie et la <span class="gradient">Xénogreffe</span></h1>
-<p class="subtitle">Les organes de porcs peuvent-ils sauver des vies humaines ? Découvrez les avancées scientifiques, les enjeux éthiques et les possibilités de la médecine du futur.</p>
-<a class="btn" href="#intro">Découvrir</a>
-<div class="stats">
-<div class="stat"><h3>100K+</h3><p>Patients en attente</p></div>
-<div class="stat"><h3>2022</h3><p>Greffe historique</p></div>
-<div class="stat"><h3>∞</h3><p>Possibilités futures</p></div>
+<div class="hero">
+<h1>🧠 Bienvenid@ a Educlick</h1>
+<p>📚 Conectamos aprendizaje con resultados reales</p>
 </div>
+
+<main class="container">
+<section aria-label="Acerca de Nosotros">
+<h2>Acerca de Nosotros</h2>
+<p>En <strong>Educlick</strong>, somos un equipo de tutores apasionados por la enseñanza. Nuestro objetivo es acompañar a estudiantes de primaria, secundaria y preparatoria en su proceso académico, brindando tutorías personalizadas, apoyo emocional y estrategias efectivas de estudio.</p>
+<p>Ya sea que necesites ayuda puntual con una materia, preparación para exámenes o reforzar tus bases, estamos aquí para apoyarte con clases claras, dinámicas y adaptadas a tu estilo de aprendizaje.</p>
+</section>
+
+<section id="servicios" aria-label="Qué ofrecemos">
+<h2>🔍 ¿Qué ofrecemos?</h2>
+<div class="tarjetas">
+<div class="tarjeta">✅ Matemáticas</div>
+<div class="tarjeta">✅ Biología</div>
+<div class="tarjeta">✅ Historia</div>
+<div class="tarjeta">✅ Física y Química (básico)</div>
+<div class="tarjeta">✅ Español y redacción</div>
+<div class="tarjeta">✅ Inglés (básico-intermedio)</div>
+<div class="tarjeta">✅ Asesoría en tareas, proyectos y organización escolar</div>
+</div>
+<p><strong>Modalidades:</strong> 💻 Online (Zoom, Meet) / 📍 Presenciales según tu ubicación.</p>
+<p><strong>Duración:</strong> ⏱️ 30, 45 o 60 minutos por sesión. Horarios adaptables.</p>
+</section>
+
+<section aria-label="Quiénes somos">
+<h2>🧑‍🏫 ¿Quiénes somos?</h2>
+<p>Somos estudiantes y profesionales comprometidos con la educación personalizada. Contamos con experiencia en docencia, habilidades pedagógicas y verdadera vocación de enseñar.</p>
+<ul>
+<li>• Acompañamiento académico personalizado</li>
+<li>• Técnicas de estudio efectivas</li>
+<li>• Comunicación clara y respetuosa</li>
+<li>• Motivación y confianza continua</li>
+</ul>
+</section>
+
+<section aria-label="Beneficios">
+<h2>⭐ Beneficios de Educlick</h2>
+<div class="tarjetas">
+<div class="tarjeta">✨ Atención individual o grupos reducidos</div>
+<div class="tarjeta">✨ Avances visibles desde la primera sesión</div>
+<div class="tarjeta">✨ Seguimiento constante</div>
+<div class="tarjeta">✨ Precios justos y accesibles</div>
+<div class="tarjeta">✨ Material de apoyo exclusivo</div>
+<div class="tarjeta">✨ Diagnóstico inicial gratuito</div>
 </div>
 </section>
 
-<section id="association">
-<h2>Notre Association</h2>
-<div class="card">
-<p>L'Alliance pour la Vie et la Xénogreffe est une association dédiée à la sensibilisation, à la recherche et à la diffusion d'informations sur la xénogreffe. Notre objectif est d'informer le public sur les avancées scientifiques qui pourraient réduire la pénurie mondiale d'organes.</p>
-</div>
+<section aria-label="Preguntas Frecuentes">
+<h2>❓ Preguntas Frecuentes</h2>
+<ul class="tarjetas">
+<li class="tarjeta"><strong>¿Cuál es el costo por sesión?</strong><br>Varía según duración y modalidad. Contáctanos para cotización.</li>
+<li class="tarjeta"><strong>¿Qué niveles atienden?</strong><br>Primaria, secundaria y preparatoria.</li>
+<li class="tarjeta"><strong>¿Sesiones individuales o grupales?</strong><br>Ambas opciones disponibles.</li>
+<li class="tarjeta"><strong>¿Puedo cancelar?</strong><br>Sí, con mínimo 12 h de antelación.</li>
+</ul>
+</section>
+</main>
+
+<!-- Enlaces a redes sociales -->
+<section class="social-media">
+<ul>
+</ul>
 </section>
 
-<section id="intro">
-<h2>Introduction</h2>
-<div class="card">
-<p>Aujourd’hui, beaucoup de personnes dans le monde ont besoin d’un organe pour survivre, comme un cœur, un rein ou un foie. Cependant, il n’y a pas assez de donneurs humains. À cause de ce problème, les scientifiques cherchent de nouvelles solutions médicales. Une solution possible est l’utilisation des organes de porcs pour les humains.</p>
+<div class="marquesina">
+<div>🎉 ¡Bienvenido a Educlick! Mejora tu aprendizaje hoy mismo. 🎓</div>
 </div>
-</section>
 
-<section>
-<h2>Pourquoi avons-nous choisi ce sujet ?</h2>
-<div class="cards">
-<div class="card"><h3>🔬 Science</h3><p>Un sujet moderne qui représente l’avenir de la médecine.</p></div>
-<div class="card"><h3>🫀 Vies humaines</h3><p>Beaucoup de personnes meurent faute d’organes disponibles.</p></div>
-<div class="card"><h3>⚖️ Éthique</h3><p>Le sujet soulève des débats importants dans la société.</p></div>
-<div class="card"><h3>🌍 Impact mondial</h3><p>Une technologie qui pourrait bénéficier à des millions de patients.</p></div>
-</div>
-</section>
-
-<section>
-<h2>Qu'est-ce que la xénogreffe ?</h2>
-<div class="card">
-<p>La xénogreffe est une transplantation entre deux espèces différentes. Dans ce cas, les médecins utilisent des organes de porcs pour les transférer à des humains.</p>
-</div>
-</section>
-
-<section>
-<h2>Pourquoi les porcs ?</h2>
-<div class="cards">
-<div class="card"><h3>📏 Taille similaire</h3><p>Leurs organes sont comparables à ceux des humains.</p></div>
-<div class="card"><h3>⚡ Croissance rapide</h3><p>Les porcs grandissent rapidement.</p></div>
-<div class="card"><h3>🧬 Recherche génétique</h3><p>Les scientifiques peuvent modifier certains gènes pour réduire les risques.</p></div>
-</div>
-</section>
-
-<section>
-<h2>Comment fonctionne la procédure ?</h2>
-<div class="timeline">
-<div><strong>1.</strong> Sélection du porc</div>
-<div><strong>2.</strong> Modification génétique</div>
-<div><strong>3.</strong> Préparation de l’organe</div>
-<div><strong>4.</strong> Transplantation</div>
-<div><strong>5.</strong> Suivi médical</div>
-</div>
-</section>
-
-<section>
-<h2>Avantages</h2>
-<div class="cards">
-<div class="card">Réduction des listes d’attente.</div>
-<div class="card">Plus grande disponibilité d’organes.</div>
-<div class="card">Possibilité de sauver davantage de vies.</div>
-</div>
-</section>
-
-<section>
-<h2>Risques</h2>
-<div class="cards">
-<div class="card">Rejet immunitaire.</div>
-<div class="card">Risques biologiques.</div>
-<div class="card">Questions éthiques.</div>
-</div>
-</section>
-
-<section>
-<h2>Une avancée historique</h2>
-<div class="card">
-<p>En 2022, des médecins aux États-Unis ont transplanté un cœur de porc génétiquement modifié à un patient humain. Cet événement était très important pour l’histoire de la médecine.</p>
-</div>
-</section>
-
-<section>
-<h2>Questions Éthiques</h2>
-<div class="cards">
-<div class="card">Est-il acceptable d'utiliser des animaux pour sauver des vies humaines ?</div>
-<div class="card">Où devons-nous fixer les limites de la science ?</div>
-<div class="card">Les bénéfices dépassent-ils les risques ?</div>
-</div>
-</section>
-
-<section>
-<h2>Notre Conclusion</h2>
-<div class="card">
-<p>Nous pensons que la xénogreffe est une technologie médicale très intéressante et importante pour le futur. Les organes de porcs pourraient aider beaucoup de personnes qui ont besoin d’une transplantation. Cependant, il existe encore des risques médicaux et des questions éthiques. Les scientifiques doivent continuer leurs recherches pour améliorer cette méthode.</p>
-</div>
-</section>
-
-<section>
-<h2>Références</h2>
-<div class="card">
-<p>Agence de la biomédecine<br>Cité des sciences et de l’industrie<br>LEL Média<br>Reverso Context</p>
-</div>
-</section>
-
-<section>
-<h2>Équipe</h2>
-<div class="cards">
-<div class="card">Stephania Nuñez</div>
-<div class="card">Katia Velásquez</div>
-<div class="card">André Sebastián Rangel</div>
-<div class="card">Valeria Zoé Ladron de Guevara</div>
-<div class="card">José Karlos Barba</div>
-<div class="card">Paola Distancia</div>
-</div>
-</section>
-
-<footer>
-Alliance pour la Vie et la Xénogreffe © 2026
-</footer>
-
+<footer>© 2024 Educlick. Todos los derechos reservados.</footer>
 </body>
 </html>
