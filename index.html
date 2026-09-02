@@ -4,69 +4,1742 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>RUTA CAFÉ — tu café, tu ritmo</title>
+
 <style>
-:root{--cream:#f4f0eb;--sage:#d7e0dd;--ink:#263330;--muted:#65716e;--white:#fffdf9}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,system-ui,sans-serif;overflow-x:hidden}
-a{text-decoration:none;color:inherit}.nav{position:fixed;z-index:5;top:18px;left:50%;transform:translateX(-50%);width:min(1120px,calc(100% - 30px));padding:12px 16px 12px 22px;display:flex;justify-content:space-between;align-items:center;background:#f4f0ebd9;backdrop-filter:blur(18px);border:1px solid #fff;border-radius:999px;box-shadow:0 10px 35px #26333015}
-.logo{font-weight:950;letter-spacing:.15em;font-size:.9rem}.links{display:flex;gap:25px;font-size:.84rem;font-weight:700;color:#53615e}.cta{background:var(--ink);color:var(--cream);padding:11px 18px;border-radius:999px;font-weight:800;font-size:.82rem}
-.hero{min-height:100vh;padding:125px 7vw 65px;display:grid;grid-template-columns:1fr 1fr;align-items:center;position:relative}.hero:after{content:"";position:absolute;width:560px;height:560px;border-radius:50%;background:var(--sage);right:-170px;top:100px;z-index:-1}
-.eyebrow,.kicker{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:900;color:#687470}.eyebrow{display:flex;gap:9px;align-items:center;margin-bottom:22px}.dot{width:8px;height:8px;border-radius:50%;background:var(--ink)}
-h1{font-size:clamp(4.5rem,10vw,9rem);line-height:.78;letter-spacing:-.075em;margin:0;font-weight:950}h1 span{display:block;color:#65716e;font-style:italic;font-weight:500}
-.hero p{max-width:520px;margin:32px 0 0;color:#586561;font-size:1.06rem;line-height:1.7}.buttons{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}.btn{display:inline-block;padding:15px 22px;border-radius:999px;border:1px solid var(--ink);font-weight:800}.btn.main{background:var(--ink);color:var(--cream)}
-.visual{min-height:550px;display:grid;place-items:center;position:relative}.truck{width:min(550px,94%);aspect-ratio:1.25;position:relative;transform:rotate(-3deg);filter:drop-shadow(0 30px 25px #2633302b);animation:float 5s ease-in-out infinite}@keyframes float{50%{transform:rotate(0) translateY(-12px)}}
-.body{position:absolute;left:5%;right:5%;bottom:22%;height:49%;background:var(--white);border:5px solid var(--ink);border-radius:34px 38px 20px 20px}.cab{position:absolute;right:0;bottom:22%;width:34%;height:45%;background:var(--sage);border:5px solid var(--ink);border-left:0;border-radius:0 34px 20px 0}.window{position:absolute;right:8%;top:13%;width:61%;height:40%;background:var(--cream);border:4px solid var(--ink);border-radius:12px 25px 12px 12px}.serving{position:absolute;left:14%;top:28%;width:44%;height:28%;background:var(--sage);border:4px solid var(--ink);border-radius:12px}.sign{position:absolute;left:18%;top:13%;font-size:1.4rem;font-weight:950;letter-spacing:.13em}.wheel{position:absolute;bottom:12%;width:74px;height:74px;background:var(--ink);border:12px solid #586561;border-radius:50%;box-shadow:inset 0 0 0 7px var(--cream)}.w1{left:17%}.w2{right:17%}.badge{position:absolute;right:0;bottom:8%;width:145px;height:145px;border-radius:50%;display:grid;place-items:center;text-align:center;background:var(--ink);color:var(--cream);font-weight:900;font-size:.82rem;line-height:1.3;letter-spacing:.06em}
-.marquee{background:var(--ink);color:var(--cream);overflow:hidden;white-space:nowrap;padding:17px 0}.track{font-size:.75rem;font-weight:900;letter-spacing:.16em;animation:move 22s linear infinite;display:inline-block}@keyframes move{to{transform:translateX(-50%)}}
-section{padding:105px 7vw}.head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:45px}h2{font-size:clamp(2.8rem,6vw,5.8rem);line-height:.9;letter-spacing:-.065em;margin:12px 0 0}.intro{max-width:400px;color:#63706d;line-height:1.7}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{padding:30px;min-height:270px;border:1px solid #2633301c;border-radius:28px;background:#fffdf9aa;transition:.3s}.card:nth-child(2){background:var(--sage);transform:translateY(28px)}.card:hover{transform:translateY(-8px) rotate(.5deg);box-shadow:0 25px 70px #26333020}.card:nth-child(2):hover{transform:translateY(18px) rotate(.5deg)}.num{font-size:.7rem;font-weight:900;letter-spacing:.12em}.icon{font-size:2.5rem;margin:28px 0 18px}.card h3{font-size:1.5rem;margin:0 0 10px}.card p{color:#61706c;line-height:1.6}
-.menu{display:grid;grid-template-columns:.7fr 1.3fr;gap:60px}.sticky{position:sticky;top:120px}.sticky p{max-width:350px;color:#63706d;line-height:1.7;margin:25px 0}.items{display:grid;grid-template-columns:1fr 1fr}.item{padding:20px;border-top:1px solid #2633301a;display:flex;justify-content:space-between;gap:12px}.item h4{margin:0;font-size:1rem}.item small{color:#75817e}.price{font-weight:900;white-space:nowrap}
-.feature{background:var(--ink);color:var(--cream);border-radius:38px;padding:60px;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}.feature p{color:#c5cfcc;line-height:1.75;max-width:520px;margin-top:25px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat{border:1px solid #f4f0eb29;border-radius:22px;padding:25px 18px}.stat strong{display:block;font-size:2.5rem;letter-spacing:-.06em}.stat span{color:#aebbb7;font-size:.8rem}
-.route{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}.map{height:450px;background:var(--sage);border-radius:40px;position:relative;overflow:hidden}.map:before{content:"";position:absolute;width:620px;height:250px;border:5px dashed var(--ink);border-radius:50%;left:-90px;top:105px;transform:rotate(-13deg);opacity:.65}.pin{position:absolute;width:54px;height:54px;border-radius:50%;background:var(--ink);color:var(--cream);display:grid;place-items:center;font-weight:900}.p1{left:20%;top:23%}.p2{right:20%;top:45%}.p3{left:43%;bottom:18%}.stops{margin-top:28px}.stop{padding:17px 0;border-bottom:1px solid #2633301a}.stop b{font-size:.78rem;letter-spacing:.08em}.stop span{display:block;color:#687571;margin-top:5px;font-size:.9rem}
-.final{text-align:center;padding-bottom:125px}.final h2{max-width:850px;margin:auto}.final p{max-width:570px;margin:25px auto;color:#65716e;line-height:1.7}footer{border-top:1px solid #2633301a;padding:25px 7vw;display:flex;justify-content:space-between;color:#697571;font-size:.78rem}
-@media(max-width:850px){.links{display:none}.hero,.menu,.feature,.route{grid-template-columns:1fr}.hero{padding-top:130px}.visual{min-height:400px}.cards{grid-template-columns:1fr}.card:nth-child(2){transform:none}.card:nth-child(2):hover{transform:translateY(-8px)}.sticky{position:static}.feature{padding:38px}.items{grid-template-columns:1fr}.head{display:block}.intro{margin-top:20px}}
-@media(max-width:520px){h1{font-size:4.3rem}.hero,section{padding-left:22px;padding-right:22px}.truck{width:100%}.badge{width:105px;height:105px;font-size:.68rem}.wheel{width:55px;height:55px;border-width:8px}.map{height:350px}}
+:root{
+  --cream:#f4f0eb;
+  --sage:#d7e0dd;
+  --ink:#263330;
+  --muted:#65716e;
+  --white:#fffdf9
+}
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:Inter,system-ui,sans-serif;
+  overflow-x:hidden
+}
+
+a{
+  text-decoration:none;
+  color:inherit
+}
+
+.nav{
+  position:fixed;
+  z-index:5;
+  top:18px;
+  left:50%;
+  transform:translateX(-50%);
+  width:min(1120px,calc(100% - 30px));
+  padding:12px 16px 12px 22px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:#f4f0ebd9;
+  backdrop-filter:blur(18px);
+  border:1px solid #fff;
+  border-radius:999px;
+  box-shadow:0 10px 35px #26333015
+}
+
+.logo{
+  font-weight:950;
+  letter-spacing:.15em;
+  font-size:.9rem
+}
+
+.links{
+  display:flex;
+  gap:25px;
+  font-size:.84rem;
+  font-weight:700;
+  color:#53615e
+}
+
+.cta{
+  background:var(--ink);
+  color:var(--cream);
+  padding:11px 18px;
+  border-radius:999px;
+  font-weight:800;
+  font-size:.82rem
+}
+
+.hero{
+  min-height:100vh;
+  padding:125px 7vw 65px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  position:relative
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  width:560px;
+  height:560px;
+  border-radius:50%;
+  background:var(--sage);
+  right:-170px;
+  top:100px;
+  z-index:-1
+}
+
+.eyebrow,.kicker{
+  font-size:.72rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  font-weight:900;
+  color:#687470
+}
+
+.eyebrow{
+  display:flex;
+  gap:9px;
+  align-items:center;
+  margin-bottom:22px
+}
+
+.dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--ink)
+}
+
+h1{
+  font-size:clamp(4.5rem,10vw,9rem);
+  line-height:.78;
+  letter-spacing:-.075em;
+  margin:0;
+  font-weight:950
+}
+
+h1 span{
+  display:block;
+  color:#65716e;
+  font-style:italic;
+  font-weight:500
+}
+
+.hero p{
+  max-width:520px;
+  margin:32px 0 0;
+  color:#586561;
+  font-size:1.06rem;
+  line-height:1.7
+}
+
+.buttons{
+  display:flex;
+  gap:12px;
+  margin-top:28px;
+  flex-wrap:wrap
+}
+
+.btn{
+  display:inline-block;
+  padding:15px 22px;
+  border-radius:999px;
+  border:1px solid var(--ink);
+  font-weight:800
+}
+
+.btn.main{
+  background:var(--ink);
+  color:var(--cream)
+}
+
+.visual{
+  min-height:550px;
+  display:grid;
+  place-items:center;
+  position:relative
+}
+
+.truck{
+  width:min(550px,94%);
+  aspect-ratio:1.25;
+  position:relative;
+  transform:rotate(-3deg);
+  filter:drop-shadow(0 30px 25px #2633302b);
+  animation:float 5s ease-in-out infinite
+}
+
+@keyframes float{
+  50%{
+    transform:rotate(0) translateY(-12px)
+  }
+}
+
+.body{
+  position:absolute;
+  left:5%;
+  right:5%;
+  bottom:22%;
+  height:49%;
+  background:var(--white);
+  border:5px solid var(--ink);
+  border-radius:34px 38px 20px 20px
+}
+
+.cab{
+  position:absolute;
+  right:0;
+  bottom:22%;
+  width:34%;
+  height:45%;
+  background:var(--sage);
+  border:5px solid var(--ink);
+  border-left:0;
+  border-radius:0 34px 20px 0
+}
+
+.window{
+  position:absolute;
+  right:8%;
+  top:13%;
+  width:61%;
+  height:40%;
+  background:var(--cream);
+  border:4px solid var(--ink);
+  border-radius:12px 25px 12px 12px
+}
+
+.serving{
+  position:absolute;
+  left:14%;
+  top:28%;
+  width:44%;
+  height:28%;
+  background:var(--sage);
+  border:4px solid var(--ink);
+  border-radius:12px
+}
+
+.sign{
+  position:absolute;
+  left:18%;
+  top:13%;
+  font-size:1.4rem;
+  font-weight:950;
+  letter-spacing:.13em
+}
+
+.wheel{
+  position:absolute;
+  bottom:12%;
+  width:74px;
+  height:74px;
+  background:var(--ink);
+  border:12px solid #586561;
+  border-radius:50%;
+  box-shadow:inset 0 0 0 7px var(--cream)
+}
+
+.w1{left:17%}
+.w2{right:17%}
+
+.badge{
+  position:absolute;
+  right:0;
+  bottom:8%;
+  width:145px;
+  height:145px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  background:var(--ink);
+  color:var(--cream);
+  font-weight:900;
+  font-size:.82rem;
+  line-height:1.3;
+  letter-spacing:.06em
+}
+
+.marquee{
+  background:var(--ink);
+  color:var(--cream);
+  overflow:hidden;
+  white-space:nowrap;
+  padding:17px 0
+}
+
+.track{
+  font-size:.75rem;
+  font-weight:900;
+  letter-spacing:.16em;
+  animation:move 22s linear infinite;
+  display:inline-block
+}
+
+@keyframes move{
+  to{
+    transform:translateX(-50%)
+  }
+}
+
+section{
+  padding:105px 7vw
+}
+
+.head{
+  display:flex;
+  justify-content:space-between;
+  gap:30px;
+  align-items:end;
+  margin-bottom:45px
+}
+
+h2{
+  font-size:clamp(2.8rem,6vw,5.8rem);
+  line-height:.9;
+  letter-spacing:-.065em;
+  margin:12px 0 0
+}
+
+.intro{
+  max-width:400px;
+  color:#63706d;
+  line-height:1.7
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px
+}
+
+.card{
+  padding:30px;
+  min-height:270px;
+  border:1px solid #2633301c;
+  border-radius:28px;
+  background:#fffdf9aa;
+  transition:.3s
+}
+
+.card:nth-child(2){
+  background:var(--sage);
+  transform:translateY(28px)
+}
+
+.card:hover{
+  transform:translateY(-8px) rotate(.5deg);
+  box-shadow:0 25px 70px #26333020
+}
+
+.card:nth-child(2):hover{
+  transform:translateY(18px) rotate(.5deg)
+}
+
+.num{
+  font-size:.7rem;
+  font-weight:900;
+  letter-spacing:.12em
+}
+
+.icon{
+  font-size:2.5rem;
+  margin:28px 0 18px
+}
+
+.card h3{
+  font-size:1.5rem;
+  margin:0 0 10px
+}
+
+.card p{
+  color:#61706c;
+  line-height:1.6
+}
+
+.menu{
+  display:grid;
+  grid-template-columns:.7fr 1.3fr;
+  gap:60px
+}
+
+.sticky{
+  position:sticky;
+  top:120px
+}
+
+.sticky p{
+  max-width:350px;
+  color:#63706d;
+  line-height:1.7;
+  margin:25px 0
+}
+
+.items{
+  display:grid;
+  grid-template-columns:1fr 1fr
+}
+
+.item{
+  padding:20px;
+  border-top:1px solid #2633301a;
+  display:flex;
+  justify-content:space-between;
+  gap:12px
+}
+
+.item h4{
+  margin:0;
+  font-size:1rem
+}
+
+.item small{
+  color:#75817e
+}
+
+.price{
+  font-weight:900;
+  white-space:nowrap
+}
+
+.feature{
+  background:var(--ink);
+  color:var(--cream);
+  border-radius:38px;
+  padding:60px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center
+}
+
+.feature p{
+  color:#c5cfcc;
+  line-height:1.75;
+  max-width:520px;
+  margin-top:25px
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px
+}
+
+.stat{
+  border:1px solid #f4f0eb29;
+  border-radius:22px;
+  padding:25px 18px
+}
+
+.stat strong{
+  display:block;
+  font-size:2.5rem;
+  letter-spacing:-.06em
+}
+
+.stat span{
+  color:#aebbb7;
+  font-size:.8rem
+}
+
+/* MAPA INTERACTIVO */
+
+.route{
+  display:block
+}
+
+.route-header{
+  display:flex;
+  justify-content:space-between;
+  gap:70px;
+  align-items:end;
+  margin-bottom:45px
+}
+
+.route-description{
+  max-width:430px;
+  color:#65716e;
+  line-height:1.7
+}
+
+.storymap-container{
+  width:100%;
+  height:650px;
+  border-radius:35px;
+  overflow:hidden;
+  background:var(--sage);
+  box-shadow:0 20px 60px #26333018;
+  border:1px solid #26333015
+}
+
+.storymap-container iframe{
+  width:100%;
+  height:100%;
+  border:0;
+  display:block
+}
+
+.route-info{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:22px
+}
+
+.route-card{
+  padding:28px;
+  border-radius:25px;
+  background:#fffdf9aa;
+  border:1px solid #26333015
+}
+
+.route-card:nth-child(2){
+  background:var(--sage)
+}
+
+.route-card strong{
+  display:block;
+  font-size:.72rem;
+  letter-spacing:.13em;
+  margin-bottom:10px
+}
+
+.route-card h3{
+  margin:0 0 8px;
+  font-size:1.3rem
+}
+
+.route-card p{
+  margin:0;
+  color:#63706d;
+  line-height:1.6;
+  font-size:.92rem
+}
+
+/* FINANZAS */
+
+.finance{
+  background:var(--sage)
+}
+
+.finance-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+  margin-top:45px
+}
+
+.finance-card{
+  background:var(--white);
+  border-radius:28px;
+  padding:30px;
+  border:1px solid #26333012
+}
+
+.finance-card h3{
+  font-size:1.3rem;
+  margin:0 0 22px
+}
+
+.finance-row{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  padding:13px 0;
+  border-bottom:1px solid #26333012
+}
+
+.finance-row:last-child{
+  border-bottom:0
+}
+
+.finance-row strong{
+  font-weight:900
+}
+
+.highlight{
+  background:var(--ink);
+  color:var(--cream)
+}
+
+.highlight .finance-row{
+  border-color:#f4f0eb22
+}
+
+.highlight .muted{
+  color:#aebbb7
+}
+
+.big-number{
+  font-size:3.5rem;
+  font-weight:950;
+  letter-spacing:-.07em;
+  margin:10px 0
+}
+
+.muted{
+  color:#63706d;
+  line-height:1.6
+}
+
+.audience{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin-top:45px
+}
+
+.audience-card{
+  padding:30px;
+  border-radius:28px;
+  background:#fffdf9aa;
+  border:1px solid #26333012
+}
+
+.audience-card h3{
+  margin-top:0;
+  font-size:1.4rem
+}
+
+.audience-card p{
+  color:#61706c;
+  line-height:1.7
+}
+
+.recovery{
+  margin-top:18px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px
+}
+
+.recovery-step{
+  padding:22px;
+  border-radius:20px;
+  background:#fffdf9aa
+}
+
+.recovery-step strong{
+  display:block;
+  font-size:1.8rem;
+  margin-bottom:7px
+}
+
+.recovery-step span{
+  font-size:.8rem;
+  color:#687571
+}
+
+.final{
+  text-align:center;
+  padding-bottom:125px
+}
+
+.final h2{
+  max-width:850px;
+  margin:auto
+}
+
+.final p{
+  max-width:570px;
+  margin:25px auto;
+  color:#65716e;
+  line-height:1.7
+}
+
+footer{
+  border-top:1px solid #2633301a;
+  padding:25px 7vw;
+  display:flex;
+  justify-content:space-between;
+  color:#697571;
+  font-size:.78rem
+}
+
+@media(max-width:850px){
+
+  .links{
+    display:none
+  }
+
+  .hero,
+  .menu,
+  .feature,
+  .audience{
+    grid-template-columns:1fr
+  }
+
+  .hero{
+    padding-top:130px
+  }
+
+  .visual{
+    min-height:400px
+  }
+
+  .cards{
+    grid-template-columns:1fr
+  }
+
+  .card:nth-child(2){
+    transform:none
+  }
+
+  .card:nth-child(2):hover{
+    transform:translateY(-8px)
+  }
+
+  .sticky{
+    position:static
+  }
+
+  .head,
+  .route-header{
+    display:block
+  }
+
+  .intro,
+  .route-description{
+    margin-top:20px
+  }
+
+  .feature{
+    padding:38px
+  }
+
+  .items{
+    grid-template-columns:1fr
+  }
+
+  .route-info{
+    grid-template-columns:1fr
+  }
+
+  .finance-grid{
+    grid-template-columns:1fr
+  }
+
+  .recovery{
+    grid-template-columns:1fr 1fr
+  }
+
+  .storymap-container{
+    height:600px
+  }
+}
+
+@media(max-width:520px){
+
+  h1{
+    font-size:4.3rem
+  }
+
+  .hero,
+  section{
+    padding-left:22px;
+    padding-right:22px
+  }
+
+  .truck{
+    width:100%
+  }
+
+  .badge{
+    width:105px;
+    height:105px;
+    font-size:.68rem
+  }
+
+  .wheel{
+    width:55px;
+    height:55px;
+    border-width:8px
+  }
+
+  .stats{
+    grid-template-columns:1fr
+  }
+
+  .recovery{
+    grid-template-columns:1fr
+  }
+
+  .storymap-container{
+    height:520px;
+    border-radius:25px
+  }
+
+  footer{
+    padding-left:22px;
+    padding-right:22px;
+    gap:15px;
+  }
+}
 </style>
 </head>
+
 <body>
-<nav class="nav"><a class="logo" href="#">RUTA CAFÉ</a><div class="links"><a href="#concepto">Concepto</a><a href="#menu">Menú</a><a href="#ruta">La ruta</a></div><a class="cta" href="#menu">Ver menú →</a></nav>
+
+<!-- NAVEGACIÓN -->
+
+<nav class="nav">
+  <a class="logo" href="#">RUTA CAFÉ</a>
+
+  <div class="links">
+    <a href="#concepto">Concepto</a>
+    <a href="#menu">Menú</a>
+    <a href="#ruta">La ruta</a>
+    <a href="#finanzas">Finanzas</a>
+  </div>
+
+  <a class="cta" href="#menu">Ver menú →</a>
+</nav>
+
+
+<!-- HERO -->
 
 <header class="hero">
-<div><div class="eyebrow"><span class="dot"></span>Cafetería express · Food truck</div><h1>RUTA <span>CAFÉ</span></h1><p>Tu café, tu ritmo. Café de especialidad, desayunos y snacks que se mueven contigo: de las mañanas entre oficinas y universidades a las tardes de mercados, eventos y festivales.</p><div class="buttons"><a class="btn main" href="#menu">Explorar menú</a><a class="btn" href="#ruta">Descubrir la ruta</a></div></div>
-<div class="visual"><div class="truck"><div class="body"></div><div class="cab"><div class="window"></div></div><div class="serving"></div><div class="sign">RUTA</div><div class="wheel w1"></div><div class="wheel w2"></div></div><div class="badge">GOOD<br>COFFEE<br>ON THE<br>MOVE</div></div>
+
+  <div>
+
+    <div class="eyebrow">
+      <span class="dot"></span>
+      Cafetería express · Food truck
+    </div>
+
+    <h1>
+      RUTA
+      <span>CAFÉ</span>
+    </h1>
+
+    <p>
+      Tu café, tu ritmo. Una cafetería móvil que se adapta al movimiento
+      de la ciudad: universidades por la mañana, zonas de oficinas por la
+      tarde y corredores gastronómicos por la noche.
+    </p>
+
+    <div class="buttons">
+      <a class="btn main" href="#menu">Explorar menú</a>
+      <a class="btn" href="#ruta">Descubrir la ruta</a>
+    </div>
+
+  </div>
+
+
+  <div class="visual">
+
+    <div class="truck">
+
+      <div class="body"></div>
+
+      <div class="cab">
+        <div class="window"></div>
+      </div>
+
+      <div class="serving"></div>
+
+      <div class="sign">
+        RUTA
+      </div>
+
+      <div class="wheel w1"></div>
+      <div class="wheel w2"></div>
+
+    </div>
+
+    <div class="badge">
+      GOOD<br>
+      COFFEE<br>
+      ON THE<br>
+      MOVE
+    </div>
+
+  </div>
+
 </header>
 
-<div class="marquee"><div class="track">RUTA CAFÉ · TU CAFÉ, TU RITMO · RUTA CAFÉ · TU CAFÉ, TU RITMO · RUTA CAFÉ · TU CAFÉ, TU RITMO · RUTA CAFÉ · TU CAFÉ, TU RITMO ·</div></div>
 
-<section id="concepto"><div class="head"><div><div class="kicker">01 — El concepto</div><h2>Hecho para<br>seguir tu día.</h2></div><p class="intro">La experiencia de una cafetería contemporánea con la libertad de un food truck: menos espera, más movimiento y un menú pensado para llevar.</p></div>
-<div class="cards">
-<article class="card"><div class="num">01 / RÁPIDO</div><div class="icon">☕</div><h3>Café que acompaña.</h3><p>Preparaciones sencillas y consistentes para que tu pedido llegue rápido sin sacrificar la experiencia.</p></article>
-<article class="card"><div class="num">02 / MÓVIL</div><div class="icon">✦</div><h3>La ciudad es nuestra mesa.</h3><p>Nos movemos hacia puntos de alta afluencia: oficinas, universidades, mercados, eventos y festivales.</p></article>
-<article class="card"><div class="num">03 / CERCANO</div><div class="icon">↗</div><h3>Tu ritmo, tu elección.</h3><p>Café, bebidas frescas, bakery y opciones saladas para distintos momentos del día.</p></article>
-</div></section>
+<!-- MARQUEE -->
 
-<section id="menu"><div class="menu"><div class="sticky"><div class="kicker">02 — Menú</div><h2>Pequeño menú.<br>Gran antojo.</h2><p>Una selección diseñada para un servicio ágil y una operación eficiente dentro del food truck.</p><a class="btn main" href="#concepto">↑ Volver arriba</a></div>
-<div class="items">
-<div class="item"><div><h4>Americano</h4><small>Espresso + agua</small></div><span class="price">$45</span></div>
-<div class="item"><div><h4>Capuchino</h4><small>Espresso + leche</small></div><span class="price">$60</span></div>
-<div class="item"><div><h4>Latte</h4><small>Suave y cremoso</small></div><span class="price">$60</span></div>
-<div class="item"><div><h4>Jugo de naranja</h4><small>Natural</small></div><span class="price">$55</span></div>
-<div class="item"><div><h4>Jugo verde</h4><small>Frutas + vegetales</small></div><span class="price">$60</span></div>
-<div class="item"><div><h4>Licuado de fresa</h4><small>Leche + fruta</small></div><span class="price">$55</span></div>
-<div class="item"><div><h4>Agua de jamaica</h4><small>Fresca</small></div><span class="price">$40</span></div>
-<div class="item"><div><h4>Horchata</h4><small>Arroz + canela</small></div><span class="price">$45</span></div>
-<div class="item"><div><h4>Concha</h4><small>Pan dulce</small></div><span class="price">$25</span></div>
-<div class="item"><div><h4>Croissant jamón & queso</h4><small>Caliente</small></div><span class="price">$60</span></div>
-<div class="item"><div><h4>Baguette de pollo</h4><small>Pollo + vegetales</small></div><span class="price">$100</span></div>
-<div class="item"><div><h4>Baguette pollo + aguacate</h4><small>Especial</small></div><span class="price">$110</span></div>
-<div class="item"><div><h4>Chilaquiles con pollo</h4><small>Roja o verde</small></div><span class="price">$120</span></div>
-<div class="item"><div><h4>Ensalada de pollo</h4><small>Verdes + proteína</small></div><span class="price">$115</span></div>
-<div class="item"><div><h4>Bowl de fruta</h4><small>Fruta de temporada</small></div><span class="price">$60</span></div>
-<div class="item"><div><h4>Bowl + yogurt + granola</h4><small>Completo</small></div><span class="price">$70</span></div>
-</div></div></section>
+<div class="marquee">
+  <div class="track">
+    RUTA CAFÉ · TU CAFÉ, TU RITMO · RUTA CAFÉ · TU CAFÉ, TU RITMO ·
+    RUTA CAFÉ · TU CAFÉ, TU RITMO ·
+  </div>
+</div>
 
-<section><div class="feature"><div><div class="kicker" style="color:#aebbb7">03 — El proyecto</div><h2>Una cafetería que no espera a que llegues.</h2><p>RUTA CAFÉ aprovecha la movilidad como parte de su propuesta de valor: acercar una experiencia de café y alimentos a donde realmente está la gente.</p></div><div class="stats"><div class="stat"><strong>50</strong><span>tickets / día</span></div><div class="stat"><strong>6</strong><span>días / semana</span></div><div class="stat"><strong>$120</strong><span>ticket promedio</span></div></div></div></section>
 
-<section id="ruta"><div class="route"><div class="map"><div class="pin p1">01</div><div class="pin p2">02</div><div class="pin p3">03</div></div><div><div class="kicker">04 — La ruta</div><h2>Donde está<br>el movimiento.</h2><p style="color:#65716e;line-height:1.7;margin-top:25px">La ubicación cambia con el momento del día para buscar el flujo adecuado de clientes.</p><div class="stops"><div class="stop"><b>MAÑANA</b><span>Oficinas · universidades · zonas de tránsito</span></div><div class="stop"><b>TARDE</b><span>Mercados · plazas · puntos de encuentro</span></div><div class="stop"><b>NOCHE</b><span>Eventos · festivales · actividades especiales</span></div></div></div></div></section>
+<!-- CONCEPTO -->
 
-<section class="final"><div class="kicker">05 — RUTA CAFÉ</div><h2>Tu café.<br><em>Tu ritmo.</em><br>Tu ruta.</h2><p>Un concepto creado para moverse con la ciudad y convertir cada parada en una experiencia.</p><a class="btn main" href="#menu">Conoce el menú →</a></section>
-<footer><span>© 2026 RUTA CAFÉ</span><span>tu café, tu ritmo</span></footer>
-</body></html>
+<section id="concepto">
+
+  <div class="head">
+
+    <div>
+      <div class="kicker">01 — El concepto</div>
+
+      <h2>
+        Hecho para<br>
+        seguir tu día.
+      </h2>
+    </div>
+
+    <p class="intro">
+      La experiencia de una cafetería contemporánea con la libertad de un
+      food truck: menos espera, más movimiento y un menú pensado para
+      distintos momentos del día.
+    </p>
+
+  </div>
+
+
+  <div class="cards">
+
+    <article class="card">
+
+      <div class="num">01 / RÁPIDO</div>
+
+      <div class="icon">☕</div>
+
+      <h3>
+        Café que acompaña.
+      </h3>
+
+      <p>
+        Preparaciones sencillas y consistentes para que el pedido llegue
+        rápido sin sacrificar la experiencia.
+      </p>
+
+    </article>
+
+
+    <article class="card">
+
+      <div class="num">02 / MÓVIL</div>
+
+      <div class="icon">✦</div>
+
+      <h3>
+        La ciudad es nuestra mesa.
+      </h3>
+
+      <p>
+        Nos desplazamos hacia distintos puntos de alta afluencia dependiendo
+        del momento del día y del perfil de nuestros clientes.
+      </p>
+
+    </article>
+
+
+    <article class="card">
+
+      <div class="num">03 / CERCANO</div>
+
+      <div class="icon">↗</div>
+
+      <h3>
+        Tu ritmo, tu elección.
+      </h3>
+
+      <p>
+        Café, bebidas frescas, bakery y opciones saladas para acompañar
+        el desayuno, la jornada laboral o una salida nocturna.
+      </p>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- MENÚ -->
+
+<section id="menu">
+
+  <div class="menu">
+
+    <div class="sticky">
+
+      <div class="kicker">02 — Menú</div>
+
+      <h2>
+        Pequeño menú.<br>
+        Gran antojo.
+      </h2>
+
+      <p>
+        Una selección diseñada para un servicio ágil y una operación
+        eficiente dentro del food truck, con opciones para diferentes
+        momentos del día.
+      </p>
+
+      <a class="btn main" href="#concepto">
+        ↑ Volver arriba
+      </a>
+
+    </div>
+
+
+    <div class="items">
+
+      <div class="item">
+        <div>
+          <h4>Americano</h4>
+          <small>Espresso + agua</small>
+        </div>
+        <span class="price">$45</span>
+      </div>
+
+      <div class="item">
+        <div>
+          <h4>Capuchino</h4>
+          <small>Espresso + leche</small>
+        </div>
+        <span class="price">$60</span>
+      </div>
+
+      <div class="item">
+        <div>
+          <h4>Latte</h4>
+          <small>Suave y cremoso</small>
+        </div>
+        <span class="price">$60</span>
+      </div>
+
+      <div class="item">
+        <div>
+          <h4>Jugo de naranja</h4>
+          <small>Natural</small>
+        </div>
+        <span class="price">$55</span>
+      </div>
+
+      <div class="item">
+        <div>
+          <h4>Jugo verde</h4>
+          <small>Frutas + vegetales</small>
+        </div>
+        <span class="price">$60</span>
+      </div>
+
+      <div class="item">
+        <div>
+          <h4>Licuado de fresa</h4>
+          <small>Leche + fruta</small>
+        </div>
+        <span class="price">$55</span>
+      </div>
+
+      <div class="item">
+        <div>
+          <h4>Agua de jamaica</h4>
+          <small>Fresca</small>
+        </div>
+        <span class="price">$40</span>
+      </div>
+
+      <div class="item">
+        <div>
+          <h4>Horchata</h4>
+          <small>Arroz + canela</small>
+        </div>
+        <span class="price">$45</span>
+      </div>
+
+      <div class="item">
+        <div>
+          <h4>Concha</h4>
+          <small>Pan dulce</small>
+        </div>
+        <span class="price">$25</span>
+      </div>
+
+      <div class="item">
+        <div>
+          <h4>Croissant jamón & queso</h4>
+          <small>Caliente</small>
+        </div>
+        <span class="price">$60</span>
+      </div>
+
+      <div class="item">
+        <div>
+          <h4>Baguette de pollo</h4>
+          <small>Pollo + vegetales</small>
+        </div>
+        <span class="price">$100</span>
+      </div>
+
+      <div class="item">
+        <div>
+          <h4>Baguette pollo + aguacate</h4>
+          <small>Especial</small>
+        </div>
+        <span class="price">$110</span>
+      </div>
+
+      <div class="item">
+        <div>
+          <h4>Chilaquiles con pollo</h4>
+          <small>Roja o verde</small>
+        </div>
+        <span class="price">$120</span>
+      </div>
+
+      <div class="item">
+        <div>
+          <h4>Ensalada de pollo</h4>
+          <small>Verdes + proteína</small>
+        </div>
+        <span class="price">$115</span>
+      </div>
+
+      <div class="item">
+        <div>
+          <h4>Bowl de fruta</h4>
+          <small>Fruta de temporada</small>
+        </div>
+        <span class="price">$60</span>
+      </div>
+
+      <div class="item">
+        <div>
+          <h4>Bowl + yogurt + granola</h4>
+          <small>Completo</small>
+        </div>
+        <span class="price">$70</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PROYECTO -->
+
+<section>
+
+  <div class="feature">
+
+    <div>
+
+      <div class="kicker" style="color:#aebbb7">
+        03 — El proyecto
+      </div>
+
+      <h2>
+        Una cafetería que no espera a que llegues.
+      </h2>
+
+      <p>
+        RUTA CAFÉ utiliza la movilidad como parte de su propuesta de valor:
+        acercar café y alimentos a zonas donde existe una alta concentración
+        de clientes potenciales durante diferentes momentos del día.
+      </p>
+
+    </div>
+
+
+    <div class="stats">
+
+      <div class="stat">
+        <strong>50</strong>
+        <span>tickets / día</span>
+      </div>
+
+      <div class="stat">
+        <strong>6</strong>
+        <span>días / semana</span>
+      </div>
+
+      <div class="stat">
+        <strong>$120</strong>
+        <span>ticket promedio</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- RUTA CON STORYMAP -->
+
+<section id="ruta">
+
+  <div class="route-header">
+
+    <div>
+
+      <div class="kicker">
+        04 — La ruta
+      </div>
+
+      <h2>
+        Donde está<br>
+        el movimiento.
+      </h2>
+
+    </div>
+
+    <p class="route-description">
+      La ubicación cambia con el momento del día para aprovechar distintos
+      flujos de clientes y convertir la movilidad en una ventaja competitiva.
+      Explora nuestro recorrido en el mapa interactivo.
+    </p>
+
+  </div>
+
+
+  <!-- STORYMAP INTERACTIVO -->
+
+  <div class="storymap-container">
+
+    <iframe
+      src="https://uploads.knightlab.com/storymapjs/b6674e98c3075b23ebc52582bb9bddce/ruta-cafe/index.html"
+      title="Ruta Café — Mapa interactivo"
+      loading="lazy"
+      allowfullscreen>
+    </iframe>
+
+  </div>
+
+
+  <!-- INFORMACIÓN DE LAS PARADAS -->
+
+  <div class="route-info">
+
+    <div class="route-card">
+
+      <strong>MAÑANA</strong>
+
+      <h3>
+        Universidades
+      </h3>
+
+      <p>
+        Estudiantes, profesores y personal académico que buscan
+        desayunos, café y bebidas para comenzar su jornada.
+      </p>
+
+    </div>
+
+
+    <div class="route-card">
+
+      <strong>TARDE</strong>
+
+      <h3>
+        Zonas de oficinas
+      </h3>
+
+      <p>
+        Empleados y jóvenes profesionistas que buscan opciones
+        rápidas para acompañar su jornada laboral.
+      </p>
+
+    </div>
+
+
+    <div class="route-card">
+
+      <strong>NOCHE</strong>
+
+      <h3>
+        Corredores gastronómicos
+      </h3>
+
+      <p>
+        Jóvenes, familias y visitantes que buscan bebidas, alimentos
+        y opciones para acompañar sus salidas.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PÚBLICO OBJETIVO -->
+
+<section>
+
+  <div class="head">
+
+    <div>
+
+      <div class="kicker">
+        05 — Público objetivo
+      </div>
+
+      <h2>
+        Distintas rutas.<br>
+        Distintos clientes.
+      </h2>
+
+    </div>
+
+    <p class="intro">
+      El modelo busca atender principalmente a jóvenes universitarios
+      y profesionistas, adaptándose a diferentes segmentos conforme
+      cambia la ubicación durante el día.
+    </p>
+
+  </div>
+
+
+  <div class="audience">
+
+    <div class="audience-card">
+
+      <h3>
+        🎓 Mercado principal
+      </h3>
+
+      <p>
+        Jóvenes de aproximadamente 18 a 35 años, especialmente estudiantes
+        universitarios y jóvenes profesionistas con un estilo de vida activo,
+        poco tiempo disponible y consumo frecuente de alimentos y bebidas
+        fuera de casa.
+      </p>
+
+    </div>
+
+
+    <div class="audience-card">
+
+      <h3>
+        ☕ Segmentos complementarios
+      </h3>
+
+      <p>
+        Profesores, personal académico, empleados de oficinas, familias y
+        personas que visitan corredores gastronómicos. La movilidad permite
+        buscar cada segmento en el horario donde existe mayor oportunidad
+        de consumo.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FINANZAS -->
+
+<section id="finanzas" class="finance">
+
+  <div class="head">
+
+    <div>
+
+      <div class="kicker">
+        06 — Finanzas
+      </div>
+
+      <h2>
+        Los números<br>
+        de la ruta.
+      </h2>
+
+    </div>
+
+    <p class="intro">
+      Proyección basada en 50 tickets diarios, 6 días de operación
+      por semana y un ticket promedio de $120.
+    </p>
+
+  </div>
+
+
+  <div class="finance-grid">
+
+
+    <!-- VENTAS -->
+
+    <div class="finance-card">
+
+      <h3>
+        Ventas proyectadas
+      </h3>
+
+      <div class="finance-row">
+        <span>Clientes diarios</span>
+        <strong>50</strong>
+      </div>
+
+      <div class="finance-row">
+        <span>Días de operación</span>
+        <strong>6 / semana</strong>
+      </div>
+
+      <div class="finance-row">
+        <span>Tickets semanales</span>
+        <strong>300</strong>
+      </div>
+
+      <div class="finance-row">
+        <span>Ventas semanales</span>
+        <strong>$36,000</strong>
+      </div>
+
+      <div class="finance-row">
+        <span>Ventas mensuales</span>
+        <strong>$144,000</strong>
+      </div>
+
+    </div>
+
+
+    <!-- COSTOS -->
+
+    <div class="finance-card">
+
+      <h3>
+        Costos mensuales
+      </h3>
+
+      <div class="finance-row">
+        <span>Ingredientes</span>
+        <strong>$45,580</strong>
+      </div>
+
+      <div class="finance-row">
+        <span>Desechables</span>
+        <strong>$8,000</strong>
+      </div>
+
+      <div class="finance-row">
+        <span>Gastos fijos</span>
+        <strong>$44,500</strong>
+      </div>
+
+      <div class="finance-row">
+        <span>Total de costos</span>
+        <strong>$98,080</strong>
+      </div>
+
+      <div class="finance-row">
+        <span>Utilidad estimada</span>
+        <strong>$45,920</strong>
+      </div>
+
+    </div>
+
+
+    <!-- RENTABILIDAD -->
+
+    <div class="finance-card highlight">
+
+      <h3>
+        Rentabilidad
+      </h3>
+
+      <div class="big-number">
+        31.9%
+      </div>
+
+      <p class="muted">
+        Margen de utilidad estimado sobre las ventas mensuales
+        al alcanzar la meta de 50 tickets diarios.
+      </p>
+
+      <div class="finance-row">
+        <span>Ventas mensuales</span>
+        <strong>$144,000</strong>
+      </div>
+
+      <div class="finance-row">
+        <span>Utilidad mensual</span>
+        <strong>$45,920</strong>
+      </div>
+
+    </div>
+
+
+    <!-- PUNTO DE EQUILIBRIO -->
+
+    <div class="finance-card">
+
+      <h3>
+        Punto de equilibrio
+      </h3>
+
+      <div class="big-number">
+        ≈ 25
+      </div>
+
+      <p class="muted">
+        RUTA CAFÉ necesita aproximadamente 25 clientes diarios
+        para cubrir sus costos bajo los supuestos actuales.
+      </p>
+
+      <div class="finance-row">
+        <span>Clientes / día</span>
+        <strong>≈ 25</strong>
+      </div>
+
+      <div class="finance-row">
+        <span>Clientes / mes</span>
+        <strong>≈ 599</strong>
+      </div>
+
+      <div class="finance-row">
+        <span>Meta proyectada</span>
+        <strong>50 / día</strong>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- INVERSIÓN INICIAL -->
+
+<section>
+
+  <div class="head">
+
+    <div>
+
+      <div class="kicker">
+        07 — Inversión inicial
+      </div>
+
+      <h2>
+        Empezar<br>
+        la ruta.
+      </h2>
+
+    </div>
+
+    <p class="intro">
+      La inversión inicial contempla el equipo, los insumos necesarios
+      para comenzar, la imagen del negocio, los permisos y un fondo
+      de capital de trabajo.
+    </p>
+
+  </div>
+
+
+  <div class="finance-card">
+
+    <div class="finance-row">
+      <span>Renta inicial food truck + depósito</span>
+      <strong>$35,000</strong>
+    </div>
+
+    <div class="finance-row">
+      <span>Máquina espresso 2 grupos</span>
+      <strong>$70,000</strong>
+    </div>
+
+    <div class="finance-row">
+      <span>Molino profesional</span>
+      <strong>$10,000</strong>
+    </div>
+
+    <div class="finance-row">
+      <span>Refrigerador</span>
+      <strong>$30,000</strong>
+    </div>
+
+    <div class="finance-row">
+      <span>Licuadora comercial</span>
+      <strong>$5,000</strong>
+    </div>
+
+    <div class="finance-row">
+      <span>Utensilios y equipo pequeño</span>
+      <strong>$15,000</strong>
+    </div>
+
+    <div class="finance-row">
+      <span>Contenedores, charolas y dispensadores</span>
+      <strong>$9,000</strong>
+    </div>
+
+    <div class="finance-row">
+      <span>Insumos iniciales</span>
+      <strong>$15,000</strong>
+    </div>
+
+    <div class="finance-row">
+      <span>Vasos, empaques y servilletas</span>
+      <strong>$5,000</strong>
+    </div>
+
+    <div class="finance-row">
+      <span>POS / caja / QR</span>
+      <strong>$1,350</strong>
+    </div>
+
+    <div class="finance-row">
+      <span>Branding, menú y letrero</span>
+      <strong>$8,800</strong>
+    </div>
+
+    <div class="finance-row">
+      <span>Permisos y trámites</span>
+      <strong>$10,000</strong>
+    </div>
+
+    <div class="finance-row">
+      <span>Capital de trabajo</span>
+      <strong>$25,000</strong>
+    </div>
+
+    <div
+      class="finance-row"
+      style="font-size:1.2rem;padding-top:22px"
+    >
+      <span>
+        <strong>INVERSIÓN INICIAL</strong>
+      </span>
+
+      <strong>
+        $239,150
+      </strong>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- RECUPERACIÓN -->
+
+<section>
+
+  <div class="feature">
+
+    <div>
+
+      <div class="kicker" style="color:#aebbb7">
+        08 — Recuperación
+      </div>
+
+      <h2>
+        ¿Cuándo recuperamos la inversión?
+      </h2>
+
+      <p>
+        Si RUTA CAFÉ alcanza gradualmente su objetivo de ventas, se estima
+        que la inversión inicial de $239,150 podría recuperarse aproximadamente
+        durante el noveno mes de operación.
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <div class="stats">
+
+        <div class="stat">
+          <strong>$239K</strong>
+          <span>inversión inicial</span>
+        </div>
+
+        <div class="stat">
+          <strong>$45.9K</strong>
+          <span>utilidad mensual objetivo</span>
+        </div>
+
+        <div class="stat">
+          <strong>≈ 9</strong>
+          <span>meses de recuperación</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="recovery">
+
+    <div class="recovery-step">
+      <strong>Mes 1</strong>
+      <span>Inicio y captación de clientes</span>
+    </div>
+
+    <div class="recovery-step">
+      <strong>Mes 3</strong>
+      <span>Comienzo de utilidades acumuladas</span>
+    </div>
+
+    <div class="recovery-step">
+      <strong>Mes 6</strong>
+      <span>Meta de 50 tickets diarios</span>
+    </div>
+
+    <div class="recovery-step">
+      <strong>Mes 9</strong>
+      <span>Recuperación estimada de la inversión</span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FINAL -->
+
+<section class="final">
+
+  <div class="kicker">
+    09 — RUTA CAFÉ
+  </div>
+
+  <h2>
+    Tu café.<br>
+    <em>Tu ritmo.</em><br>
+    Tu ruta.
+  </h2>
+
+  <p>
+    Una cafetería móvil creada para moverse con la ciudad:
+    universidades por la mañana, oficinas por la tarde y
+    corredores gastronómicos por la noche.
+  </p>
+
+  <a class="btn main" href="#menu">
+    Conoce el menú →
+  </a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <span>
+    © 2026 RUTA CAFÉ
+  </span>
+
+  <span>
+    tu café, tu ritmo
+  </span>
+
+</footer>
+
+</body>
+</html
