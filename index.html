@@ -1,232 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Educlick - Aprende con Apoyo</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RUTA CAFÉ — tu café, tu ritmo</title>
 <style>
-:root {
---primary-color: #1B6E67;
---secondary-color: #F2C14E;
---accent-color: #E07A5F;
---bg-main: #FAF3E0;
---bg-alt: #E8F6F3;
---text-color: #2F2D2E;
---card-bg: #FFFFFF;
---hover-color: #E07A5F;
-}
-* {
-box-sizing: border-box;
-}
-body {
-margin: 0;
-font-family: 'Poppins', sans-serif;
-background: var(--bg-main);
-color: var(--text-color);
-}
-header {
-background-color: var(--primary-color);
-color: var(--card-bg);
-padding: 2rem;
-text-align: center;
-font-size: 2.2rem;
-font-weight: 700;
-}
-nav {
-background: var(--secondary-color);
-max-width: 900px;
-margin: 1rem auto;
-padding: 0.75rem;
-border-radius: 0.75rem;
-box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-nav ul {
-display: flex;
-justify-content: center;
-gap: 2rem;
-list-style: none;
-margin: 0;
-padding: 0;
-}
-nav ul li a {
-color: var(--text-color);
-text-decoration: none;
-font-weight: 600;
-padding: 0.5rem 1rem;
-border-radius: 0.5rem;
-transition: background 0.3s;
-}
-nav ul li a:hover,
-nav ul li a.active {
-background: var(--hover-color);
-color: #fff;
-}
-.hero {
-background: url('https://source.unsplash.com/1600x900/?education,learning') no-repeat center/cover;
-color: var(--card-bg);
-text-align: center;
-padding: 6rem 1rem;
-font-size: 1.75rem;
-font-weight: 700;
-text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
-}
-.container {
-max-width: 900px;
-margin: auto;
-padding: 2rem 1rem;
-}
-section {
-margin-bottom: 3rem;
-padding: 2rem 1rem;
-border-radius: 1rem;
-}
-section:nth-of-type(even) {
-background: var(--bg-alt);
-}
-h2 {
-color: var(--primary-color);
-margin-bottom: 1rem;
-font-size: 1.8rem;
-}
-p {
-font-size: 1.1rem;
-margin-bottom: 1rem;
-}
-.tarjetas {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-gap: 1.5rem;
-}
-.tarjeta {
-background: var(--card-bg);
-padding: 1.5rem;
-border-radius: 1rem;
-box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-transition: transform 0.3s;
-}
-.tarjeta:hover {
-transform: translateY(-5px);
-}
-.social-media ul {
-list-style: none;
-padding: 0;
-display: flex;
-justify-content: center;
-gap: 1.5rem;
-}
-.social-media ul li a {
-font-size: 1.5rem;
-color: var(--text-color);
-transition: color 0.3s;
-}
-.social-media ul li a:hover {
-color: var(--hover-color);
-}
-.marquesina {
-position: fixed;
-bottom: 0;
-width: 100%;
-background: var(--secondary-color);
-color: var(--text-color);
-text-align: center;
-padding: 0.75rem;
-font-weight: 600;
-animation: scroll-left 15s linear infinite;
-}
-@keyframes scroll-left {
-from { transform: translateX(100%); }
-to { transform: translateX(-100%); }
-}
-footer {
-background: var(--text-color);
-color: var(--card-bg);
-text-align: center;
-padding: 2rem;
-font-size: 0.95rem;
-}
+:root{--cream:#f4f0eb;--sage:#d7e0dd;--ink:#263330;--muted:#65716e;--white:#fffdf9}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,system-ui,sans-serif;overflow-x:hidden}
+a{text-decoration:none;color:inherit}.nav{position:fixed;z-index:5;top:18px;left:50%;transform:translateX(-50%);width:min(1120px,calc(100% - 30px));padding:12px 16px 12px 22px;display:flex;justify-content:space-between;align-items:center;background:#f4f0ebd9;backdrop-filter:blur(18px);border:1px solid #fff;border-radius:999px;box-shadow:0 10px 35px #26333015}
+.logo{font-weight:950;letter-spacing:.15em;font-size:.9rem}.links{display:flex;gap:25px;font-size:.84rem;font-weight:700;color:#53615e}.cta{background:var(--ink);color:var(--cream);padding:11px 18px;border-radius:999px;font-weight:800;font-size:.82rem}
+.hero{min-height:100vh;padding:125px 7vw 65px;display:grid;grid-template-columns:1fr 1fr;align-items:center;position:relative}.hero:after{content:"";position:absolute;width:560px;height:560px;border-radius:50%;background:var(--sage);right:-170px;top:100px;z-index:-1}
+.eyebrow,.kicker{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:900;color:#687470}.eyebrow{display:flex;gap:9px;align-items:center;margin-bottom:22px}.dot{width:8px;height:8px;border-radius:50%;background:var(--ink)}
+h1{font-size:clamp(4.5rem,10vw,9rem);line-height:.78;letter-spacing:-.075em;margin:0;font-weight:950}h1 span{display:block;color:#65716e;font-style:italic;font-weight:500}
+.hero p{max-width:520px;margin:32px 0 0;color:#586561;font-size:1.06rem;line-height:1.7}.buttons{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}.btn{display:inline-block;padding:15px 22px;border-radius:999px;border:1px solid var(--ink);font-weight:800}.btn.main{background:var(--ink);color:var(--cream)}
+.visual{min-height:550px;display:grid;place-items:center;position:relative}.truck{width:min(550px,94%);aspect-ratio:1.25;position:relative;transform:rotate(-3deg);filter:drop-shadow(0 30px 25px #2633302b);animation:float 5s ease-in-out infinite}@keyframes float{50%{transform:rotate(0) translateY(-12px)}}
+.body{position:absolute;left:5%;right:5%;bottom:22%;height:49%;background:var(--white);border:5px solid var(--ink);border-radius:34px 38px 20px 20px}.cab{position:absolute;right:0;bottom:22%;width:34%;height:45%;background:var(--sage);border:5px solid var(--ink);border-left:0;border-radius:0 34px 20px 0}.window{position:absolute;right:8%;top:13%;width:61%;height:40%;background:var(--cream);border:4px solid var(--ink);border-radius:12px 25px 12px 12px}.serving{position:absolute;left:14%;top:28%;width:44%;height:28%;background:var(--sage);border:4px solid var(--ink);border-radius:12px}.sign{position:absolute;left:18%;top:13%;font-size:1.4rem;font-weight:950;letter-spacing:.13em}.wheel{position:absolute;bottom:12%;width:74px;height:74px;background:var(--ink);border:12px solid #586561;border-radius:50%;box-shadow:inset 0 0 0 7px var(--cream)}.w1{left:17%}.w2{right:17%}.badge{position:absolute;right:0;bottom:8%;width:145px;height:145px;border-radius:50%;display:grid;place-items:center;text-align:center;background:var(--ink);color:var(--cream);font-weight:900;font-size:.82rem;line-height:1.3;letter-spacing:.06em}
+.marquee{background:var(--ink);color:var(--cream);overflow:hidden;white-space:nowrap;padding:17px 0}.track{font-size:.75rem;font-weight:900;letter-spacing:.16em;animation:move 22s linear infinite;display:inline-block}@keyframes move{to{transform:translateX(-50%)}}
+section{padding:105px 7vw}.head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:45px}h2{font-size:clamp(2.8rem,6vw,5.8rem);line-height:.9;letter-spacing:-.065em;margin:12px 0 0}.intro{max-width:400px;color:#63706d;line-height:1.7}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{padding:30px;min-height:270px;border:1px solid #2633301c;border-radius:28px;background:#fffdf9aa;transition:.3s}.card:nth-child(2){background:var(--sage);transform:translateY(28px)}.card:hover{transform:translateY(-8px) rotate(.5deg);box-shadow:0 25px 70px #26333020}.card:nth-child(2):hover{transform:translateY(18px) rotate(.5deg)}.num{font-size:.7rem;font-weight:900;letter-spacing:.12em}.icon{font-size:2.5rem;margin:28px 0 18px}.card h3{font-size:1.5rem;margin:0 0 10px}.card p{color:#61706c;line-height:1.6}
+.menu{display:grid;grid-template-columns:.7fr 1.3fr;gap:60px}.sticky{position:sticky;top:120px}.sticky p{max-width:350px;color:#63706d;line-height:1.7;margin:25px 0}.items{display:grid;grid-template-columns:1fr 1fr}.item{padding:20px;border-top:1px solid #2633301a;display:flex;justify-content:space-between;gap:12px}.item h4{margin:0;font-size:1rem}.item small{color:#75817e}.price{font-weight:900;white-space:nowrap}
+.feature{background:var(--ink);color:var(--cream);border-radius:38px;padding:60px;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}.feature p{color:#c5cfcc;line-height:1.75;max-width:520px;margin-top:25px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat{border:1px solid #f4f0eb29;border-radius:22px;padding:25px 18px}.stat strong{display:block;font-size:2.5rem;letter-spacing:-.06em}.stat span{color:#aebbb7;font-size:.8rem}
+.route{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}.map{height:450px;background:var(--sage);border-radius:40px;position:relative;overflow:hidden}.map:before{content:"";position:absolute;width:620px;height:250px;border:5px dashed var(--ink);border-radius:50%;left:-90px;top:105px;transform:rotate(-13deg);opacity:.65}.pin{position:absolute;width:54px;height:54px;border-radius:50%;background:var(--ink);color:var(--cream);display:grid;place-items:center;font-weight:900}.p1{left:20%;top:23%}.p2{right:20%;top:45%}.p3{left:43%;bottom:18%}.stops{margin-top:28px}.stop{padding:17px 0;border-bottom:1px solid #2633301a}.stop b{font-size:.78rem;letter-spacing:.08em}.stop span{display:block;color:#687571;margin-top:5px;font-size:.9rem}
+.final{text-align:center;padding-bottom:125px}.final h2{max-width:850px;margin:auto}.final p{max-width:570px;margin:25px auto;color:#65716e;line-height:1.7}footer{border-top:1px solid #2633301a;padding:25px 7vw;display:flex;justify-content:space-between;color:#697571;font-size:.78rem}
+@media(max-width:850px){.links{display:none}.hero,.menu,.feature,.route{grid-template-columns:1fr}.hero{padding-top:130px}.visual{min-height:400px}.cards{grid-template-columns:1fr}.card:nth-child(2){transform:none}.card:nth-child(2):hover{transform:translateY(-8px)}.sticky{position:static}.feature{padding:38px}.items{grid-template-columns:1fr}.head{display:block}.intro{margin-top:20px}}
+@media(max-width:520px){h1{font-size:4.3rem}.hero,section{padding-left:22px;padding-right:22px}.truck{width:100%}.badge{width:105px;height:105px;font-size:.68rem}.wheel{width:55px;height:55px;border-width:8px}.map{height:350px}}
 </style>
 </head>
 <body>
-<header>Educlick</header>
-<nav>
-<ul>
-<li><a href="index.html" class="active">Inicio</a></li>
-<li><a href="servicios.html">Servicios</a></li>
-<li><a href="Blog.html">Blog</a></li>
-</ul>
-</nav>
+<nav class="nav"><a class="logo" href="#">RUTA CAFÉ</a><div class="links"><a href="#concepto">Concepto</a><a href="#menu">Menú</a><a href="#ruta">La ruta</a></div><a class="cta" href="#menu">Ver menú →</a></nav>
 
-<div class="hero">
-<h1>🧠 Bienvenid@ a Educlick</h1>
-<p>📚 Conectamos aprendizaje con resultados reales</p>
-</div>
+<header class="hero">
+<div><div class="eyebrow"><span class="dot"></span>Cafetería express · Food truck</div><h1>RUTA <span>CAFÉ</span></h1><p>Tu café, tu ritmo. Café de especialidad, desayunos y snacks que se mueven contigo: de las mañanas entre oficinas y universidades a las tardes de mercados, eventos y festivales.</p><div class="buttons"><a class="btn main" href="#menu">Explorar menú</a><a class="btn" href="#ruta">Descubrir la ruta</a></div></div>
+<div class="visual"><div class="truck"><div class="body"></div><div class="cab"><div class="window"></div></div><div class="serving"></div><div class="sign">RUTA</div><div class="wheel w1"></div><div class="wheel w2"></div></div><div class="badge">GOOD<br>COFFEE<br>ON THE<br>MOVE</div></div>
+</header>
 
-<main class="container">
-<section aria-label="Acerca de Nosotros">
-<h2>Acerca de Nosotros</h2>
-<p>En <strong>Educlick</strong>, somos un equipo de tutores apasionados por la enseñanza. Nuestro objetivo es acompañar a estudiantes de primaria, secundaria y preparatoria en su proceso académico, brindando tutorías personalizadas, apoyo emocional y estrategias efectivas de estudio.</p>
-<p>Ya sea que necesites ayuda puntual con una materia, preparación para exámenes o reforzar tus bases, estamos aquí para apoyarte con clases claras, dinámicas y adaptadas a tu estilo de aprendizaje.</p>
-</section>
+<div class="marquee"><div class="track">RUTA CAFÉ · TU CAFÉ, TU RITMO · RUTA CAFÉ · TU CAFÉ, TU RITMO · RUTA CAFÉ · TU CAFÉ, TU RITMO · RUTA CAFÉ · TU CAFÉ, TU RITMO ·</div></div>
 
-<section id="servicios" aria-label="Qué ofrecemos">
-<h2>🔍 ¿Qué ofrecemos?</h2>
-<div class="tarjetas">
-<div class="tarjeta">✅ Matemáticas</div>
-<div class="tarjeta">✅ Biología</div>
-<div class="tarjeta">✅ Historia</div>
-<div class="tarjeta">✅ Física y Química (básico)</div>
-<div class="tarjeta">✅ Español y redacción</div>
-<div class="tarjeta">✅ Inglés (básico-intermedio)</div>
-<div class="tarjeta">✅ Asesoría en tareas, proyectos y organización escolar</div>
-</div>
-<p><strong>Modalidades:</strong> 💻 Online (Zoom, Meet) / 📍 Presenciales según tu ubicación.</p>
-<p><strong>Duración:</strong> ⏱️ 30, 45 o 60 minutos por sesión. Horarios adaptables.</p>
-</section>
+<section id="concepto"><div class="head"><div><div class="kicker">01 — El concepto</div><h2>Hecho para<br>seguir tu día.</h2></div><p class="intro">La experiencia de una cafetería contemporánea con la libertad de un food truck: menos espera, más movimiento y un menú pensado para llevar.</p></div>
+<div class="cards">
+<article class="card"><div class="num">01 / RÁPIDO</div><div class="icon">☕</div><h3>Café que acompaña.</h3><p>Preparaciones sencillas y consistentes para que tu pedido llegue rápido sin sacrificar la experiencia.</p></article>
+<article class="card"><div class="num">02 / MÓVIL</div><div class="icon">✦</div><h3>La ciudad es nuestra mesa.</h3><p>Nos movemos hacia puntos de alta afluencia: oficinas, universidades, mercados, eventos y festivales.</p></article>
+<article class="card"><div class="num">03 / CERCANO</div><div class="icon">↗</div><h3>Tu ritmo, tu elección.</h3><p>Café, bebidas frescas, bakery y opciones saladas para distintos momentos del día.</p></article>
+</div></section>
 
-<section aria-label="Quiénes somos">
-<h2>🧑‍🏫 ¿Quiénes somos?</h2>
-<p>Somos estudiantes y profesionales comprometidos con la educación personalizada. Contamos con experiencia en docencia, habilidades pedagógicas y verdadera vocación de enseñar.</p>
-<ul>
-<li>• Acompañamiento académico personalizado</li>
-<li>• Técnicas de estudio efectivas</li>
-<li>• Comunicación clara y respetuosa</li>
-<li>• Motivación y confianza continua</li>
-</ul>
-</section>
+<section id="menu"><div class="menu"><div class="sticky"><div class="kicker">02 — Menú</div><h2>Pequeño menú.<br>Gran antojo.</h2><p>Una selección diseñada para un servicio ágil y una operación eficiente dentro del food truck.</p><a class="btn main" href="#concepto">↑ Volver arriba</a></div>
+<div class="items">
+<div class="item"><div><h4>Americano</h4><small>Espresso + agua</small></div><span class="price">$45</span></div>
+<div class="item"><div><h4>Capuchino</h4><small>Espresso + leche</small></div><span class="price">$60</span></div>
+<div class="item"><div><h4>Latte</h4><small>Suave y cremoso</small></div><span class="price">$60</span></div>
+<div class="item"><div><h4>Jugo de naranja</h4><small>Natural</small></div><span class="price">$55</span></div>
+<div class="item"><div><h4>Jugo verde</h4><small>Frutas + vegetales</small></div><span class="price">$60</span></div>
+<div class="item"><div><h4>Licuado de fresa</h4><small>Leche + fruta</small></div><span class="price">$55</span></div>
+<div class="item"><div><h4>Agua de jamaica</h4><small>Fresca</small></div><span class="price">$40</span></div>
+<div class="item"><div><h4>Horchata</h4><small>Arroz + canela</small></div><span class="price">$45</span></div>
+<div class="item"><div><h4>Concha</h4><small>Pan dulce</small></div><span class="price">$25</span></div>
+<div class="item"><div><h4>Croissant jamón & queso</h4><small>Caliente</small></div><span class="price">$60</span></div>
+<div class="item"><div><h4>Baguette de pollo</h4><small>Pollo + vegetales</small></div><span class="price">$100</span></div>
+<div class="item"><div><h4>Baguette pollo + aguacate</h4><small>Especial</small></div><span class="price">$110</span></div>
+<div class="item"><div><h4>Chilaquiles con pollo</h4><small>Roja o verde</small></div><span class="price">$120</span></div>
+<div class="item"><div><h4>Ensalada de pollo</h4><small>Verdes + proteína</small></div><span class="price">$115</span></div>
+<div class="item"><div><h4>Bowl de fruta</h4><small>Fruta de temporada</small></div><span class="price">$60</span></div>
+<div class="item"><div><h4>Bowl + yogurt + granola</h4><small>Completo</small></div><span class="price">$70</span></div>
+</div></div></section>
 
-<section aria-label="Beneficios">
-<h2>⭐ Beneficios de Educlick</h2>
-<div class="tarjetas">
-<div class="tarjeta">✨ Atención individual o grupos reducidos</div>
-<div class="tarjeta">✨ Avances visibles desde la primera sesión</div>
-<div class="tarjeta">✨ Seguimiento constante</div>
-<div class="tarjeta">✨ Precios justos y accesibles</div>
-<div class="tarjeta">✨ Material de apoyo exclusivo</div>
-<div class="tarjeta">✨ Diagnóstico inicial gratuito</div>
-</div>
-</section>
+<section><div class="feature"><div><div class="kicker" style="color:#aebbb7">03 — El proyecto</div><h2>Una cafetería que no espera a que llegues.</h2><p>RUTA CAFÉ aprovecha la movilidad como parte de su propuesta de valor: acercar una experiencia de café y alimentos a donde realmente está la gente.</p></div><div class="stats"><div class="stat"><strong>50</strong><span>tickets / día</span></div><div class="stat"><strong>6</strong><span>días / semana</span></div><div class="stat"><strong>$120</strong><span>ticket promedio</span></div></div></div></section>
 
-<section aria-label="Preguntas Frecuentes">
-<h2>❓ Preguntas Frecuentes</h2>
-<ul class="tarjetas">
-<li class="tarjeta"><strong>¿Cuál es el costo por sesión?</strong><br>Varía según duración y modalidad. Contáctanos para cotización.</li>
-<li class="tarjeta"><strong>¿Qué niveles atienden?</strong><br>Primaria, secundaria y preparatoria.</li>
-<li class="tarjeta"><strong>¿Sesiones individuales o grupales?</strong><br>Ambas opciones disponibles.</li>
-<li class="tarjeta"><strong>¿Puedo cancelar?</strong><br>Sí, con mínimo 12 h de antelación.</li>
-</ul>
-</section>
-</main>
+<section id="ruta"><div class="route"><div class="map"><div class="pin p1">01</div><div class="pin p2">02</div><div class="pin p3">03</div></div><div><div class="kicker">04 — La ruta</div><h2>Donde está<br>el movimiento.</h2><p style="color:#65716e;line-height:1.7;margin-top:25px">La ubicación cambia con el momento del día para buscar el flujo adecuado de clientes.</p><div class="stops"><div class="stop"><b>MAÑANA</b><span>Oficinas · universidades · zonas de tránsito</span></div><div class="stop"><b>TARDE</b><span>Mercados · plazas · puntos de encuentro</span></div><div class="stop"><b>NOCHE</b><span>Eventos · festivales · actividades especiales</span></div></div></div></div></section>
 
-<!-- Enlaces a redes sociales -->
-<section class="social-media">
-<ul>
-</ul>
-</section>
-
-<div class="marquesina">
-<div>🎉 ¡Bienvenido a Educlick! Mejora tu aprendizaje hoy mismo. 🎓</div>
-</div>
-
-<footer>© 2024 Educlick. Todos los derechos reservados.</footer>
-</body>
-</html>
+<section class="final"><div class="kicker">05 — RUTA CAFÉ</div><h2>Tu café.<br><em>Tu ritmo.</em><br>Tu ruta.</h2><p>Un concepto creado para moverse con la ciudad y convertir cada parada en una experiencia.</p><a class="btn main" href="#menu">Conoce el menú →</a></section>
+<footer><span>© 2026 RUTA CAFÉ</span><span>tu café, tu ritmo</span></footer>
+</body></html>
