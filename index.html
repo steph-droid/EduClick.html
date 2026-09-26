@@ -1,1745 +1,746 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>RUTA CAFÉ — tu café, tu ritmo</title>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KEENFINITY // HUMAN SYSTEM</title>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
 :root{
-  --cream:#f4f0eb;
-  --sage:#d7e0dd;
-  --ink:#263330;
-  --muted:#65716e;
-  --white:#fffdf9
+  --bg:#050812; --bg2:#09111f; --text:#eef7ff; --muted:#8ea3b8;
+  --cyan:#35e6ff; --blue:#4f7cff; --violet:#a56cff;
+  --line:rgba(120,190,255,.20); --glass:rgba(12,24,42,.64);
 }
-
-*{box-sizing:border-box}
-
+*{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-
-body{
-  margin:0;
-  background:var(--cream);
-  color:var(--ink);
-  font-family:Inter,system-ui,sans-serif;
-  overflow-x:hidden
+body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+body:before{
+ content:"";position:fixed;inset:0;z-index:-3;
+ background:
+ radial-gradient(circle at 18% 12%,rgba(53,230,255,.14),transparent 28%),
+ radial-gradient(circle at 82% 24%,rgba(165,108,255,.13),transparent 30%),
+ radial-gradient(circle at 52% 85%,rgba(79,124,255,.12),transparent 35%);
 }
-
-a{
-  text-decoration:none;
-  color:inherit
+body:after{
+ content:"";position:fixed;inset:0;z-index:-2;opacity:.35;
+ background-image:linear-gradient(rgba(120,190,255,.035) 1px,transparent 1px),
+ linear-gradient(90deg,rgba(120,190,255,.035) 1px,transparent 1px);
+ background-size:70px 70px;
+ mask-image:linear-gradient(to bottom,black,transparent 92%);
 }
-
+a{color:inherit;text-decoration:none}
+section{min-height:100vh;padding:110px 7vw;position:relative}
+.container{max-width:1250px;margin:auto}
+.kicker{font:600 12px "Space Grotesk";letter-spacing:.22em;color:var(--cyan);text-transform:uppercase}
+h1,h2,h3{font-family:"Space Grotesk",sans-serif}
+h2{font-size:clamp(42px,6vw,82px);line-height:.94;letter-spacing:-.055em}
+p{color:var(--muted);line-height:1.7}
+.glow{color:var(--cyan);text-shadow:0 0 28px rgba(53,230,255,.5)}
 .nav{
-  position:fixed;
-  z-index:5;
-  top:18px;
-  left:50%;
-  transform:translateX(-50%);
-  width:min(1120px,calc(100% - 30px));
-  padding:12px 16px 12px 22px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background:#f4f0ebd9;
-  backdrop-filter:blur(18px);
-  border:1px solid #fff;
-  border-radius:999px;
-  box-shadow:0 10px 35px #26333015
+ position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:20;
+ width:min(92%,1100px);padding:12px 16px;border:1px solid var(--line);
+ background:rgba(5,8,18,.68);backdrop-filter:blur(18px);border-radius:20px;
+ display:flex;align-items:center;justify-content:space-between;
 }
-
-.logo{
-  font-weight:950;
-  letter-spacing:.15em;
-  font-size:.9rem
+.brand{font:700 16px "Space Grotesk";letter-spacing:.08em}
+.brand span{color:var(--cyan)}
+.navlinks{display:flex;gap:8px}
+.navlinks a{font-size:12px;color:#aebfd0;padding:9px 12px;border-radius:12px}
+.navlinks a:hover{background:rgba(53,230,255,.08);color:white}
+.hero{display:grid;place-items:center;text-align:center;overflow:hidden}
+.hero-inner{position:relative;z-index:2}
+.orb{
+ width:270px;height:270px;border-radius:50%;margin:0 auto 38px;
+ background:radial-gradient(circle at 35% 30%,#c8fbff 0 2%,var(--cyan) 7%,#146a9a 30%,#08142b 66%,transparent 70%);
+ box-shadow:0 0 35px rgba(53,230,255,.35),0 0 120px rgba(79,124,255,.22);
+ animation:float 5s ease-in-out infinite;
+ position:relative;
 }
+.orb:before,.orb:after{content:"";position:absolute;inset:-34px;border:1px solid rgba(53,230,255,.28);border-radius:50%;transform:rotate(25deg) scaleY(.35)}
+.orb:after{inset:-60px;transform:rotate(-30deg) scaleY(.25);border-color:rgba(165,108,255,.25)}
+@keyframes float{50%{transform:translateY(-12px) scale(1.02)}}
+.hero h1{font-size:clamp(60px,12vw,150px);line-height:.82;letter-spacing:-.08em}
+.hero .tag{font:500 clamp(15px,2vw,23px) "Space Grotesk";margin:22px 0 35px;color:#c9d8e7}
+.stats-row{display:flex;justify-content:center;gap:34px;flex-wrap:wrap}
+.stat{text-align:left;border-left:1px solid var(--line);padding-left:15px}
+.stat b{display:block;font:700 25px "Space Grotesk";color:white}.stat small{color:var(--muted)}
+.scroll{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);font-size:11px;color:#6e859b;letter-spacing:.2em}
 
-.links{
-  display:flex;
-  gap:25px;
-  font-size:.84rem;
-  font-weight:700;
-  color:#53615e
+.intro-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:60px;align-items:center}
+.big-quote{font:500 clamp(30px,4vw,55px) "Space Grotesk";line-height:1.05;letter-spacing:-.04em}
+.big-quote span{color:var(--cyan)}
+.card{
+ border:1px solid var(--line);background:linear-gradient(145deg,rgba(18,37,61,.72),rgba(7,14,27,.62));
+ border-radius:28px;padding:28px;backdrop-filter:blur(14px);
+ box-shadow:inset 0 1px rgba(255,255,255,.04),0 20px 80px rgba(0,0,0,.2);
 }
+.timeline{position:relative;margin-top:65px}
+.timeline:before{content:"";position:absolute;left:22px;top:0;bottom:0;width:1px;background:linear-gradient(var(--cyan),var(--violet),transparent)}
+.event{position:relative;padding-left:65px;margin-bottom:55px}
+.dot{position:absolute;left:14px;top:5px;width:17px;height:17px;border-radius:50%;background:var(--cyan);box-shadow:0 0 22px var(--cyan)}
+.event .year{font:700 13px "Space Grotesk";color:var(--cyan);letter-spacing:.12em}
+.event h3{font-size:29px;margin:7px 0 10px}
+.event strong{color:white}
 
-.cta{
-  background:var(--ink);
-  color:var(--cream);
-  padding:11px 18px;
-  border-radius:999px;
-  font-weight:800;
-  font-size:.82rem
+.mind-wrap{margin-top:60px;min-height:650px;position:relative;display:grid;place-items:center}
+.mind-center{
+ width:190px;height:190px;border-radius:50%;display:grid;place-items:center;text-align:center;
+ background:radial-gradient(circle,#133e62,#071326 65%);
+ border:1px solid rgba(53,230,255,.55);box-shadow:0 0 55px rgba(53,230,255,.2);
+ position:relative;z-index:4;
 }
-
-.hero{
-  min-height:100vh;
-  padding:125px 7vw 65px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  align-items:center;
-  position:relative
+.mind-center b{font:700 25px "Space Grotesk";letter-spacing:-.04em}
+.mind-center small{color:var(--cyan);letter-spacing:.15em}
+.node{
+ position:absolute;width:180px;min-height:105px;padding:18px;border-radius:22px;
+ border:1px solid var(--line);background:rgba(9,20,35,.82);backdrop-filter:blur(15px);
+ cursor:pointer;transition:.35s;z-index:5;
 }
+.node:hover,.node.active{transform:scale(1.07);border-color:var(--cyan);box-shadow:0 0 35px rgba(53,230,255,.18)}
+.node b{font:600 18px "Space Grotesk";display:block;margin-bottom:7px}
+.node small{color:#8298ad;line-height:1.35}
+.n1{top:0;left:50%;transform:translateX(-50%)} .n1:hover{transform:translateX(-50%) scale(1.07)}
+.n2{right:3%;top:22%}.n3{right:5%;bottom:17%}.n4{left:5%;bottom:17%}.n5{left:3%;top:22%}
+.connector{position:absolute;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);transform-origin:left;opacity:.35;z-index:1}
+.c1{width:220px;left:50%;top:33%;transform:rotate(-90deg)}
+.c2{width:280px;left:56%;top:43%;transform:rotate(-19deg)}
+.c3{width:270px;left:54%;top:60%;transform:rotate(22deg)}
+.c4{width:270px;left:44%;top:60%;transform:rotate(158deg)}
+.c5{width:280px;left:44%;top:43%;transform:rotate(199deg)}
+.detail-panel{margin-top:20px;min-height:125px;text-align:center}
+.detail-panel h3{font-size:26px;margin-bottom:8px}.detail-panel p{max-width:700px;margin:auto}
 
-.hero:after{
+.talent-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:60px}
+.talent-card{padding:25px;border-radius:25px;border:1px solid var(--line);background:rgba(10,20,35,.62);transition:.3s}
+.talent-card:hover{transform:translateY(-8px);border-color:var(--cyan)}
+.icon{font-size:28px;margin-bottom:22px}.talent-card h3{font-size:22px;margin-bottom:10px}.talent-card p{font-size:14px}
+
+.network{margin-top:65px;display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.area{padding:28px;border-radius:25px;border:1px solid var(--line);background:var(--glass);transition:.3s}
+.area:hover{transform:translateY(-5px);border-color:var(--violet)}
+.area .num{font:700 12px "Space Grotesk";color:var(--cyan)}
+.area h3{font-size:28px;margin:10px 0}.area p{font-size:14px}
+
+.numbers{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:60px}
+.number-card{min-height:190px;padding:28px;border:1px solid var(--line);border-radius:26px;background:rgba(10,20,35,.65);display:flex;flex-direction:column;justify-content:space-between}
+.number-card b{font:700 clamp(42px,5vw,72px) "Space Grotesk";letter-spacing:-.06em;color:white}
+.number-card span{color:var(--cyan);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+
+.final{display:grid;place-items:center;text-align:center;background:radial-gradient(circle at 50% 50%,rgba(53,230,255,.08),transparent 45%)}
+.final h2{max-width:1000px;margin:25px auto}
+.final p{max-width:700px;margin:auto}
+.cta{display:inline-flex;margin-top:35px;padding:14px 20px;border:1px solid rgba(53,230,255,.5);border-radius:999px;color:var(--cyan);background:rgba(53,230,255,.05)}
+
+.reveal{opacity:0;transform:translateY(35px);transition:opacity .8s,transform .8s}.reveal.show{opacity:1;transform:none}
+@media(max-width:850px){
+ section{padding:90px 5vw}.navlinks{display:none}.intro-grid{grid-template-columns:1fr}
+ .talent-grid,.numbers{grid-template-columns:1fr 1fr}.network{grid-template-columns:1fr}
+ .mind-wrap{min-height:900px}.node{width:145px}.n1{top:30px}.n2{right:0;top:25%}.n3{right:0;bottom:18%}.n4{left:0;bottom:18%}.n5{left:0;top:25%}
+}
+@media(max-width:520px){.talent-grid,.numbers{grid-template-columns:1fr}.orb{width:200px;height:200px}.mind-wrap{min-height:850px}}
+
+.logo-mark{
+  width:34px;height:34px;display:inline-grid;place-items:center;position:relative;
+  margin-right:9px;vertical-align:middle;
+}
+.logo-mark:before,.logo-mark:after{
+  content:"";position:absolute;border:2px solid var(--cyan);border-radius:50%;
+  transform:rotate(45deg) scaleY(.55);
+}
+.logo-mark:before{inset:3px 1px}
+.logo-mark:after{inset:8px 5px;border-color:#fff;transform:rotate(-45deg) scaleY(.55)}
+.logo-dot{width:6px;height:6px;background:var(--cyan);border-radius:50%;box-shadow:0 0 14px var(--cyan);z-index:2}
+.brand-lockup{display:flex;align-items:center}
+.hero-logo{display:inline-flex;align-items:center;justify-content:center;margin-bottom:22px;padding:10px 17px 10px 11px;border:1px solid rgba(53,230,255,.28);border-radius:18px;background:rgba(8,20,34,.5);box-shadow:0 0 35px rgba(53,230,255,.08)}
+.hero-logo .logo-mark{width:48px;height:48px}
+.hero-logo .logo-mark:before{inset:4px 1px}.hero-logo .logo-mark:after{inset:11px 7px}
+.hero-logo .logo-word{font:700 24px "Space Grotesk";letter-spacing:.12em}
+.hero-logo .logo-word span{color:var(--cyan)}
+.keyword-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.keyword{padding:9px 13px;border:1px solid rgba(53,230,255,.22);border-radius:999px;background:rgba(53,230,255,.045);color:#dcefff;font:500 12px "Space Grotesk";letter-spacing:.04em}
+.keyword.hot{border-color:rgba(165,108,255,.35);background:rgba(165,108,255,.07)}
+.people-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;margin-top:55px}
+.profile-panel{padding:32px;border-radius:28px;border:1px solid var(--line);background:rgba(10,20,35,.68)}
+.profile-panel h3{font-size:30px;margin:10px 0}
+.mini-label{font:600 11px "Space Grotesk";letter-spacing:.18em;color:var(--cyan);text-transform:uppercase}
+@media(max-width:850px){.people-layout{grid-template-columns:1fr}}
+
+
+/* =========================
+   MIND MAP 2.0
+========================= */
+.mindmap-section{
+  position:relative;
+  min-height:980px;
+  overflow:hidden;
+}
+.mindmap-stage{
+  position:relative;
+  width:min(1180px,96vw);
+  height:820px;
+  margin:20px auto 0;
+}
+.mindmap-stage:before{
   content:"";
   position:absolute;
-  width:560px;
-  height:560px;
+  inset:8% 6%;
+  border:1px solid rgba(53,230,255,.08);
   border-radius:50%;
-  background:var(--sage);
-  right:-170px;
-  top:100px;
-  z-index:-1
+  box-shadow:0 0 100px rgba(53,230,255,.04) inset;
 }
-
-.eyebrow,.kicker{
-  font-size:.72rem;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  font-weight:900;
-  color:#687470
-}
-
-.eyebrow{
-  display:flex;
-  gap:9px;
-  align-items:center;
-  margin-bottom:22px
-}
-
-.dot{
-  width:8px;
-  height:8px;
-  border-radius:50%;
-  background:var(--ink)
-}
-
-h1{
-  font-size:clamp(4.5rem,10vw,9rem);
-  line-height:.78;
-  letter-spacing:-.075em;
-  margin:0;
-  font-weight:950
-}
-
-h1 span{
-  display:block;
-  color:#65716e;
-  font-style:italic;
-  font-weight:500
-}
-
-.hero p{
-  max-width:520px;
-  margin:32px 0 0;
-  color:#586561;
-  font-size:1.06rem;
-  line-height:1.7
-}
-
-.buttons{
-  display:flex;
-  gap:12px;
-  margin-top:28px;
-  flex-wrap:wrap
-}
-
-.btn{
-  display:inline-block;
-  padding:15px 22px;
-  border-radius:999px;
-  border:1px solid var(--ink);
-  font-weight:800
-}
-
-.btn.main{
-  background:var(--ink);
-  color:var(--cream)
-}
-
-.visual{
-  min-height:550px;
-  display:grid;
-  place-items:center;
-  position:relative
-}
-
-.truck{
-  width:min(550px,94%);
-  aspect-ratio:1.25;
-  position:relative;
-  transform:rotate(-3deg);
-  filter:drop-shadow(0 30px 25px #2633302b);
-  animation:float 5s ease-in-out infinite
-}
-
-@keyframes float{
-  50%{
-    transform:rotate(0) translateY(-12px)
-  }
-}
-
-.body{
+.mm-lines{
   position:absolute;
-  left:5%;
-  right:5%;
-  bottom:22%;
-  height:49%;
-  background:var(--white);
-  border:5px solid var(--ink);
-  border-radius:34px 38px 20px 20px
-}
-
-.cab{
-  position:absolute;
-  right:0;
-  bottom:22%;
-  width:34%;
-  height:45%;
-  background:var(--sage);
-  border:5px solid var(--ink);
-  border-left:0;
-  border-radius:0 34px 20px 0
-}
-
-.window{
-  position:absolute;
-  right:8%;
-  top:13%;
-  width:61%;
-  height:40%;
-  background:var(--cream);
-  border:4px solid var(--ink);
-  border-radius:12px 25px 12px 12px
-}
-
-.serving{
-  position:absolute;
-  left:14%;
-  top:28%;
-  width:44%;
-  height:28%;
-  background:var(--sage);
-  border:4px solid var(--ink);
-  border-radius:12px
-}
-
-.sign{
-  position:absolute;
-  left:18%;
-  top:13%;
-  font-size:1.4rem;
-  font-weight:950;
-  letter-spacing:.13em
-}
-
-.wheel{
-  position:absolute;
-  bottom:12%;
-  width:74px;
-  height:74px;
-  background:var(--ink);
-  border:12px solid #586561;
-  border-radius:50%;
-  box-shadow:inset 0 0 0 7px var(--cream)
-}
-
-.w1{left:17%}
-.w2{right:17%}
-
-.badge{
-  position:absolute;
-  right:0;
-  bottom:8%;
-  width:145px;
-  height:145px;
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  text-align:center;
-  background:var(--ink);
-  color:var(--cream);
-  font-weight:900;
-  font-size:.82rem;
-  line-height:1.3;
-  letter-spacing:.06em
-}
-
-.marquee{
-  background:var(--ink);
-  color:var(--cream);
-  overflow:hidden;
-  white-space:nowrap;
-  padding:17px 0
-}
-
-.track{
-  font-size:.75rem;
-  font-weight:900;
-  letter-spacing:.16em;
-  animation:move 22s linear infinite;
-  display:inline-block
-}
-
-@keyframes move{
-  to{
-    transform:translateX(-50%)
-  }
-}
-
-section{
-  padding:105px 7vw
-}
-
-.head{
-  display:flex;
-  justify-content:space-between;
-  gap:30px;
-  align-items:end;
-  margin-bottom:45px
-}
-
-h2{
-  font-size:clamp(2.8rem,6vw,5.8rem);
-  line-height:.9;
-  letter-spacing:-.065em;
-  margin:12px 0 0
-}
-
-.intro{
-  max-width:400px;
-  color:#63706d;
-  line-height:1.7
-}
-
-.cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px
-}
-
-.card{
-  padding:30px;
-  min-height:270px;
-  border:1px solid #2633301c;
-  border-radius:28px;
-  background:#fffdf9aa;
-  transition:.3s
-}
-
-.card:nth-child(2){
-  background:var(--sage);
-  transform:translateY(28px)
-}
-
-.card:hover{
-  transform:translateY(-8px) rotate(.5deg);
-  box-shadow:0 25px 70px #26333020
-}
-
-.card:nth-child(2):hover{
-  transform:translateY(18px) rotate(.5deg)
-}
-
-.num{
-  font-size:.7rem;
-  font-weight:900;
-  letter-spacing:.12em
-}
-
-.icon{
-  font-size:2.5rem;
-  margin:28px 0 18px
-}
-
-.card h3{
-  font-size:1.5rem;
-  margin:0 0 10px
-}
-
-.card p{
-  color:#61706c;
-  line-height:1.6
-}
-
-.menu{
-  display:grid;
-  grid-template-columns:.7fr 1.3fr;
-  gap:60px
-}
-
-.sticky{
-  position:sticky;
-  top:120px
-}
-
-.sticky p{
-  max-width:350px;
-  color:#63706d;
-  line-height:1.7;
-  margin:25px 0
-}
-
-.items{
-  display:grid;
-  grid-template-columns:1fr 1fr
-}
-
-.item{
-  padding:20px;
-  border-top:1px solid #2633301a;
-  display:flex;
-  justify-content:space-between;
-  gap:12px
-}
-
-.item h4{
-  margin:0;
-  font-size:1rem
-}
-
-.item small{
-  color:#75817e
-}
-
-.price{
-  font-weight:900;
-  white-space:nowrap
-}
-
-.feature{
-  background:var(--ink);
-  color:var(--cream);
-  border-radius:38px;
-  padding:60px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:50px;
-  align-items:center
-}
-
-.feature p{
-  color:#c5cfcc;
-  line-height:1.75;
-  max-width:520px;
-  margin-top:25px
-}
-
-.stats{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px
-}
-
-.stat{
-  border:1px solid #f4f0eb29;
-  border-radius:22px;
-  padding:25px 18px
-}
-
-.stat strong{
-  display:block;
-  font-size:2.5rem;
-  letter-spacing:-.06em
-}
-
-.stat span{
-  color:#aebbb7;
-  font-size:.8rem
-}
-
-/* MAPA INTERACTIVO */
-
-.route{
-  display:block
-}
-
-.route-header{
-  display:flex;
-  justify-content:space-between;
-  gap:70px;
-  align-items:end;
-  margin-bottom:45px
-}
-
-.route-description{
-  max-width:430px;
-  color:#65716e;
-  line-height:1.7
-}
-
-.storymap-container{
-  width:100%;
-  height:650px;
-  border-radius:35px;
-  overflow:hidden;
-  background:var(--sage);
-  box-shadow:0 20px 60px #26333018;
-  border:1px solid #26333015
-}
-
-.storymap-container iframe{
+  inset:0;
   width:100%;
   height:100%;
-  border:0;
-  display:block
+  pointer-events:none;
 }
+.mm-line{
+  stroke:rgba(53,230,255,.25);
+  stroke-width:1.5;
+  stroke-dasharray:7 8;
+  animation:mmFlow 7s linear infinite;
+}
+.mm-line.hot{stroke:rgba(165,108,255,.34)}
+@keyframes mmFlow{to{stroke-dashoffset:-120}}
 
-.route-info{
+.mm-core{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:245px;height:245px;
+  border-radius:50%;
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-  margin-top:22px
-}
-
-.route-card{
-  padding:28px;
-  border-radius:25px;
-  background:#fffdf9aa;
-  border:1px solid #26333015
-}
-
-.route-card:nth-child(2){
-  background:var(--sage)
-}
-
-.route-card strong{
-  display:block;
-  font-size:.72rem;
-  letter-spacing:.13em;
-  margin-bottom:10px
-}
-
-.route-card h3{
-  margin:0 0 8px;
-  font-size:1.3rem
-}
-
-.route-card p{
-  margin:0;
-  color:#63706d;
-  line-height:1.6;
-  font-size:.92rem
-}
-
-/* FINANZAS */
-
-.finance{
-  background:var(--sage)
-}
-
-.finance-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:18px;
-  margin-top:45px
-}
-
-.finance-card{
-  background:var(--white);
-  border-radius:28px;
-  padding:30px;
-  border:1px solid #26333012
-}
-
-.finance-card h3{
-  font-size:1.3rem;
-  margin:0 0 22px
-}
-
-.finance-row{
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  padding:13px 0;
-  border-bottom:1px solid #26333012
-}
-
-.finance-row:last-child{
-  border-bottom:0
-}
-
-.finance-row strong{
-  font-weight:900
-}
-
-.highlight{
-  background:var(--ink);
-  color:var(--cream)
-}
-
-.highlight .finance-row{
-  border-color:#f4f0eb22
-}
-
-.highlight .muted{
-  color:#aebbb7
-}
-
-.big-number{
-  font-size:3.5rem;
-  font-weight:950;
-  letter-spacing:-.07em;
-  margin:10px 0
-}
-
-.muted{
-  color:#63706d;
-  line-height:1.6
-}
-
-.audience{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px;
-  margin-top:45px
-}
-
-.audience-card{
-  padding:30px;
-  border-radius:28px;
-  background:#fffdf9aa;
-  border:1px solid #26333012
-}
-
-.audience-card h3{
-  margin-top:0;
-  font-size:1.4rem
-}
-
-.audience-card p{
-  color:#61706c;
-  line-height:1.7
-}
-
-.recovery{
-  margin-top:18px;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:10px
-}
-
-.recovery-step{
-  padding:22px;
-  border-radius:20px;
-  background:#fffdf9aa
-}
-
-.recovery-step strong{
-  display:block;
-  font-size:1.8rem;
-  margin-bottom:7px
-}
-
-.recovery-step span{
-  font-size:.8rem;
-  color:#687571
-}
-
-.final{
+  place-items:center;
   text-align:center;
-  padding-bottom:125px
+  z-index:5;
+  cursor:pointer;
+  background:radial-gradient(circle at 35% 30%,rgba(79,124,255,.32),rgba(5,8,18,.94) 62%);
+  border:1px solid rgba(53,230,255,.7);
+  box-shadow:0 0 35px rgba(53,230,255,.22),0 0 100px rgba(79,124,255,.12),inset 0 0 45px rgba(53,230,255,.08);
+  transition:.35s ease;
+}
+.mm-core:hover{transform:translate(-50%,-50%) scale(1.05);box-shadow:0 0 55px rgba(53,230,255,.38),0 0 130px rgba(79,124,255,.18),inset 0 0 55px rgba(53,230,255,.13)}
+.mm-core:after{
+  content:"";
+  position:absolute;
+  inset:-18px;
+  border:1px solid rgba(53,230,255,.12);
+  border-radius:50%;
+  animation:mmPulse 3s ease-in-out infinite;
+}
+@keyframes mmPulse{50%{transform:scale(1.08);opacity:.3}}
+.mm-core .core-small{font-size:.62rem;letter-spacing:.24em;color:#8beeff;margin-bottom:8px}
+.mm-core .core-big{font-family:"Space Grotesk",sans-serif;font-size:1.5rem;font-weight:700;letter-spacing:.06em}
+.mm-core .core-sub{font-size:.68rem;color:#91a1b9;margin-top:8px}
+
+.mm-node{
+  position:absolute;
+  min-width:155px;
+  padding:16px 18px;
+  border-radius:18px;
+  background:rgba(8,16,30,.78);
+  border:1px solid rgba(255,255,255,.10);
+  backdrop-filter:blur(14px);
+  box-shadow:0 12px 35px rgba(0,0,0,.28);
+  cursor:pointer;
+  z-index:4;
+  transition:.3s ease;
+}
+.mm-node:hover,.mm-node.active{
+  transform:translateY(-5px) scale(1.035);
+  border-color:rgba(53,230,255,.55);
+  box-shadow:0 0 30px rgba(53,230,255,.12),0 18px 45px rgba(0,0,0,.35);
+}
+.mm-node .node-icon{font-size:1.1rem;margin-bottom:7px}
+.mm-node .node-title{font-family:"Space Grotesk",sans-serif;font-size:.86rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.mm-node .node-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px}
+.mm-node .tag{font-size:.57rem;color:#a9b8cd;border:1px solid rgba(255,255,255,.08);padding:3px 6px;border-radius:999px}
+.mm-node.cyan{border-left:2px solid #35e6ff}
+.mm-node.blue{border-left:2px solid #4f7cff}
+.mm-node.violet{border-left:2px solid #a56cff}
+
+.mm-n1{left:4%;top:10%}.mm-n2{left:40%;top:2%}.mm-n3{right:4%;top:10%}
+.mm-n4{left:1%;top:43%}.mm-n5{right:1%;top:43%}
+.mm-n6{left:9%;bottom:8%}.mm-n7{left:40%;bottom:1%}.mm-n8{right:9%;bottom:8%}
+
+.mm-legend{
+  position:absolute;left:50%;bottom:0;transform:translateX(-50%);
+  display:flex;gap:12px;flex-wrap:wrap;justify-content:center;
+  width:90%;
+}
+.mm-legend span{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:#8292aa;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06)}
+
+.info-modal{
+  position:fixed;inset:0;z-index:1000;
+  display:none;place-items:center;
+  background:rgba(2,5,12,.72);
+  backdrop-filter:blur(10px);
+  padding:24px;
+}
+.info-modal.open{display:grid}
+.modal-card{
+  width:min(680px,94vw);
+  max-height:84vh;
+  overflow:auto;
+  position:relative;
+  border:1px solid rgba(53,230,255,.28);
+  border-radius:26px;
+  background:linear-gradient(145deg,rgba(12,23,41,.97),rgba(5,8,18,.98));
+  box-shadow:0 0 70px rgba(53,230,255,.12),0 30px 100px rgba(0,0,0,.5);
+  padding:34px;
+  animation:modalIn .25s ease-out;
+}
+@keyframes modalIn{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:none}}
+.modal-close{
+  position:absolute;right:17px;top:15px;width:36px;height:36px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);
+  color:white;font-size:1.15rem;cursor:pointer;
+}
+.modal-kicker{font-size:.62rem;letter-spacing:.2em;color:#35e6ff;text-transform:uppercase}
+.modal-title{font-family:"Space Grotesk",sans-serif;font-size:2rem;margin:8px 0 14px}
+.modal-text{color:#aab7ca;line-height:1.7;font-size:.94rem}
+.modal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:20px}
+.modal-pill{padding:12px 13px;border-radius:12px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07);font-size:.73rem;color:#d9e4f2}
+@media(max-width:800px){
+  .mindmap-section{min-height:auto}
+  .mindmap-stage{height:auto;display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:15px 0 70px}
+  .mm-lines{display:none}
+  .mm-core{position:relative;left:auto;top:auto;transform:none;grid-column:1/-1;margin:25px auto;width:190px;height:190px}
+  .mm-core:hover{transform:scale(1.03)}
+  .mm-node{position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;min-width:0}
+  .mm-legend{position:relative;left:auto;bottom:auto;transform:none;width:100%;grid-column:1/-1}
+  .modal-grid{grid-template-columns:1fr}
 }
 
-.final h2{
-  max-width:850px;
-  margin:auto
-}
 
-.final p{
-  max-width:570px;
-  margin:25px auto;
-  color:#65716e;
-  line-height:1.7
-}
+/* Presentation mode: the interactive map is the main information surface */
+body.mindmap-focus #timeline,
+body.mindmap-focus #profile,
+body.mindmap-focus #employees,
+body.mindmap-focus #customers,
+body.mindmap-focus #connections,
+body.mindmap-focus #cycle,
+body.mindmap-focus #network,
+body.mindmap-focus #scale,
+body.mindmap-focus .talent-cycle,
+body.mindmap-focus .talent-network { display:none !important; }
 
-footer{
-  border-top:1px solid #2633301a;
-  padding:25px 7vw;
-  display:flex;
-  justify-content:space-between;
-  color:#697571;
-  font-size:.78rem
-}
-
-@media(max-width:850px){
-
-  .links{
-    display:none
-  }
-
-  .hero,
-  .menu,
-  .feature,
-  .audience{
-    grid-template-columns:1fr
-  }
-
-  .hero{
-    padding-top:130px
-  }
-
-  .visual{
-    min-height:400px
-  }
-
-  .cards{
-    grid-template-columns:1fr
-  }
-
-  .card:nth-child(2){
-    transform:none
-  }
-
-  .card:nth-child(2):hover{
-    transform:translateY(-8px)
-  }
-
-  .sticky{
-    position:static
-  }
-
-  .head,
-  .route-header{
-    display:block
-  }
-
-  .intro,
-  .route-description{
-    margin-top:20px
-  }
-
-  .feature{
-    padding:38px
-  }
-
-  .items{
-    grid-template-columns:1fr
-  }
-
-  .route-info{
-    grid-template-columns:1fr
-  }
-
-  .finance-grid{
-    grid-template-columns:1fr
-  }
-
-  .recovery{
-    grid-template-columns:1fr 1fr
-  }
-
-  .storymap-container{
-    height:600px
-  }
-}
-
-@media(max-width:520px){
-
-  h1{
-    font-size:4.3rem
-  }
-
-  .hero,
-  section{
-    padding-left:22px;
-    padding-right:22px
-  }
-
-  .truck{
-    width:100%
-  }
-
-  .badge{
-    width:105px;
-    height:105px;
-    font-size:.68rem
-  }
-
-  .wheel{
-    width:55px;
-    height:55px;
-    border-width:8px
-  }
-
-  .stats{
-    grid-template-columns:1fr
-  }
-
-  .recovery{
-    grid-template-columns:1fr
-  }
-
-  .storymap-container{
-    height:520px;
-    border-radius:25px
-  }
-
-  footer{
-    padding-left:22px;
-    padding-right:22px;
-    gap:15px;
-  }
-}
 </style>
 </head>
-
 <body>
 
-<!-- NAVEGACIÓN -->
-
 <nav class="nav">
-  <a class="logo" href="#">RUTA CAFÉ</a>
-
-  <div class="links">
-    <a href="#concepto">Concepto</a>
-    <a href="#menu">Menú</a>
-    <a href="#ruta">La ruta</a>
-    <a href="#finanzas">Finanzas</a>
+  <a class="brand brand-lockup" href="#home">
+  <span class="logo-mark"><i class="logo-dot"></i></span>
+  <span>KEEN<span>FINITY</span></span>
+</a>
+  <div class="navlinks">
+    <a href="#transformation">Transformación</a><a href="#profile">Talento</a><a href="#employees">Equipo</a><a href="#customers">Clientes</a><a href="#network">Conexiones</a>
   </div>
-
-  <a class="cta" href="#menu">Ver menú →</a>
 </nav>
 
+<section class="hero" id="home">
+ <div class="hero-inner reveal">
+   <div class="hero-logo">
+     <span class="logo-mark"><i class="logo-dot"></i></span>
+     <span class="logo-word">KEEN<span>FINITY</span></span>
+   </div>
+   <div class="orb"></div>
+   <div class="kicker">Talent Organizational Experience</div>
+   <h1>KEEN<span class="glow">FINITY</span></h1>
+   <div class="tag">THE PEOPLE BEHIND THE TECHNOLOGY</div>
+   <div class="stats-row">
+     <div class="stat"><b>4,200+</b><small>personas</small></div>
+     <div class="stat"><b>50+</b><small>países con empleados</small></div>
+     <div class="stat"><b>90+</b><small>países con operaciones</small></div>
+   </div>
+ </div>
+ <div class="scroll">SCROLL TO EXPLORE ↓</div>
+</section>
 
-<!-- HERO -->
+<section>
+ <div class="container intro-grid">
+  <div class="reveal">
+   <div class="kicker">01 // THE HUMAN SYSTEM</div>
+   <div class="big-quote" style="margin-top:25px">Una empresa de tecnología también es un <span>sistema de personas.</span></div>
+  </div>
+  <div class="card reveal">
+   <p>Keenfinity reúne talento, tecnología, operaciones y relaciones con clientes dentro de una organización global. Su transformación reciente permite observar cómo la gestión del talento acompaña un cambio profundo en la estructura de una empresa.</p>
+   <br><p><strong style="color:white">La pregunta central:</strong> ¿cómo se atrae, desarrolla, conecta y conserva el talento mientras una organización construye una nueva identidad?</p>
+  </div>
+ </div>
+</section>
 
-<header class="hero">
+<section id="transformation">
+ <div class="container">
+  <div class="kicker reveal">02 // TRANSFORMATION</div>
+  <h2 class="reveal" style="margin-top:18px">FROM BOSCH<br><span class="glow">TO KEENFINITY.</span></h2>
+  <div class="timeline">
+   <div class="event reveal"><div class="dot"></div><div class="year">2023</div><h3>Revisión del portafolio</h3><p>Bosch decidió vender su división de tecnología de seguridad y comunicaciones como parte de una revisión de sus áreas de negocio y una estrategia enfocada en sus prioridades, incluyendo movilidad.</p></div>
+   <div class="event reveal"><div class="dot"></div><div class="year">12 DIC 2024</div><h3>Adquisición por Triton Partners</h3><p>La división fue adquirida por <strong>Triton Partners</strong>, dando inicio al proceso de transformación hacia una compañía independiente.</p></div>
+   <div class="event reveal"><div class="dot"></div><div class="year">JUL 2025</div><h3>Finaliza el carve-out</h3><p>Keenfinity deja de operar como una división de Bosch y comienza su etapa como empresa independiente, conservando experiencia, talento, tecnologías y marcas del negocio.</p></div>
+  </div>
+ </div>
+</section>
 
-  <div>
 
-    <div class="eyebrow">
-      <span class="dot"></span>
-      Cafetería express · Food truck
+<section id="profile">
+ <div class="container">
+  <div class="kicker reveal">03 // PEOPLE PROFILE</div>
+  <h2 class="reveal" style="margin-top:18px">EL TALENTO<br><span class="glow">KEENFINITY.</span></h2>
+
+  <div class="people-layout">
+   <div class="profile-panel reveal">
+    <div class="mini-label">CAPITAL HUMANO</div>
+    <h3>Herencia técnica + mentalidad ágil</h3>
+    <div class="keyword-grid">
+      <span class="keyword">Ingeniería</span>
+      <span class="keyword">TI</span>
+      <span class="keyword">Software embebido</span>
+      <span class="keyword">Linux</span>
+      <span class="keyword">RF</span>
+      <span class="keyword">Pruebas de hardware</span>
+      <span class="keyword">Supply Chain global</span>
+      <span class="keyword">Audio / Video</span>
+      <span class="keyword hot">IA</span>
     </div>
+   </div>
 
-    <h1>
-      RUTA
-      <span>CAFÉ</span>
-    </h1>
-
-    <p>
-      Tu café, tu ritmo. Una cafetería móvil que se adapta al movimiento
-      de la ciudad: universidades por la mañana, zonas de oficinas por la
-      tarde y corredores gastronómicos por la noche.
-    </p>
-
-    <div class="buttons">
-      <a class="btn main" href="#menu">Explorar menú</a>
-      <a class="btn" href="#ruta">Descubrir la ruta</a>
+   <div class="profile-panel reveal">
+    <div class="mini-label">SEMILLERO</div>
+    <h3>Talento joven</h3>
+    <div class="keyword-grid">
+      <span class="keyword">Prácticas profesionales</span>
+      <span class="keyword">Becarios</span>
+      <span class="keyword">Pro Meritum · México</span>
+      <span class="keyword">Mentorías</span>
+      <span class="keyword">Capacitación</span>
+      <span class="keyword hot">Recién graduados</span>
+      <span class="keyword">Tecnología de última generación</span>
     </div>
+   </div>
+  </div>
+ </div>
+</section>
 
+<section id="employees">
+ <div class="container">
+  <div class="kicker reveal">04 // EMPLOYEE RELATIONSHIP</div>
+  <h2 class="reveal" style="margin-top:18px">LA EXPERIENCIA<br><span class="glow">DEL EQUIPO.</span></h2>
+  <div class="talent-grid" style="margin-top:60px">
+   <div class="talent-card reveal"><div class="icon">↔</div><h3>Transición</h3><div class="keyword-grid"><span class="keyword">Bosch → independiente</span><span class="keyword">Triton</span><span class="keyword">Cambio cultural</span></div></div>
+   <div class="talent-card reveal"><div class="icon">☼</div><h3>Fortalezas</h3><div class="keyword-grid"><span class="keyword">Work-life balance</span><span class="keyword">Horarios flexibles</span><span class="keyword">Compañerismo</span><span class="keyword">Cooperación técnica</span></div></div>
+   <div class="talent-card reveal"><div class="icon">!</div><h3>Retos</h3><div class="keyword-grid"><span class="keyword hot">Comunicación directiva</span><span class="keyword">Burocracia</span><span class="keyword">Nueva estrategia</span><span class="keyword">Identidad independiente</span></div></div>
+   <div class="talent-card reveal"><div class="icon">∞</div><h3>Cultura</h3><div class="keyword-grid"><span class="keyword">Colaboración</span><span class="keyword">Flexibilidad</span><span class="keyword">Adaptación</span><span class="keyword">Innovación</span></div></div>
+  </div>
+ </div>
+</section>
+
+<section id="customers">
+ <div class="container">
+  <div class="kicker reveal">05 // CUSTOMERS & PARTNERS</div>
+  <h2 class="reveal" style="margin-top:18px">RELACIONES<br><span class="glow">B2B.</span></h2>
+  <div class="people-layout">
+   <div class="profile-panel reveal">
+    <div class="mini-label">MODELO</div>
+    <h3>Business to Business</h3>
+    <div class="keyword-grid">
+      <span class="keyword">Confianza industrial</span>
+      <span class="keyword">Socios a largo plazo</span>
+      <span class="keyword">Co-creación</span>
+      <span class="keyword">Ingeniería</span>
+      <span class="keyword">Diseño de precisión</span>
+      <span class="keyword">Validación</span>
+      <span class="keyword">Pruebas de calidad</span>
+      <span class="keyword hot">EMS</span>
+    </div>
+   </div>
+   <div class="profile-panel reveal">
+    <div class="mini-label">AMÉRICA LATINA</div>
+    <h3>Canales & soporte</h3>
+    <div class="keyword-grid">
+      <span class="keyword">Integradores</span>
+      <span class="keyword">Distribuidores</span>
+      <span class="keyword">Soporte técnico</span>
+      <span class="keyword">Capacitación</span>
+      <span class="keyword">Bosch Business Club</span>
+      <span class="keyword hot">Red comercial</span>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="talent">
+ <div class="container">
+  <div class="kicker reveal">03 // TALENT MAP</div>
+  <h2 class="reveal" style="margin-top:18px">THE <span class="glow">HUMAN</span><br>SYSTEM.</h2>
+  <div class="mind-wrap reveal">
+   <div class="connector c1"></div><div class="connector c2"></div><div class="connector c3"></div><div class="connector c4"></div><div class="connector c5"></div>
+   <div class="mind-center"><div><small>CORE</small><br><b>KEENFINITY</b><br><small>TALENT</small></div></div>
+   <div class="node n1" data-title="Desarrollo" data-text="Capacitación continua, desarrollo de habilidades y preparación para futuros líderes mediante planes de carrera."><b>🧠 Desarrollo</b><small>Learning & Development</small></div>
+   <div class="node n2" data-title="Clientes" data-text="La experiencia del colaborador puede reflejarse en la experiencia del cliente y en la confianza hacia la marca."><b>🤝 Clientes</b><small>Experiencia & confianza</small></div>
+   <div class="node n3" data-title="Clima laboral" data-text="Relaciones laborales, seguridad, prevención de conflictos y construcción de un entorno motivador."><b>🌱 Clima</b><small>Relaciones & cultura</small></div>
+   <div class="node n4" data-title="Operaciones" data-text="Asegurar que las personas tengan las competencias y el flujo de trabajo adecuados para operar eficientemente."><b>⚙️ Operaciones</b><small>Competencias & seguridad</small></div>
+   <div class="node n5" data-title="Atracción" data-text="Identificar, evaluar e incorporar talento mediante reclutamiento interno y externo."><b>✦ Atracción</b><small>Recruiting & selección</small></div>
+  </div>
+  <div class="card detail-panel reveal" id="detail"><h3>Explora el mapa</h3><p>Haz clic en cualquiera de los nodos para descubrir cómo se relaciona con la gestión del talento.</p></div>
+ </div>
+</section>
+
+<section>
+ <div class="container">
+  <div class="kicker reveal">07 // TALENT CYCLE</div>
+  <h2 class="reveal" style="margin-top:18px">FROM <span class="glow">ATTRACT</span><br>TO RETAIN.</h2>
+  <div class="talent-grid">
+   <div class="talent-card reveal"><div class="icon">✦</div><h3>Atraer</h3><p>Reclutamiento interno y externo para identificar y seleccionar talento.</p></div>
+   <div class="talent-card reveal"><div class="icon">↗</div><h3>Desarrollar</h3><p>Capacitación, aprendizaje continuo y planes de carrera.</p></div>
+   <div class="talent-card reveal"><div class="icon">◎</div><h3>Desempeñar</h3><p>Objetivos, evaluación del desempeño, compensaciones e incentivos.</p></div>
+   <div class="talent-card reveal"><div class="icon">∞</div><h3>Retener</h3><p>Clima, relaciones laborales, seguridad y una experiencia que favorezca la permanencia.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="network">
+ <div class="container">
+  <div class="kicker reveal">08 // TALENT NETWORK</div>
+  <h2 class="reveal" style="margin-top:18px">TALENT<br><span class="glow">DOESN'T WORK ALONE.</span></h2>
+  <div class="network">
+   <div class="area reveal"><span class="num">01 / FINANZAS</span><h3>Personas ↔ dinero</h3><p>Compensaciones, contratación, rotación y capacitación deben alinearse con el presupuesto y la sostenibilidad económica.</p></div>
+   <div class="area reveal"><span class="num">02 / OPERACIONES</span><h3>Personas ↔ eficiencia</h3><p>La gestión del talento ayuda a asegurar las competencias, dotación y seguridad necesarias para operar.</p></div>
+   <div class="area reveal"><span class="num">03 / MARKETING</span><h3>Personas ↔ marca</h3><p>Employer branding conecta la promesa externa de la marca con la experiencia interna de los colaboradores.</p></div>
+   <div class="area reveal"><span class="num">04 / CLIENTES</span><h3>Personas ↔ confianza</h3><p>El comportamiento y la experiencia de los colaboradores pueden influir en la percepción del servicio y la marca.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="global">
+ <div class="container">
+  <div class="kicker reveal">09 // GLOBAL SCALE</div>
+  <h2 class="reveal" style="margin-top:18px">ONE COMPANY.<br><span class="glow">MANY PLACES.</span></h2>
+  <div class="numbers">
+   <div class="number-card reveal"><b>4,200+</b><span>empleados globales</span></div>
+   <div class="number-card reveal"><b>50+</b><span>países con empleados</span></div>
+   <div class="number-card reveal"><b>90+</b><span>países con operaciones comerciales</span></div>
+   <div class="number-card reveal"><b>3</b><span>continentes</span></div>
+  </div>
+  <div class="card reveal" style="margin-top:20px;display:flex;justify-content:space-between;gap:25px;align-items:center;flex-wrap:wrap">
+   <div><div class="kicker">MÉXICO</div><h3 style="font-size:34px;margin-top:8px">Hermosillo</h3></div>
+   <p style="max-width:650px">Keenfinity cuenta con una planta de producción y operaciones estratégicas en México, integrada a su estructura global.</p>
+  </div>
+ </div>
+</section>
+
+<section class="final">
+ <div class="container reveal">
+  <div class="kicker">10 // FINAL THOUGHT</div>
+  <h2>FROM A BUSINESS UNIT<br>TO A <span class="glow">NEW ORGANIZATION.</span></h2>
+  <p>La transformación de Keenfinity no solo modificó su estructura. También creó el reto de construir identidad, mantener conocimiento, desarrollar personas y conservar la confianza de sus clientes.</p>
+  <a class="cta" href="#home">↑ VOLVER AL INICIO</a>
+ </div>
+</section>
+
+<script>
+const reveals=document.querySelectorAll('.reveal');
+const io=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')});
+},{threshold:.12});
+reveals.forEach(x=>io.observe(x));
+
+const nodes=document.querySelectorAll('.node');
+const detail=document.getElementById('detail');
+nodes.forEach(n=>{
+ n.addEventListener('click',()=>{
+  nodes.forEach(x=>x.classList.remove('active')); n.classList.add('active');
+  detail.innerHTML=`<h3>${n.dataset.title}</h3><p>${n.dataset.text}</p>`;
+  detail.scrollIntoView({behavior:'smooth',block:'center'});
+ });
+});
+
+document.addEventListener('mousemove',e=>{
+ const x=(e.clientX/window.innerWidth-.5)*2;
+ const y=(e.clientY/window.innerHeight-.5)*2;
+ document.querySelector('.orb').style.transform=`translate(${x*7}px,${y*7}px)`;
+});
+</script>
+
+<section class="section mindmap-section" id="mindmap2">
+  <div class="section-label">03 // THE HUMAN SYSTEM</div>
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">KEENFINITY × TALENTO</div>
+      <h2>TODO CONECTA.</h2>
+    </div>
+    <p class="muted">Haz click en cada nodo para explorar la información.</p>
   </div>
 
+  <div class="mindmap-stage">
+    <svg class="mm-lines" viewBox="0 0 1000 820" preserveAspectRatio="none" aria-hidden="true">
+      <line class="mm-line" x1="500" y1="410" x2="145" y2="125"/>
+      <line class="mm-line hot" x1="500" y1="410" x2="500" y2="75"/>
+      <line class="mm-line" x1="500" y1="410" x2="855" y2="125"/>
+      <line class="mm-line hot" x1="500" y1="410" x2="115" y2="410"/>
+      <line class="mm-line" x1="500" y1="410" x2="885" y2="410"/>
+      <line class="mm-line" x1="500" y1="410" x2="190" y2="720"/>
+      <line class="mm-line hot" x1="500" y1="410" x2="500" y2="770"/>
+      <line class="mm-line" x1="500" y1="410" x2="810" y2="720"/>
+    </svg>
 
-  <div class="visual">
-
-    <div class="truck">
-
-      <div class="body"></div>
-
-      <div class="cab">
-        <div class="window"></div>
+    <button class="mm-core" data-modal="core">
+      <div>
+        <div class="core-small">HUMAN SYSTEM</div>
+        <div class="core-big">KEENFINITY</div>
+        <div class="core-sub">TALENTO · PERSONAS · CONEXIONES</div>
       </div>
+    </button>
 
-      <div class="serving"></div>
+    <button class="mm-node cyan mm-n1" data-modal="transformation">
+      <div class="node-icon">◈</div>
+      <div class="node-title">Transformación</div>
+      <div class="node-tags"><span class="tag">Bosch</span><span class="tag">Triton</span><span class="tag">2025</span></div>
+    </button>
 
-      <div class="sign">
-        RUTA
-      </div>
+    <button class="mm-node blue mm-n2" data-modal="profile">
+      <div class="node-icon">⌁</div>
+      <div class="node-title">Talento & Perfil</div>
+      <div class="node-tags"><span class="tag">Ingeniería</span><span class="tag">TI</span><span class="tag">IA</span></div>
+    </button>
 
-      <div class="wheel w1"></div>
-      <div class="wheel w2"></div>
+    <button class="mm-node violet mm-n3" data-modal="development">
+      <div class="node-icon">↗</div>
+      <div class="node-title">Desarrollo</div>
+      <div class="node-tags"><span class="tag">Becarios</span><span class="tag">Mentoría</span><span class="tag">L&D</span></div>
+    </button>
 
+    <button class="mm-node cyan mm-n4" data-modal="employees">
+      <div class="node-icon">◎</div>
+      <div class="node-title">Equipo</div>
+      <div class="node-tags"><span class="tag">Flexibilidad</span><span class="tag">Cultura</span></div>
+    </button>
+
+    <button class="mm-node blue mm-n5" data-modal="clients">
+      <div class="node-icon">◌</div>
+      <div class="node-title">Clientes B2B</div>
+      <div class="node-tags"><span class="tag">Confianza</span><span class="tag">Co-creación</span></div>
+    </button>
+
+    <button class="mm-node violet mm-n6" data-modal="operations">
+      <div class="node-icon">⌘</div>
+      <div class="node-title">Operaciones</div>
+      <div class="node-tags"><span class="tag">Supply Chain</span><span class="tag">EMS</span></div>
+    </button>
+
+    <button class="mm-node cyan mm-n7" data-modal="network">
+      <div class="node-icon">✦</div>
+      <div class="node-title">Conexiones</div>
+      <div class="node-tags"><span class="tag">Finanzas</span><span class="tag">Marketing</span></div>
+    </button>
+
+    <button class="mm-node blue mm-n8" data-modal="scale">
+      <div class="node-icon">⌖</div>
+      <div class="node-title">Escala Global</div>
+      <div class="node-tags"><span class="tag">4,200+</span><span class="tag">50+</span><span class="tag">90+</span></div>
+    </button>
+
+    <div class="mm-legend">
+      <span>PERSONAS</span><span>DESARROLLO</span><span>CLIENTES</span><span>OPERACIONES</span><span>ESTRATEGIA</span>
     </div>
-
-    <div class="badge">
-      GOOD<br>
-      COFFEE<br>
-      ON THE<br>
-      MOVE
-    </div>
-
   </div>
+</section>
 
-</header>
-
-
-<!-- MARQUEE -->
-
-<div class="marquee">
-  <div class="track">
-    RUTA CAFÉ · TU CAFÉ, TU RITMO · RUTA CAFÉ · TU CAFÉ, TU RITMO ·
-    RUTA CAFÉ · TU CAFÉ, TU RITMO ·
+<div class="info-modal" id="infoModal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal-card">
+    <button class="modal-close" aria-label="Cerrar">×</button>
+    <div class="modal-kicker" id="modalKicker"></div>
+    <h3 class="modal-title" id="modalTitle"></h3>
+    <div class="modal-text" id="modalText"></div>
+    <div class="modal-grid" id="modalGrid"></div>
   </div>
 </div>
 
 
-<!-- CONCEPTO -->
-
-<section id="concepto">
-
-  <div class="head">
-
-    <div>
-      <div class="kicker">01 — El concepto</div>
-
-      <h2>
-        Hecho para<br>
-        seguir tu día.
-      </h2>
-    </div>
-
-    <p class="intro">
-      La experiencia de una cafetería contemporánea con la libertad de un
-      food truck: menos espera, más movimiento y un menú pensado para
-      distintos momentos del día.
-    </p>
-
-  </div>
-
-
-  <div class="cards">
-
-    <article class="card">
-
-      <div class="num">01 / RÁPIDO</div>
-
-      <div class="icon">☕</div>
-
-      <h3>
-        Café que acompaña.
-      </h3>
-
-      <p>
-        Preparaciones sencillas y consistentes para que el pedido llegue
-        rápido sin sacrificar la experiencia.
-      </p>
-
-    </article>
-
-
-    <article class="card">
-
-      <div class="num">02 / MÓVIL</div>
-
-      <div class="icon">✦</div>
-
-      <h3>
-        La ciudad es nuestra mesa.
-      </h3>
-
-      <p>
-        Nos desplazamos hacia distintos puntos de alta afluencia dependiendo
-        del momento del día y del perfil de nuestros clientes.
-      </p>
-
-    </article>
-
-
-    <article class="card">
-
-      <div class="num">03 / CERCANO</div>
-
-      <div class="icon">↗</div>
-
-      <h3>
-        Tu ritmo, tu elección.
-      </h3>
-
-      <p>
-        Café, bebidas frescas, bakery y opciones saladas para acompañar
-        el desayuno, la jornada laboral o una salida nocturna.
-      </p>
-
-    </article>
-
-  </div>
-
-</section>
-
-
-<!-- MENÚ -->
-
-<section id="menu">
-
-  <div class="menu">
-
-    <div class="sticky">
-
-      <div class="kicker">02 — Menú</div>
-
-      <h2>
-        Pequeño menú.<br>
-        Gran antojo.
-      </h2>
-
-      <p>
-        Una selección diseñada para un servicio ágil y una operación
-        eficiente dentro del food truck, con opciones para diferentes
-        momentos del día.
-      </p>
-
-      <a class="btn main" href="#concepto">
-        ↑ Volver arriba
-      </a>
-
-    </div>
-
-
-    <div class="items">
-
-      <div class="item">
-        <div>
-          <h4>Americano</h4>
-          <small>Espresso + agua</small>
-        </div>
-        <span class="price">$45</span>
-      </div>
-
-      <div class="item">
-        <div>
-          <h4>Capuchino</h4>
-          <small>Espresso + leche</small>
-        </div>
-        <span class="price">$60</span>
-      </div>
-
-      <div class="item">
-        <div>
-          <h4>Latte</h4>
-          <small>Suave y cremoso</small>
-        </div>
-        <span class="price">$60</span>
-      </div>
-
-      <div class="item">
-        <div>
-          <h4>Jugo de naranja</h4>
-          <small>Natural</small>
-        </div>
-        <span class="price">$55</span>
-      </div>
-
-      <div class="item">
-        <div>
-          <h4>Jugo verde</h4>
-          <small>Frutas + vegetales</small>
-        </div>
-        <span class="price">$60</span>
-      </div>
-
-      <div class="item">
-        <div>
-          <h4>Licuado de fresa</h4>
-          <small>Leche + fruta</small>
-        </div>
-        <span class="price">$55</span>
-      </div>
-
-      <div class="item">
-        <div>
-          <h4>Agua de jamaica</h4>
-          <small>Fresca</small>
-        </div>
-        <span class="price">$40</span>
-      </div>
-
-      <div class="item">
-        <div>
-          <h4>Horchata</h4>
-          <small>Arroz + canela</small>
-        </div>
-        <span class="price">$45</span>
-      </div>
-
-      <div class="item">
-        <div>
-          <h4>Concha</h4>
-          <small>Pan dulce</small>
-        </div>
-        <span class="price">$25</span>
-      </div>
-
-      <div class="item">
-        <div>
-          <h4>Croissant jamón & queso</h4>
-          <small>Caliente</small>
-        </div>
-        <span class="price">$60</span>
-      </div>
-
-      <div class="item">
-        <div>
-          <h4>Baguette de pollo</h4>
-          <small>Pollo + vegetales</small>
-        </div>
-        <span class="price">$100</span>
-      </div>
-
-      <div class="item">
-        <div>
-          <h4>Baguette pollo + aguacate</h4>
-          <small>Especial</small>
-        </div>
-        <span class="price">$110</span>
-      </div>
-
-      <div class="item">
-        <div>
-          <h4>Chilaquiles con pollo</h4>
-          <small>Roja o verde</small>
-        </div>
-        <span class="price">$120</span>
-      </div>
-
-      <div class="item">
-        <div>
-          <h4>Ensalada de pollo</h4>
-          <small>Verdes + proteína</small>
-        </div>
-        <span class="price">$115</span>
-      </div>
-
-      <div class="item">
-        <div>
-          <h4>Bowl de fruta</h4>
-          <small>Fruta de temporada</small>
-        </div>
-        <span class="price">$60</span>
-      </div>
-
-      <div class="item">
-        <div>
-          <h4>Bowl + yogurt + granola</h4>
-          <small>Completo</small>
-        </div>
-        <span class="price">$70</span>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- PROYECTO -->
-
-<section>
-
-  <div class="feature">
-
-    <div>
-
-      <div class="kicker" style="color:#aebbb7">
-        03 — El proyecto
-      </div>
-
-      <h2>
-        Una cafetería que no espera a que llegues.
-      </h2>
-
-      <p>
-        RUTA CAFÉ utiliza la movilidad como parte de su propuesta de valor:
-        acercar café y alimentos a zonas donde existe una alta concentración
-        de clientes potenciales durante diferentes momentos del día.
-      </p>
-
-    </div>
-
-
-    <div class="stats">
-
-      <div class="stat">
-        <strong>50</strong>
-        <span>tickets / día</span>
-      </div>
-
-      <div class="stat">
-        <strong>6</strong>
-        <span>días / semana</span>
-      </div>
-
-      <div class="stat">
-        <strong>$120</strong>
-        <span>ticket promedio</span>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- RUTA CON STORYMAP -->
-
-<section id="ruta">
-
-  <div class="route-header">
-
-    <div>
-
-      <div class="kicker">
-        04 — La ruta
-      </div>
-
-      <h2>
-        Donde está<br>
-        el movimiento.
-      </h2>
-
-    </div>
-
-    <p class="route-description">
-      La ubicación cambia con el momento del día para aprovechar distintos
-      flujos de clientes y convertir la movilidad en una ventaja competitiva.
-      Explora nuestro recorrido en el mapa interactivo.
-    </p>
-
-  </div>
-
-
-  <!-- STORYMAP INTERACTIVO -->
-
-  <div class="storymap-container">
-
-    <iframe
-      src="https://uploads.knightlab.com/storymapjs/b6674e98c3075b23ebc52582bb9bddce/ruta-cafe/index.html"
-      title="Ruta Café — Mapa interactivo"
-      loading="lazy"
-      allowfullscreen>
-    </iframe>
-
-  </div>
-
-
-  <!-- INFORMACIÓN DE LAS PARADAS -->
-
-  <div class="route-info">
-
-    <div class="route-card">
-
-      <strong>MAÑANA</strong>
-
-      <h3>
-        Universidades
-      </h3>
-
-      <p>
-        Estudiantes, profesores y personal académico que buscan
-        desayunos, café y bebidas para comenzar su jornada.
-      </p>
-
-    </div>
-
-
-    <div class="route-card">
-
-      <strong>TARDE</strong>
-
-      <h3>
-        Zonas de oficinas
-      </h3>
-
-      <p>
-        Empleados y jóvenes profesionistas que buscan opciones
-        rápidas para acompañar su jornada laboral.
-      </p>
-
-    </div>
-
-
-    <div class="route-card">
-
-      <strong>NOCHE</strong>
-
-      <h3>
-        Corredores gastronómicos
-      </h3>
-
-      <p>
-        Jóvenes, familias y visitantes que buscan bebidas, alimentos
-        y opciones para acompañar sus salidas.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- PÚBLICO OBJETIVO -->
-
-<section>
-
-  <div class="head">
-
-    <div>
-
-      <div class="kicker">
-        05 — Público objetivo
-      </div>
-
-      <h2>
-        Distintas rutas.<br>
-        Distintos clientes.
-      </h2>
-
-    </div>
-
-    <p class="intro">
-      El modelo busca atender principalmente a jóvenes universitarios
-      y profesionistas, adaptándose a diferentes segmentos conforme
-      cambia la ubicación durante el día.
-    </p>
-
-  </div>
-
-
-  <div class="audience">
-
-    <div class="audience-card">
-
-      <h3>
-        🎓 Mercado principal
-      </h3>
-
-      <p>
-        Jóvenes de aproximadamente 18 a 35 años, especialmente estudiantes
-        universitarios y jóvenes profesionistas con un estilo de vida activo,
-        poco tiempo disponible y consumo frecuente de alimentos y bebidas
-        fuera de casa.
-      </p>
-
-    </div>
-
-
-    <div class="audience-card">
-
-      <h3>
-        ☕ Segmentos complementarios
-      </h3>
-
-      <p>
-        Profesores, personal académico, empleados de oficinas, familias y
-        personas que visitan corredores gastronómicos. La movilidad permite
-        buscar cada segmento en el horario donde existe mayor oportunidad
-        de consumo.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- FINANZAS -->
-
-<section id="finanzas" class="finance">
-
-  <div class="head">
-
-    <div>
-
-      <div class="kicker">
-        06 — Finanzas
-      </div>
-
-      <h2>
-        Los números<br>
-        de la ruta.
-      </h2>
-
-    </div>
-
-    <p class="intro">
-      Proyección basada en 50 tickets diarios, 6 días de operación
-      por semana y un ticket promedio de $120.
-    </p>
-
-  </div>
-
-
-  <div class="finance-grid">
-
-
-    <!-- VENTAS -->
-
-    <div class="finance-card">
-
-      <h3>
-        Ventas proyectadas
-      </h3>
-
-      <div class="finance-row">
-        <span>Clientes diarios</span>
-        <strong>50</strong>
-      </div>
-
-      <div class="finance-row">
-        <span>Días de operación</span>
-        <strong>6 / semana</strong>
-      </div>
-
-      <div class="finance-row">
-        <span>Tickets semanales</span>
-        <strong>300</strong>
-      </div>
-
-      <div class="finance-row">
-        <span>Ventas semanales</span>
-        <strong>$36,000</strong>
-      </div>
-
-      <div class="finance-row">
-        <span>Ventas mensuales</span>
-        <strong>$144,000</strong>
-      </div>
-
-    </div>
-
-
-    <!-- COSTOS -->
-
-    <div class="finance-card">
-
-      <h3>
-        Costos mensuales
-      </h3>
-
-      <div class="finance-row">
-        <span>Ingredientes</span>
-        <strong>$45,580</strong>
-      </div>
-
-      <div class="finance-row">
-        <span>Desechables</span>
-        <strong>$8,000</strong>
-      </div>
-
-      <div class="finance-row">
-        <span>Gastos fijos</span>
-        <strong>$44,500</strong>
-      </div>
-
-      <div class="finance-row">
-        <span>Total de costos</span>
-        <strong>$98,080</strong>
-      </div>
-
-      <div class="finance-row">
-        <span>Utilidad estimada</span>
-        <strong>$45,920</strong>
-      </div>
-
-    </div>
-
-
-    <!-- RENTABILIDAD -->
-
-    <div class="finance-card highlight">
-
-      <h3>
-        Rentabilidad
-      </h3>
-
-      <div class="big-number">
-        31.9%
-      </div>
-
-      <p class="muted">
-        Margen de utilidad estimado sobre las ventas mensuales
-        al alcanzar la meta de 50 tickets diarios.
-      </p>
-
-      <div class="finance-row">
-        <span>Ventas mensuales</span>
-        <strong>$144,000</strong>
-      </div>
-
-      <div class="finance-row">
-        <span>Utilidad mensual</span>
-        <strong>$45,920</strong>
-      </div>
-
-    </div>
-
-
-    <!-- PUNTO DE EQUILIBRIO -->
-
-    <div class="finance-card">
-
-      <h3>
-        Punto de equilibrio
-      </h3>
-
-      <div class="big-number">
-        ≈ 25
-      </div>
-
-      <p class="muted">
-        RUTA CAFÉ necesita aproximadamente 25 clientes diarios
-        para cubrir sus costos bajo los supuestos actuales.
-      </p>
-
-      <div class="finance-row">
-        <span>Clientes / día</span>
-        <strong>≈ 25</strong>
-      </div>
-
-      <div class="finance-row">
-        <span>Clientes / mes</span>
-        <strong>≈ 599</strong>
-      </div>
-
-      <div class="finance-row">
-        <span>Meta proyectada</span>
-        <strong>50 / día</strong>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- INVERSIÓN INICIAL -->
-
-<section>
-
-  <div class="head">
-
-    <div>
-
-      <div class="kicker">
-        07 — Inversión inicial
-      </div>
-
-      <h2>
-        Empezar<br>
-        la ruta.
-      </h2>
-
-    </div>
-
-    <p class="intro">
-      La inversión inicial contempla el equipo, los insumos necesarios
-      para comenzar, la imagen del negocio, los permisos y un fondo
-      de capital de trabajo.
-    </p>
-
-  </div>
-
-
-  <div class="finance-card">
-
-    <div class="finance-row">
-      <span>Renta inicial food truck + depósito</span>
-      <strong>$35,000</strong>
-    </div>
-
-    <div class="finance-row">
-      <span>Máquina espresso 2 grupos</span>
-      <strong>$70,000</strong>
-    </div>
-
-    <div class="finance-row">
-      <span>Molino profesional</span>
-      <strong>$10,000</strong>
-    </div>
-
-    <div class="finance-row">
-      <span>Refrigerador</span>
-      <strong>$30,000</strong>
-    </div>
-
-    <div class="finance-row">
-      <span>Licuadora comercial</span>
-      <strong>$5,000</strong>
-    </div>
-
-    <div class="finance-row">
-      <span>Utensilios y equipo pequeño</span>
-      <strong>$15,000</strong>
-    </div>
-
-    <div class="finance-row">
-      <span>Contenedores, charolas y dispensadores</span>
-      <strong>$9,000</strong>
-    </div>
-
-    <div class="finance-row">
-      <span>Insumos iniciales</span>
-      <strong>$15,000</strong>
-    </div>
-
-    <div class="finance-row">
-      <span>Vasos, empaques y servilletas</span>
-      <strong>$5,000</strong>
-    </div>
-
-    <div class="finance-row">
-      <span>POS / caja / QR</span>
-      <strong>$1,350</strong>
-    </div>
-
-    <div class="finance-row">
-      <span>Branding, menú y letrero</span>
-      <strong>$8,800</strong>
-    </div>
-
-    <div class="finance-row">
-      <span>Permisos y trámites</span>
-      <strong>$10,000</strong>
-    </div>
-
-    <div class="finance-row">
-      <span>Capital de trabajo</span>
-      <strong>$25,000</strong>
-    </div>
-
-    <div
-      class="finance-row"
-      style="font-size:1.2rem;padding-top:22px"
-    >
-      <span>
-        <strong>INVERSIÓN INICIAL</strong>
-      </span>
-
-      <strong>
-        $239,150
-      </strong>
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- RECUPERACIÓN -->
-
-<section>
-
-  <div class="feature">
-
-    <div>
-
-      <div class="kicker" style="color:#aebbb7">
-        08 — Recuperación
-      </div>
-
-      <h2>
-        ¿Cuándo recuperamos la inversión?
-      </h2>
-
-      <p>
-        Si RUTA CAFÉ alcanza gradualmente su objetivo de ventas, se estima
-        que la inversión inicial de $239,150 podría recuperarse aproximadamente
-        durante el noveno mes de operación.
-      </p>
-
-    </div>
-
-
-    <div>
-
-      <div class="stats">
-
-        <div class="stat">
-          <strong>$239K</strong>
-          <span>inversión inicial</span>
-        </div>
-
-        <div class="stat">
-          <strong>$45.9K</strong>
-          <span>utilidad mensual objetivo</span>
-        </div>
-
-        <div class="stat">
-          <strong>≈ 9</strong>
-          <span>meses de recuperación</span>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <div class="recovery">
-
-    <div class="recovery-step">
-      <strong>Mes 1</strong>
-      <span>Inicio y captación de clientes</span>
-    </div>
-
-    <div class="recovery-step">
-      <strong>Mes 3</strong>
-      <span>Comienzo de utilidades acumuladas</span>
-    </div>
-
-    <div class="recovery-step">
-      <strong>Mes 6</strong>
-      <span>Meta de 50 tickets diarios</span>
-    </div>
-
-    <div class="recovery-step">
-      <strong>Mes 9</strong>
-      <span>Recuperación estimada de la inversión</span>
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- FINAL -->
-
-<section class="final">
-
-  <div class="kicker">
-    09 — RUTA CAFÉ
-  </div>
-
-  <h2>
-    Tu café.<br>
-    <em>Tu ritmo.</em><br>
-    Tu ruta.
-  </h2>
-
-  <p>
-    Una cafetería móvil creada para moverse con la ciudad:
-    universidades por la mañana, oficinas por la tarde y
-    corredores gastronómicos por la noche.
-  </p>
-
-  <a class="btn main" href="#menu">
-    Conoce el menú →
-  </a>
-
-</section>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-  <span>
-    © 2026 RUTA CAFÉ
-  </span>
-
-  <span>
-    tu café, tu ritmo
-  </span>
-
-</footer>
+<script>
+const modalData = {
+ core:{
+  k:"KEENFINITY // HUMAN SYSTEM",t:"El sistema humano",
+  d:"Personas + tecnología + relaciones + estrategia.",
+  p:["Talento","Cultura","Clientes","Operaciones","Innovación","Conexiones"]
+ },
+ transformation:{
+  k:"01 // TRANSFORMACIÓN",t:"Bosch → Independiente",
+  d:"Cambio estructural y nueva identidad corporativa.",
+  p:["Bosch","2023","Portfolio review","Triton Partners","12 DIC 2024","Carve-out","JUL 2025","Independencia"]
+ },
+ profile:{
+  k:"02 // PERFIL",t:"Talento & Perfil",
+  d:"Capital humano técnico + mentalidad de empresa independiente.",
+  p:["Ingeniería","TI","Software embebido","Linux","RF","Hardware testing","Supply Chain","Audio / Video","IA"]
+ },
+ development:{
+  k:"03 // DESARROLLO",t:"Atracción → Desarrollo",
+  d:"Entrada de talento joven + aprendizaje + crecimiento profesional.",
+  p:["Prácticas profesionales","Becarios","Pro Meritum · México","Mentorías","Capacitación","Recién graduados","Tecnología de última generación","Career plans"]
+ },
+ employees:{
+  k:"04 // PERSONAS",t:"Experiencia del equipo",
+  d:"Cultura en transición: fortalezas internas + retos de adaptación.",
+  p:["Work-life balance","Horarios flexibles","Compañerismo","Cooperación técnica","Bosch → independiente","Comunicación directiva","Burocracia","Nueva estrategia"]
+ },
+ clients:{
+  k:"05 // RELACIÓN",t:"Clientes B2B",
+  d:"Relaciones industriales basadas en confianza, soporte y co-creación.",
+  p:["Business to Business","Confianza industrial","Socios a largo plazo","Co-creación","Diseño de precisión","Validación","Pruebas de calidad","EMS"]
+ },
+ operations:{
+  k:"06 // OPERACIONES",t:"Talento en operación",
+  d:"Competencias y equipos conectados con procesos, calidad y cadena de suministro.",
+  p:["Supply Chain global","EMS","Hardware","Audio / Video","Calidad","Ingeniería","Eficiencia","Seguridad"]
+ },
+ network:{
+  k:"07 // CONEXIONES",t:"Talento × Empresa",
+  d:"El talento se conecta con las áreas que sostienen el negocio.",
+  p:["Finanzas","Operaciones","Marketing","Clientes","Presupuesto","Productividad","Employer branding","Reputación"]
+ },
+ scale:{
+  k:"08 // ALCANCE",t:"Escala global",
+  d:"Una organización internacional con operación y presencia comercial amplia.",
+  p:["4,200+ empleados","50+ países","90+ países comerciales","3 continentes","México","Hermosillo"]
+ }
+};
+
+const modal=document.getElementById("infoModal");
+const mk=document.getElementById("modalKicker");
+const mt=document.getElementById("modalTitle");
+const mx=document.getElementById("modalText");
+const mg=document.getElementById("modalGrid");
+
+function openModal(key){
+ const d=modalData[key]; if(!d)return;
+ mk.textContent=d.k; mt.textContent=d.t; mx.textContent=d.d;
+ mg.innerHTML=d.p.map(x=>`<div class="modal-pill">${x}</div>`).join("");
+ modal.classList.add("open"); modal.setAttribute("aria-hidden","false");
+ document.body.style.overflow="hidden";
+}
+function closeModal(){
+ modal.classList.remove("open"); modal.setAttribute("aria-hidden","true");
+ document.body.style.overflow="";
+}
+document.querySelectorAll("[data-modal]").forEach(el=>{
+ el.addEventListener("click",()=>openModal(el.dataset.modal));
+});
+document.querySelector(".modal-close").addEventListener("click",closeModal);
+modal.addEventListener("click",e=>{if(e.target===modal)closeModal()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
+
+// Subtle active-state glow
+document.querySelectorAll(".mm-node").forEach(n=>{
+ n.addEventListener("mouseenter",()=>n.classList.add("active"));
+ n.addEventListener("mouseleave",()=>n.classList.remove("active"));
+});
+</script>
 
 </body>
-</html
+</html>
