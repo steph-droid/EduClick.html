@@ -1,55 +1,2506 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KEENFINITY // HUMAN SYSTEM</title>
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
-:root{--bg:#050812;--bg2:#09111f;--text:#eef7ff;--muted:#8ea3b8;--cyan:#35e6ff;--blue:#4f7cff;--violet:#a56cff;--line:rgba(120,190,255,.20);--glass:rgba(12,24,42,.64)}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;min-height:100%;overflow-y:auto}body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;overflow-y:auto;min-height:100vh;-webkit-overflow-scrolling:touch}body:before{content:"";position:fixed;inset:0;z-index:-3;background:radial-gradient(circle at 18% 12%,rgba(53,230,255,.14),transparent 28%),radial-gradient(circle at 82% 24%,rgba(165,108,255,.13),transparent 30%),radial-gradient(circle at 52% 85%,rgba(79,124,255,.12),transparent 35%)}body:after{content:"";position:fixed;inset:0;z-index:-2;opacity:.35;background-image:linear-gradient(rgba(120,190,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(120,190,255,.035) 1px,transparent 1px);background-size:70px 70px;mask-image:linear-gradient(to bottom,black,transparent 92%)}a{color:inherit;text-decoration:none}section{min-height:100vh;padding:110px 7vw;position:relative}.container{max-width:1250px;margin:auto}.kicker{font:600 12px "Space Grotesk";letter-spacing:.22em;color:var(--cyan);text-transform:uppercase}h1,h2,h3{font-family:"Space Grotesk",sans-serif}h2{font-size:clamp(42px,6vw,82px);line-height:.94;letter-spacing:-.055em}p{color:var(--muted);line-height:1.7}.glow{color:var(--cyan);text-shadow:0 0 28px rgba(53,230,255,.5)}
-.nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:20;width:min(92%,1100px);padding:12px 16px;border:1px solid var(--line);background:rgba(5,8,18,.68);backdrop-filter:blur(18px);border-radius:20px;display:flex;align-items:center;justify-content:space-between}.brand{font:700 16px "Space Grotesk";letter-spacing:.08em}.brand span span{color:var(--cyan)}.navlinks{display:flex;gap:8px;flex-wrap:wrap}.navlinks a{font-size:12px;color:#aebfd0;padding:9px 12px;border-radius:12px}.navlinks a:hover{background:rgba(53,230,255,.08);color:white}
-.hero{display:grid;place-items:center;text-align:center;overflow:hidden}.hero-inner{position:relative;z-index:2}.orb{width:270px;height:270px;border-radius:50%;margin:0 auto 38px;background:radial-gradient(circle at 35% 30%,#c8fbff 0 2%,var(--cyan) 7%,#146a9a 30%,#08142b 66%,transparent 70%);box-shadow:0 0 35px rgba(53,230,255,.35),0 0 120px rgba(79,124,255,.22);animation:float 5s ease-in-out infinite;position:relative}.orb:before,.orb:after{content:"";position:absolute;inset:-34px;border:1px solid rgba(53,230,255,.28);border-radius:50%;transform:rotate(25deg) scaleY(.35)}.orb:after{inset:-60px;transform:rotate(-30deg) scaleY(.25);border-color:rgba(165,108,255,.25)}@keyframes float{50%{transform:translateY(-12px) scale(1.02)}}.hero h1{font-size:clamp(60px,12vw,150px);line-height:.82;letter-spacing:-.08em}.hero .tag{font:500 clamp(15px,2vw,23px) "Space Grotesk";margin:22px 0 35px;color:#c9d8e7}.stats-row{display:flex;justify-content:center;gap:34px;flex-wrap:wrap}.stat{text-align:left;border-left:1px solid var(--line);padding-left:15px}.stat b{display:block;font:700 25px "Space Grotesk";color:white}.stat small{color:var(--muted)}.scroll{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);font-size:11px;color:#6e859b;letter-spacing:.2em}
-.intro-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:60px;align-items:center}.big-quote{font:500 clamp(30px,4vw,55px) "Space Grotesk";line-height:1.05;letter-spacing:-.04em}.big-quote span{color:var(--cyan)}.card{border:1px solid var(--line);background:linear-gradient(145deg,rgba(18,37,61,.72),rgba(7,14,27,.62));border-radius:28px;padding:28px;backdrop-filter:blur(14px);box-shadow:inset 0 1px rgba(255,255,255,.04),0 20px 80px rgba(0,0,0,.2)}.timeline{position:relative;margin-top:65px}.timeline:before{content:"";position:absolute;left:22px;top:0;bottom:0;width:1px;background:linear-gradient(var(--cyan),var(--violet),transparent)}.event{position:relative;padding-left:65px;margin-bottom:55px}.dot{position:absolute;left:14px;top:5px;width:17px;height:17px;border-radius:50%;background:var(--cyan);box-shadow:0 0 22px var(--cyan)}.event .year{font:700 13px "Space Grotesk";color:var(--cyan);letter-spacing:.12em}.event h3{font-size:29px;margin:7px 0 10px}.event strong{color:white}
-.talent-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:60px}.talent-card{padding:25px;border-radius:25px;border:1px solid var(--line);background:rgba(10,20,35,.62);transition:.3s}.talent-card:hover{transform:translateY(-8px);border-color:var(--cyan)}.icon{font-size:28px;margin-bottom:22px}.talent-card h3{font-size:22px;margin-bottom:10px}.talent-card p{font-size:14px}.keyword-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.keyword{padding:9px 13px;border:1px solid rgba(53,230,255,.22);border-radius:999px;background:rgba(53,230,255,.045);color:#dcefff;font:500 12px "Space Grotesk";letter-spacing:.04em}.keyword.hot{border-color:rgba(165,108,255,.35);background:rgba(165,108,255,.07)}.people-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;margin-top:55px}.profile-panel{padding:32px;border-radius:28px;border:1px solid var(--line);background:rgba(10,20,35,.68)}.profile-panel h3{font-size:30px;margin:10px 0}.mini-label{font:600 11px "Space Grotesk";letter-spacing:.18em;color:var(--cyan);text-transform:uppercase}
-.network{margin-top:65px;display:grid;grid-template-columns:1fr 1fr;gap:25px}.area{padding:28px;border-radius:25px;border:1px solid var(--line);background:var(--glass);transition:.3s}.area:hover{transform:translateY(-5px);border-color:var(--violet)}.area .num{font:700 12px "Space Grotesk";color:var(--cyan)}.area h3{font-size:28px;margin:10px 0}.area p{font-size:14px}.numbers{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:60px}.number-card{min-height:190px;padding:28px;border:1px solid var(--line);border-radius:26px;background:rgba(10,20,35,.65);display:flex;flex-direction:column;justify-content:space-between}.number-card b{font:700 clamp(42px,5vw,72px) "Space Grotesk";letter-spacing:-.06em;color:white}.number-card span{color:var(--cyan);font-size:12px;letter-spacing:.12em;text-transform:uppercase}.final{display:grid;place-items:center;text-align:center;background:radial-gradient(circle at 50% 50%,rgba(53,230,255,.08),transparent 45%)}.final h2{max-width:1000px;margin:25px auto}.final p{max-width:700px;margin:auto}.cta{display:inline-flex;margin-top:35px;padding:14px 20px;border:1px solid rgba(53,230,255,.5);border-radius:999px;color:var(--cyan);background:rgba(53,230,255,.05)}
-.reveal{opacity:0;transform:translateY(35px);transition:opacity .8s,transform .8s}.reveal.show{opacity:1;transform:none}.logo-mark{width:34px;height:34px;display:inline-grid;place-items:center;position:relative;margin-right:9px;vertical-align:middle}.logo-mark:before,.logo-mark:after{content:"";position:absolute;border:2px solid var(--cyan);border-radius:50%;transform:rotate(45deg) scaleY(.55)}.logo-mark:before{inset:3px 1px}.logo-mark:after{inset:8px 5px;border-color:#fff;transform:rotate(-45deg) scaleY(.55)}.logo-dot{width:6px;height:6px;background:var(--cyan);border-radius:50%;box-shadow:0 0 14px var(--cyan);z-index:2}.brand-lockup{display:flex;align-items:center}.hero-logo{display:inline-flex;align-items:center;justify-content:center;margin-bottom:22px;padding:10px 17px 10px 11px;border:1px solid rgba(53,230,255,.28);border-radius:18px;background:rgba(8,20,34,.5);box-shadow:0 0 35px rgba(53,230,255,.08)}.hero-logo .logo-mark{width:48px;height:48px}.hero-logo .logo-mark:before{inset:4px 1px}.hero-logo .logo-mark:after{inset:11px 7px}.hero-logo .logo-word{font:700 24px "Space Grotesk";letter-spacing:.12em}.hero-logo .logo-word span{color:var(--cyan)}
-.mindmap-section{position:relative;min-height:980px;overflow:hidden}.section-label{font:600 12px "Space Grotesk";letter-spacing:.22em;color:var(--cyan);text-transform:uppercase}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-top:18px}.section-head h2{margin-top:8px}.section-head p{max-width:400px}.eyebrow{font:600 11px "Space Grotesk";letter-spacing:.18em;color:#91a1b9;text-transform:uppercase}.muted{color:var(--muted)}.mindmap-stage{position:relative;width:min(1180px,96vw);height:820px;margin:20px auto 0}.mindmap-stage:before{content:"";position:absolute;inset:8% 6%;border:1px solid rgba(53,230,255,.08);border-radius:50%;box-shadow:0 0 100px rgba(53,230,255,.04) inset}.mm-lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.mm-line{stroke:rgba(53,230,255,.25);stroke-width:1.5;stroke-dasharray:7 8;animation:mmFlow 7s linear infinite}.mm-line.hot{stroke:rgba(165,108,255,.34)}@keyframes mmFlow{to{stroke-dashoffset:-120}}.mm-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:245px;height:245px;border-radius:50%;display:grid;place-items:center;text-align:center;z-index:5;cursor:pointer;background:radial-gradient(circle at 35% 30%,rgba(79,124,255,.32),rgba(5,8,18,.94) 62%);border:1px solid rgba(53,230,255,.7);box-shadow:0 0 35px rgba(53,230,255,.22),0 0 100px rgba(79,124,255,.12),inset 0 0 45px rgba(53,230,255,.08);transition:.35s ease;color:white}.mm-core:hover{transform:translate(-50%,-50%) scale(1.05);box-shadow:0 0 55px rgba(53,230,255,.38),0 0 130px rgba(79,124,255,.18),inset 0 0 55px rgba(53,230,255,.13)}.mm-core:after{content:"";position:absolute;inset:-18px;border:1px solid rgba(53,230,255,.12);border-radius:50%;animation:mmPulse 3s ease-in-out infinite}@keyframes mmPulse{50%{transform:scale(1.08);opacity:.3}}.mm-core .core-small{font-size:.62rem;letter-spacing:.24em;color:#8beeff;margin-bottom:8px}.mm-core .core-big{font-family:"Space Grotesk",sans-serif;font-size:1.5rem;font-weight:700;letter-spacing:.06em}.mm-core .core-sub{font-size:.68rem;color:#91a1b9;margin-top:8px}.mm-node{position:absolute;min-width:155px;padding:16px 18px;border-radius:18px;background:rgba(8,16,30,.78);border:1px solid rgba(255,255,255,.10);backdrop-filter:blur(14px);box-shadow:0 12px 35px rgba(0,0,0,.28);cursor:pointer;z-index:4;transition:.3s ease;color:white}.mm-node:hover,.mm-node.active{transform:translateY(-5px) scale(1.035);border-color:rgba(53,230,255,.55);box-shadow:0 0 30px rgba(53,230,255,.12),0 18px 45px rgba(0,0,0,.35)}.mm-node .node-icon{font-size:1.1rem;margin-bottom:7px}.mm-node .node-title{font-family:"Space Grotesk",sans-serif;font-size:.86rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.mm-node .node-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px}.mm-node .tag{font-size:.57rem;color:#a9b8cd;border:1px solid rgba(255,255,255,.08);padding:3px 6px;border-radius:999px}.mm-node.cyan{border-left:2px solid #35e6ff}.mm-node.blue{border-left:2px solid #4f7cff}.mm-node.violet{border-left:2px solid #a56cff}.mm-n1{left:4%;top:10%}.mm-n2{left:40%;top:2%}.mm-n3{right:4%;top:10%}.mm-n4{left:1%;top:43%}.mm-n5{right:1%;top:43%}.mm-n6{left:9%;bottom:8%}.mm-n7{left:40%;bottom:1%}.mm-n8{right:9%;bottom:8%}.mm-legend{position:absolute;left:50%;bottom:0;transform:translateX(-50%);display:flex;gap:12px;flex-wrap:wrap;justify-content:center;width:90%}.mm-legend span{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:#8292aa;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06)}
-.info-modal{position:fixed;inset:0;z-index:1000;display:none;place-items:center;background:rgba(2,5,12,.72);backdrop-filter:blur(10px);padding:24px}.info-modal.open{display:grid}.modal-card{width:min(680px,94vw);max-height:84vh;overflow:auto;position:relative;border:1px solid rgba(53,230,255,.28);border-radius:26px;background:linear-gradient(145deg,rgba(12,23,41,.97),rgba(5,8,18,.98));box-shadow:0 0 70px rgba(53,230,255,.12),0 30px 100px rgba(0,0,0,.5);padding:34px;animation:modalIn .25s ease-out}@keyframes modalIn{from{opacity:0;transform:translateY(12px) scale(.97)}to{opacity:1;transform:none}}.modal-close{position:absolute;right:17px;top:15px;width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);color:white;font-size:1.15rem;cursor:pointer}.modal-kicker{font-size:.62rem;letter-spacing:.2em;color:#35e6ff;text-transform:uppercase}.modal-title{font-family:"Space Grotesk",sans-serif;font-size:2rem;margin:8px 0 14px}.modal-text{color:#aab7ca;line-height:1.7;font-size:.94rem}.modal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:20px}.modal-pill{padding:12px 13px;border-radius:12px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07);font-size:.73rem;color:#d9e4f2}
-@media(max-width:850px){section{padding:90px 5vw}.navlinks{gap:2px}.navlinks a{padding:8px 6px;font-size:10px}.intro-grid{grid-template-columns:1fr}.talent-grid,.numbers{grid-template-columns:1fr 1fr}.network,.people-layout{grid-template-columns:1fr}.section-head{display:block}.mindmap-stage{height:auto;display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:15px 0 70px}.mm-lines{display:none}.mm-core{position:relative;left:auto;top:auto;transform:none;grid-column:1/-1;margin:25px auto;width:190px;height:190px}.mm-core:hover{transform:scale(1.03)}.mm-node{position:relative!important;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;min-width:0}.mm-legend{position:relative;left:auto;bottom:auto;transform:none;width:100%;grid-column:1/-1}.modal-grid{grid-template-columns:1fr}}@media(max-width:520px){.talent-grid,.numbers{grid-template-columns:1fr}.orb{width:200px;height:200px}.mindmap-stage{min-height:850px}.nav{width:96%;padding:10px}.brand{font-size:12px}.navlinks a{font-size:9px;padding:7px 4px}}
+
+:root{
+  --bg:#050812;
+  --bg2:#09111f;
+  --text:#eef7ff;
+  --muted:#8ea3b8;
+  --cyan:#35e6ff;
+  --blue:#4f7cff;
+  --violet:#a56cff;
+  --line:rgba(120,190,255,.20);
+  --glass:rgba(12,24,42,.64);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+  min-height:100%;
+  overflow-y:auto;
+}
+
+body{
+  font-family:"DM Sans",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+  overflow-y:auto;
+  min-height:100vh;
+  -webkit-overflow-scrolling:touch;
+}
+
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-3;
+  background:
+    radial-gradient(circle at 18% 12%,rgba(53,230,255,.14),transparent 28%),
+    radial-gradient(circle at 82% 24%,rgba(165,108,255,.13),transparent 30%),
+    radial-gradient(circle at 52% 85%,rgba(79,124,255,.12),transparent 35%);
+}
+
+body:after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  opacity:.35;
+  background-image:
+    linear-gradient(rgba(120,190,255,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(120,190,255,.035) 1px,transparent 1px);
+  background-size:70px 70px;
+  mask-image:linear-gradient(to bottom,black,transparent 92%);
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+section{
+  min-height:100vh;
+  padding:110px 7vw;
+  position:relative;
+}
+
+.container{
+  max-width:1250px;
+  margin:auto;
+}
+
+.kicker{
+  font:600 12px "Space Grotesk";
+  letter-spacing:.22em;
+  color:var(--cyan);
+  text-transform:uppercase;
+}
+
+h1,h2,h3{
+  font-family:"Space Grotesk",sans-serif;
+}
+
+h2{
+  font-size:clamp(42px,6vw,82px);
+  line-height:.94;
+  letter-spacing:-.055em;
+}
+
+p{
+  color:var(--muted);
+  line-height:1.7;
+}
+
+.glow{
+  color:var(--cyan);
+  text-shadow:0 0 28px rgba(53,230,255,.5);
+}
+
+/* =========================
+   NAV
+========================= */
+
+.nav{
+  position:fixed;
+  top:18px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:20;
+  width:min(92%,1100px);
+  padding:12px 16px;
+  border:1px solid var(--line);
+  background:rgba(5,8,18,.68);
+  backdrop-filter:blur(18px);
+  border-radius:20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.brand{
+  font:700 16px "Space Grotesk";
+  letter-spacing:.08em;
+}
+
+.brand span span{
+  color:var(--cyan);
+}
+
+.navlinks{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.navlinks a{
+  font-size:12px;
+  color:#aebfd0;
+  padding:9px 12px;
+  border-radius:12px;
+  transition:.25s;
+}
+
+.navlinks a:hover{
+  background:rgba(53,230,255,.08);
+  color:white;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  display:grid;
+  place-items:center;
+  text-align:center;
+  overflow:hidden;
+}
+
+.hero-inner{
+  position:relative;
+  z-index:2;
+}
+
+.orb{
+  width:270px;
+  height:270px;
+  border-radius:50%;
+  margin:0 auto 38px;
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #c8fbff 0 2%,
+      var(--cyan) 7%,
+      #146a9a 30%,
+      #08142b 66%,
+      transparent 70%
+    );
+  box-shadow:
+    0 0 35px rgba(53,230,255,.35),
+    0 0 120px rgba(79,124,255,.22);
+  animation:float 5s ease-in-out infinite;
+  position:relative;
+}
+
+.orb:before,
+.orb:after{
+  content:"";
+  position:absolute;
+  inset:-34px;
+  border:1px solid rgba(53,230,255,.28);
+  border-radius:50%;
+  transform:rotate(25deg) scaleY(.35);
+}
+
+.orb:after{
+  inset:-60px;
+  transform:rotate(-30deg) scaleY(.25);
+  border-color:rgba(165,108,255,.25);
+}
+
+@keyframes float{
+  50%{
+    transform:translateY(-12px) scale(1.02);
+  }
+}
+
+.hero h1{
+  font-size:clamp(60px,12vw,150px);
+  line-height:.82;
+  letter-spacing:-.08em;
+}
+
+.hero .tag{
+  font:500 clamp(15px,2vw,23px) "Space Grotesk";
+  margin:22px 0 35px;
+  color:#c9d8e7;
+}
+
+.stats-row{
+  display:flex;
+  justify-content:center;
+  gap:34px;
+  flex-wrap:wrap;
+}
+
+.stat{
+  text-align:left;
+  border-left:1px solid var(--line);
+  padding-left:15px;
+}
+
+.stat b{
+  display:block;
+  font:700 25px "Space Grotesk";
+  color:white;
+}
+
+.stat small{
+  color:var(--muted);
+}
+
+.scroll{
+  position:absolute;
+  bottom:30px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:11px;
+  color:#6e859b;
+  letter-spacing:.2em;
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.intro-grid{
+  display:grid;
+  grid-template-columns:1fr 1.25fr;
+  gap:60px;
+  align-items:center;
+}
+
+.big-quote{
+  font:500 clamp(30px,4vw,55px) "Space Grotesk";
+  line-height:1.05;
+  letter-spacing:-.04em;
+}
+
+.big-quote span{
+  color:var(--cyan);
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+  border:1px solid var(--line);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(18,37,61,.72),
+      rgba(7,14,27,.62)
+    );
+  border-radius:28px;
+  padding:28px;
+  backdrop-filter:blur(14px);
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.04),
+    0 20px 80px rgba(0,0,0,.2);
+}
+
+/* =========================
+   TIMELINE
+========================= */
+
+.timeline{
+  position:relative;
+  margin-top:65px;
+}
+
+.timeline:before{
+  content:"";
+  position:absolute;
+  left:22px;
+  top:0;
+  bottom:0;
+  width:1px;
+  background:
+    linear-gradient(
+      var(--cyan),
+      var(--violet),
+      transparent
+    );
+}
+
+.event{
+  position:relative;
+  padding-left:65px;
+  margin-bottom:55px;
+}
+
+.dot{
+  position:absolute;
+  left:14px;
+  top:5px;
+  width:17px;
+  height:17px;
+  border-radius:50%;
+  background:var(--cyan);
+  box-shadow:0 0 22px var(--cyan);
+}
+
+.event .year{
+  font:700 13px "Space Grotesk";
+  color:var(--cyan);
+  letter-spacing:.12em;
+}
+
+.event h3{
+  font-size:29px;
+  margin:7px 0 10px;
+}
+
+.event strong{
+  color:white;
+}
+
+/* =========================
+   TALENT
+========================= */
+
+.talent-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+  margin-top:60px;
+}
+
+.talent-card{
+  padding:25px;
+  border-radius:25px;
+  border:1px solid var(--line);
+  background:rgba(10,20,35,.62);
+  transition:.3s;
+}
+
+.talent-card:hover{
+  transform:translateY(-8px);
+  border-color:var(--cyan);
+}
+
+.icon{
+  font-size:28px;
+  margin-bottom:22px;
+}
+
+.talent-card h3{
+  font-size:22px;
+  margin-bottom:10px;
+}
+
+.talent-card p{
+  font-size:14px;
+}
+
+/* =========================
+   KEYWORDS
+========================= */
+
+.keyword-grid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:20px;
+}
+
+.keyword{
+  padding:9px 13px;
+  border:1px solid rgba(53,230,255,.22);
+  border-radius:999px;
+  background:rgba(53,230,255,.045);
+  color:#dcefff;
+  font:500 12px "Space Grotesk";
+  letter-spacing:.04em;
+}
+
+.keyword.hot{
+  border-color:rgba(165,108,255,.35);
+  background:rgba(165,108,255,.07);
+}
+
+/* =========================
+   PEOPLE
+========================= */
+
+.people-layout{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:22px;
+  margin-top:55px;
+}
+
+.profile-panel{
+  padding:32px;
+  border-radius:28px;
+  border:1px solid var(--line);
+  background:rgba(10,20,35,.68);
+}
+
+.profile-panel h3{
+  font-size:30px;
+  margin:10px 0;
+}
+
+.mini-label{
+  font:600 11px "Space Grotesk";
+  letter-spacing:.18em;
+  color:var(--cyan);
+  text-transform:uppercase;
+}
+
+/* =========================
+   NETWORK
+========================= */
+
+.network{
+  margin-top:65px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+}
+
+.area{
+  padding:28px;
+  border-radius:25px;
+  border:1px solid var(--line);
+  background:var(--glass);
+  transition:.3s;
+}
+
+.area:hover{
+  transform:translateY(-5px);
+  border-color:var(--violet);
+}
+
+.area .num{
+  font:700 12px "Space Grotesk";
+  color:var(--cyan);
+}
+
+.area h3{
+  font-size:28px;
+  margin:10px 0;
+}
+
+.area p{
+  font-size:14px;
+}
+
+/* =========================
+   FINAL
+========================= */
+
+.final{
+  display:grid;
+  place-items:center;
+  text-align:center;
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(53,230,255,.08),
+      transparent 45%
+    );
+}
+
+.final h2{
+  max-width:1000px;
+  margin:25px auto;
+}
+
+.final p{
+  max-width:700px;
+  margin:auto;
+}
+
+.cta{
+  display:inline-flex;
+  margin-top:35px;
+  padding:14px 20px;
+  border:1px solid rgba(53,230,255,.5);
+  border-radius:999px;
+  color:var(--cyan);
+  background:rgba(53,230,255,.05);
+  transition:.25s;
+}
+
+.cta:hover{
+  background:rgba(53,230,255,.12);
+  box-shadow:0 0 25px rgba(53,230,255,.15);
+}
+
+/* =========================
+   REVEAL
+========================= */
+
+.reveal{
+  opacity:0;
+  transform:translateY(35px);
+  transition:opacity .8s,transform .8s;
+}
+
+.reveal.show{
+  opacity:1;
+  transform:none;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo-mark{
+  width:34px;
+  height:34px;
+  display:inline-grid;
+  place-items:center;
+  position:relative;
+  margin-right:9px;
+  vertical-align:middle;
+}
+
+.logo-mark:before,
+.logo-mark:after{
+  content:"";
+  position:absolute;
+  border:2px solid var(--cyan);
+  border-radius:50%;
+  transform:rotate(45deg) scaleY(.55);
+}
+
+.logo-mark:before{
+  inset:3px 1px;
+}
+
+.logo-mark:after{
+  inset:8px 5px;
+  border-color:#fff;
+  transform:rotate(-45deg) scaleY(.55);
+}
+
+.logo-dot{
+  width:6px;
+  height:6px;
+  background:var(--cyan);
+  border-radius:50%;
+  box-shadow:0 0 14px var(--cyan);
+  z-index:2;
+}
+
+.brand-lockup{
+  display:flex;
+  align-items:center;
+}
+
+.hero-logo{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:22px;
+  padding:10px 17px 10px 11px;
+  border:1px solid rgba(53,230,255,.28);
+  border-radius:18px;
+  background:rgba(8,20,34,.5);
+  box-shadow:0 0 35px rgba(53,230,255,.08);
+}
+
+.hero-logo .logo-mark{
+  width:48px;
+  height:48px;
+}
+
+.hero-logo .logo-mark:before{
+  inset:4px 1px;
+}
+
+.hero-logo .logo-mark:after{
+  inset:11px 7px;
+}
+
+.hero-logo .logo-word{
+  font:700 24px "Space Grotesk";
+  letter-spacing:.12em;
+}
+
+.hero-logo .logo-word span{
+  color:var(--cyan);
+}
+
+/* =========================
+   MIND MAP
+========================= */
+
+.mindmap-section{
+  position:relative;
+  min-height:980px;
+  overflow:hidden;
+}
+
+.section-label{
+  font:600 12px "Space Grotesk";
+  letter-spacing:.22em;
+  color:var(--cyan);
+  text-transform:uppercase;
+}
+
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:30px;
+  margin-top:18px;
+}
+
+.section-head h2{
+  margin-top:8px;
+}
+
+.section-head p{
+  max-width:400px;
+}
+
+.eyebrow{
+  font:600 11px "Space Grotesk";
+  letter-spacing:.18em;
+  color:#91a1b9;
+  text-transform:uppercase;
+}
+
+.muted{
+  color:var(--muted);
+}
+
+.mindmap-stage{
+  position:relative;
+  width:min(1180px,96vw);
+  height:820px;
+  margin:20px auto 0;
+}
+
+.mindmap-stage:before{
+  content:"";
+  position:absolute;
+  inset:8% 6%;
+  border:1px solid rgba(53,230,255,.08);
+  border-radius:50%;
+  box-shadow:0 0 100px rgba(53,230,255,.04) inset;
+}
+
+.mm-lines{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+}
+
+.mm-line{
+  stroke:rgba(53,230,255,.25);
+  stroke-width:1.5;
+  stroke-dasharray:7 8;
+  animation:mmFlow 7s linear infinite;
+}
+
+.mm-line.hot{
+  stroke:rgba(165,108,255,.34);
+}
+
+@keyframes mmFlow{
+  to{
+    stroke-dashoffset:-120;
+  }
+}
+
+.mm-core{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  width:245px;
+  height:245px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  z-index:5;
+  cursor:pointer;
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      rgba(79,124,255,.32),
+      rgba(5,8,18,.94) 62%
+    );
+  border:1px solid rgba(53,230,255,.7);
+  box-shadow:
+    0 0 35px rgba(53,230,255,.22),
+    0 0 100px rgba(79,124,255,.12),
+    inset 0 0 45px rgba(53,230,255,.08);
+  transition:.35s ease;
+  color:white;
+}
+
+.mm-core:hover{
+  transform:translate(-50%,-50%) scale(1.05);
+  box-shadow:
+    0 0 55px rgba(53,230,255,.38),
+    0 0 130px rgba(79,124,255,.18),
+    inset 0 0 55px rgba(53,230,255,.13);
+}
+
+.mm-core:after{
+  content:"";
+  position:absolute;
+  inset:-18px;
+  border:1px solid rgba(53,230,255,.12);
+  border-radius:50%;
+  animation:mmPulse 3s ease-in-out infinite;
+}
+
+@keyframes mmPulse{
+  50%{
+    transform:scale(1.08);
+    opacity:.3;
+  }
+}
+
+.mm-core .core-small{
+  font-size:.62rem;
+  letter-spacing:.24em;
+  color:#8beeff;
+  margin-bottom:8px;
+}
+
+.mm-core .core-big{
+  font-family:"Space Grotesk",sans-serif;
+  font-size:1.5rem;
+  font-weight:700;
+  letter-spacing:.06em;
+}
+
+.mm-core .core-sub{
+  font-size:.68rem;
+  color:#91a1b9;
+  margin-top:8px;
+}
+
+.mm-node{
+  position:absolute;
+  min-width:155px;
+  padding:16px 18px;
+  border-radius:18px;
+  background:rgba(8,16,30,.78);
+  border:1px solid rgba(255,255,255,.10);
+  backdrop-filter:blur(14px);
+  box-shadow:0 12px 35px rgba(0,0,0,.28);
+  cursor:pointer;
+  z-index:4;
+  transition:.3s ease;
+  color:white;
+}
+
+.mm-node:hover,
+.mm-node.active{
+  transform:translateY(-5px) scale(1.035);
+  border-color:rgba(53,230,255,.55);
+  box-shadow:
+    0 0 30px rgba(53,230,255,.12),
+    0 18px 45px rgba(0,0,0,.35);
+}
+
+.mm-node .node-icon{
+  font-size:1.1rem;
+  margin-bottom:7px;
+}
+
+.mm-node .node-title{
+  font-family:"Space Grotesk",sans-serif;
+  font-size:.86rem;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.mm-node .node-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px;
+  margin-top:9px;
+}
+
+.mm-node .tag{
+  font-size:.57rem;
+  color:#a9b8cd;
+  border:1px solid rgba(255,255,255,.08);
+  padding:3px 6px;
+  border-radius:999px;
+}
+
+.mm-node.cyan{
+  border-left:2px solid #35e6ff;
+}
+
+.mm-node.blue{
+  border-left:2px solid #4f7cff;
+}
+
+.mm-node.violet{
+  border-left:2px solid #a56cff;
+}
+
+.mm-n1{
+  left:4%;
+  top:10%;
+}
+
+.mm-n2{
+  left:40%;
+  top:2%;
+}
+
+.mm-n3{
+  right:4%;
+  top:10%;
+}
+
+.mm-n4{
+  left:1%;
+  top:43%;
+}
+
+.mm-n5{
+  right:1%;
+  top:43%;
+}
+
+.mm-n6{
+  left:9%;
+  bottom:8%;
+}
+
+.mm-n7{
+  left:40%;
+  bottom:1%;
+}
+
+.mm-n8{
+  right:9%;
+  bottom:8%;
+}
+
+.mm-legend{
+  position:absolute;
+  left:50%;
+  bottom:0;
+  transform:translateX(-50%);
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:center;
+  width:90%;
+}
+
+.mm-legend span{
+  font-size:.62rem;
+  letter-spacing:.04em;
+  color:#8292aa;
+  padding:8px 10px;
+  border-radius:999px;
+  background:rgba(255,255,255,.025);
+  border:1px solid rgba(255,255,255,.06);
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.info-modal{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  display:none;
+  place-items:center;
+  background:rgba(2,5,12,.72);
+  backdrop-filter:blur(10px);
+  padding:24px;
+}
+
+.info-modal.open{
+  display:grid;
+}
+
+.modal-card{
+  width:min(680px,94vw);
+  max-height:84vh;
+  overflow:auto;
+  position:relative;
+  border:1px solid rgba(53,230,255,.28);
+  border-radius:26px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(12,23,41,.97),
+      rgba(5,8,18,.98)
+    );
+  box-shadow:
+    0 0 70px rgba(53,230,255,.12),
+    0 30px 100px rgba(0,0,0,.5);
+  padding:34px;
+  animation:modalIn .25s ease-out;
+}
+
+@keyframes modalIn{
+  from{
+    opacity:0;
+    transform:translateY(12px) scale(.97);
+  }
+  to{
+    opacity:1;
+    transform:none;
+  }
+}
+
+.modal-close{
+  position:absolute;
+  right:17px;
+  top:15px;
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.1);
+  background:rgba(255,255,255,.04);
+  color:white;
+  font-size:1.15rem;
+  cursor:pointer;
+}
+
+.modal-kicker{
+  font-size:.62rem;
+  letter-spacing:.2em;
+  color:#35e6ff;
+  text-transform:uppercase;
+}
+
+.modal-title{
+  font-family:"Space Grotesk",sans-serif;
+  font-size:2rem;
+  margin:8px 0 14px;
+}
+
+.modal-text{
+  color:#aab7ca;
+  line-height:1.7;
+  font-size:.94rem;
+}
+
+.modal-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin-top:20px;
+}
+
+.modal-pill{
+  padding:12px 13px;
+  border-radius:12px;
+  background:rgba(255,255,255,.035);
+  border:1px solid rgba(255,255,255,.07);
+  font-size:.73rem;
+  color:#d9e4f2;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:850px){
+
+  section{
+    padding:90px 5vw;
+  }
+
+  .navlinks{
+    gap:2px;
+  }
+
+  .navlinks a{
+    padding:8px 6px;
+    font-size:10px;
+  }
+
+  .intro-grid{
+    grid-template-columns:1fr;
+  }
+
+  .talent-grid,
+  .numbers{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .network,
+  .people-layout{
+    grid-template-columns:1fr;
+  }
+
+  .section-head{
+    display:block;
+  }
+
+  .mindmap-stage{
+    height:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    padding:15px 0 70px;
+  }
+
+  .mm-lines{
+    display:none;
+  }
+
+  .mm-core{
+    position:relative;
+    left:auto;
+    top:auto;
+    transform:none;
+    grid-column:1/-1;
+    margin:25px auto;
+    width:190px;
+    height:190px;
+  }
+
+  .mm-core:hover{
+    transform:scale(1.03);
+  }
+
+  .mm-node{
+    position:relative!important;
+    left:auto!important;
+    right:auto!important;
+    top:auto!important;
+    bottom:auto!important;
+    min-width:0;
+  }
+
+  .mm-legend{
+    position:relative;
+    left:auto;
+    bottom:auto;
+    transform:none;
+    width:100%;
+    grid-column:1/-1;
+  }
+
+  .modal-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:520px){
+
+  .talent-grid,
+  .numbers{
+    grid-template-columns:1fr;
+  }
+
+  .orb{
+    width:200px;
+    height:200px;
+  }
+
+  .mindmap-stage{
+    min-height:850px;
+  }
+
+  .nav{
+    width:96%;
+    padding:10px;
+  }
+
+  .brand{
+    font-size:12px;
+  }
+
+  .navlinks a{
+    font-size:9px;
+    padding:7px 4px;
+  }
+}
 </style>
 </head>
-<body>
-<nav class="nav">
-  <a class="brand brand-lockup" href="#home"><span class="logo-mark"><i class="logo-dot"></i></span><span>KEEN<span>FINITY</span></span></a>
-  <div class="navlinks">
-    <a href="index.html">Portada</a><a href="#mindmap2">Mapa mental</a><a href="#transformation">Transformación</a><a href="#profile">Talento</a><a href="#employees">Equipo</a><a href="#customers">Clientes</a><a href="#network">Conexiones</a>
-  </div>
-</nav>
-<section class="hero" id="home"><div class="hero-inner reveal"><div class="hero-logo"><span class="logo-mark"><i class="logo-dot"></i></span><span class="logo-word">KEEN<span>FINITY</span></span></div><div class="orb"></div><div class="kicker">Talent Organizational Experience</div><h1>KEEN<span class="glow">FINITY</span></h1><div class="tag">THE PEOPLE BEHIND THE TECHNOLOGY</div><div class="stats-row"><div class="stat"><b>4,200+</b><small>personas</small></div><div class="stat"><b>50+</b><small>países con empleados</small></div><div class="stat"><b>90+</b><small>países con operaciones</small></div></div></div><div class="scroll">SCROLL TO EXPLORE ↓</div></section>
-<section><div class="container intro-grid"><div class="reveal"><div class="kicker">01 // THE HUMAN SYSTEM</div><div class="big-quote" style="margin-top:25px">Una empresa de tecnología también es un <span>sistema de personas.</span></div></div><br><p><strong style="color:white">La pregunta central:</strong> ¿cómo se atrae, desarrolla, conecta y conserva el talento mientras una organización construye una nueva identidad?</p></div></div></section>
-<section id="transformation"><div class="container"><div class="kicker reveal">02 // TRANSFORMATION</div><h2 class="reveal" style="margin-top:18px">FROM BOSCH<br><span class="glow">TO KEENFINITY.</span></h2><div class="timeline"><div class="event reveal"><div class="dot"></div><div class="year">2023</div><h3>Revisión del portafolio</h3><p>Bosch decidió vender su división de tecnología de seguridad y comunicaciones como parte de una revisión de sus áreas de negocio y una estrategia enfocada en sus prioridades, incluyendo movilidad.</p></div><div class="event reveal"><div class="dot"></div><div class="year">12 DIC 2024</div><h3>Adquisición por Triton Partners</h3><p>La división fue adquirida por <strong>Triton Partners</strong>, dando inicio al proceso de transformación hacia una compañía independiente.</p></div><div class="event reveal"><div class="dot"></div><div class="year">JUL 2025</div><h3>Finaliza el carve-out</h3><p>Keenfinity deja de operar como una división de Bosch y comienza su etapa como empresa independiente, conservando experiencia, talento, tecnologías y marcas del negocio.</p></div></div></div></section>
-<section id="profile"><div class="container"><div class="kicker reveal">03 // PEOPLE PROFILE</div><h2 class="reveal" style="margin-top:18px">EL TALENTO<br><span class="glow">KEENFINITY.</span></h2><div class="people-layout"><div class="profile-panel reveal"><div class="mini-label">CAPITAL HUMANO</div><h3>Herencia técnica + mentalidad ágil</h3><div class="keyword-grid"><span class="keyword">Ingeniería</span><span class="keyword">TI</span><span class="keyword">Software embebido</span><span class="keyword">Linux</span><span class="keyword">RF</span><span class="keyword">Pruebas de hardware</span><span class="keyword">Supply Chain global</span><span class="keyword">Audio / Video</span><span class="keyword hot">IA</span></div></div><div class="profile-panel reveal"><div class="mini-label">SEMILLERO</div><h3>Talento joven</h3><div class="keyword-grid"><span class="keyword">Prácticas profesionales</span><span class="keyword">Becarios</span><span class="keyword">Pro Meritum · México</span><span class="keyword">Mentorías</span><span class="keyword">Capacitación</span><span class="keyword hot">Recién graduados</span><span class="keyword">Tecnología de última generación</span></div></div></div></div></section>
-<section id="employees"><div class="container"><div class="kicker reveal">04 // EMPLOYEE RELATIONSHIP</div><h2 class="reveal" style="margin-top:18px">LA EXPERIENCIA<br><span class="glow">DEL EQUIPO.</span></h2><div class="talent-grid"><div class="talent-card reveal"><div class="icon">↔</div><h3>Transición</h3><div class="keyword-grid"><span class="keyword">Bosch → independiente</span><span class="keyword">Triton</span><span class="keyword">Cambio cultural</span></div></div><div class="talent-card reveal"><div class="icon">☼</div><h3>Fortalezas</h3><div class="keyword-grid"><span class="keyword">Work-life balance</span><span class="keyword">Horarios flexibles</span><span class="keyword">Compañerismo</span><span class="keyword">Cooperación técnica</span></div></div><div class="talent-card reveal"><div class="icon">!</div><h3>Retos</h3><div class="keyword-grid"><span class="keyword hot">Comunicación directiva</span><span class="keyword">Burocracia</span><span class="keyword">Nueva estrategia</span><span class="keyword">Identidad independiente</span></div></div><div class="talent-card reveal"><div class="icon">∞</div><h3>Cultura</h3><div class="keyword-grid"><span class="keyword">Colaboración</span><span class="keyword">Flexibilidad</span><span class="keyword">Adaptación</span><span class="keyword">Innovación</span></div></div></div></div></section>
-<section id="customers"><div class="container"><div class="kicker reveal">05 // CUSTOMERS & PARTNERS</div><h2 class="reveal" style="margin-top:18px">RELACIONES<br><span class="glow">B2B.</span></h2><div class="people-layout"><div class="profile-panel reveal"><div class="mini-label">MODELO</div><h3>Business to Business</h3><div class="keyword-grid"><span class="keyword">Confianza industrial</span><span class="keyword">Socios a largo plazo</span><span class="keyword">Co-creación</span><span class="keyword">Ingeniería</span><span class="keyword">Diseño de precisión</span><span class="keyword">Validación</span><span class="keyword">Pruebas de calidad</span><span class="keyword hot">EMS</span></div></div><div class="profile-panel reveal"><div class="mini-label">AMÉRICA LATINA</div><h3>Canales & soporte</h3><div class="keyword-grid"><span class="keyword">Integradores</span><span class="keyword">Distribuidores</span><span class="keyword">Soporte técnico</span><span class="keyword">Capacitación</span><span class="keyword">Bosch Business Club</span><span class="keyword hot">Red comercial</span></div></div></div></div></section>
-<section id="talent"><div class="container"><div class="kicker reveal">06 // TALENT MAP</div><h2 class="reveal" style="margin-top:18px">THE <span class="glow">HUMAN</span><br>SYSTEM.</h2><div class="talent-grid"><div class="talent-card reveal"><div class="icon">✦</div><h3>Atraer</h3><p>Reclutamiento interno y externo para identificar y seleccionar talento.</p></div><div class="talent-card reveal"><div class="icon">↗</div><h3>Desarrollar</h3><p>Capacitación, aprendizaje continuo y planes de carrera.</p></div><div class="talent-card reveal"><div class="icon">◎</div><h3>Desempeñar</h3><p>Objetivos, evaluación del desempeño, compensaciones e incentivos.</p></div><div class="talent-card reveal"><div class="icon">∞</div><h3>Retener</h3><p>Clima, relaciones laborales, seguridad y una experiencia que favorezca la permanencia.</p></div></div></div></section>
-<section id="network"><div class="container"><div class="kicker reveal">07 // TALENT NETWORK</div><h2 class="reveal" style="margin-top:18px">TALENT<br><span class="glow">DOESN'T WORK ALONE.</span></h2><div class="network"><div class="area reveal"><span class="num">01 / FINANZAS</span><h3>Personas ↔ dinero</h3><p>Compensaciones, contratación, rotación y capacitación deben alinearse con el presupuesto y la sostenibilidad económica.</p></div><div class="area reveal"><span class="num">02 / OPERACIONES</span><h3>Personas ↔ eficiencia</h3><p>La gestión del talento ayuda a asegurar las competencias, dotación y seguridad necesarias para operar.</p></div><div class="area reveal"><span class="num">03 / MARKETING</span><h3>Personas ↔ marca</h3><p>Employer branding conecta la promesa externa de la marca con la experiencia interna de los colaboradores.</p></div><div class="area reveal"><span class="num">04 / CLIENTES</span><h3>Personas ↔ confianza</h3><p>El comportamiento y la experiencia de los colaboradores pueden influir en la percepción del servicio y la marca.</p></div></div></div></section>
-<section class="final"><div class="container reveal"><div class="kicker">08 // FINAL THOUGHT</div><h2>FROM A BUSINESS UNIT<br>TO A <span class="glow">NEW ORGANIZATION.</span></h2><p>La transformación de Keenfinity no solo modificó su estructura. También creó el reto de construir identidad, mantener conocimiento, desarrollar personas y conservar la confianza de sus clientes.</p><a class="cta" href="#home">↑ VOLVER AL INICIO</a></div></section>
 
-<section class="section mindmap-section" id="mindmap2"><div class="section-label">09 // THE HUMAN SYSTEM</div><div class="section-head"><div><div class="eyebrow">KEENFINITY × TALENTO</div><h2>TODO CONECTA.</h2></div><p class="muted">Haz click en cada nodo para explorar la información.</p></div><div class="mindmap-stage"><svg class="mm-lines" viewBox="0 0 1000 820" preserveAspectRatio="none" aria-hidden="true"><line class="mm-line" x1="500" y1="410" x2="145" y2="125"/><line class="mm-line hot" x1="500" y1="410" x2="500" y2="75"/><line class="mm-line" x1="500" y1="410" x2="855" y2="125"/><line class="mm-line hot" x1="500" y1="410" x2="115" y2="410"/><line class="mm-line" x1="500" y1="410" x2="885" y2="410"/><line class="mm-line" x1="500" y1="410" x2="190" y2="720"/><line class="mm-line hot" x1="500" y1="410" x2="500" y2="770"/><line class="mm-line" x1="500" y1="410" x2="810" y2="720"/></svg><button class="mm-core" data-modal="core"><div><div class="core-small">HUMAN SYSTEM</div><div class="core-big">KEENFINITY</div><div class="core-sub">TALENTO · PERSONAS · CONEXIONES</div></div></button><button class="mm-node cyan mm-n1" data-modal="transformation"><div class="node-icon">◈</div><div class="node-title">Transformación</div><div class="node-tags"><span class="tag">Bosch</span><span class="tag">Triton</span><span class="tag">2025</span></div></button><button class="mm-node blue mm-n2" data-modal="profile"><div class="node-icon">⌁</div><div class="node-title">Talento & Perfil</div><div class="node-tags"><span class="tag">Ingeniería</span><span class="tag">TI</span><span class="tag">IA</span></div></button><button class="mm-node violet mm-n3" data-modal="development"><div class="node-icon">↗</div><div class="node-title">Desarrollo</div><div class="node-tags"><span class="tag">Becarios</span><span class="tag">Mentoría</span><span class="tag">L&D</span></div></button><button class="mm-node cyan mm-n4" data-modal="employees"><div class="node-icon">◎</div><div class="node-title">Equipo</div><div class="node-tags"><span class="tag">Flexibilidad</span><span class="tag">Cultura</span></div></button><button class="mm-node blue mm-n5" data-modal="clients"><div class="node-icon">◌</div><div class="node-title">Clientes B2B</div><div class="node-tags"><span class="tag">Confianza</span><span class="tag">Co-creación</span></div></button><button class="mm-node violet mm-n6" data-modal="operations"><div class="node-icon">⌘</div><div class="node-title">Operaciones</div><div class="node-tags"><span class="tag">Supply Chain</span><span class="tag">EMS</span></div></button><button class="mm-node cyan mm-n7" data-modal="network"><div class="node-icon">✦</div><div class="node-title">Conexiones</div><div class="node-tags"><span class="tag">Finanzas</span><span class="tag">Marketing</span></div></button><button class="mm-node blue mm-n8" data-modal="scale"><div class="node-icon">⌖</div><div class="node-title">Escala Global</div><div class="node-tags"><span class="tag">4,200+</span><span class="tag">50+</span><span class="tag">90+</span></div></button><div class="mm-legend"><span>Keenfinity Group. (2026, 16 de abril). Keenfinity Group accelerates transformation and introduces simplified management structure. https://www.keenfinity-group.com/xm/en/news/press-room/keenfinity-group-accelerates-transformation-and-introduces-simplified-management-structure/</span><span>> TECNOSeguro. (2025, 27 de mayo). Keenfinity: el nuevo capítulo de Bosch Security Systems que promete enfoque, cercanía e innovación. https://www.tecnoseguro.com/noticias/empresas/keenfinity-bosch-innovacion-seguridad
-> TECNOSeguro. (2025,27 de mayo). Keenfinity: el nuevo capítulo de Bosch Security Systems que promete enfoque de cercanía e innovación. https://www.tecnoseguro.com/noticias/empresas/keenfinity-bosch-innovacion-seguridad </span><span>Ventas de Seguridad. (s.f.). Keenfinity inicia operaciones en México tras la adquisición de Bosch. https://www.ventasdeseguridad.com/novedades/ultimas-noticias/21-empresas/25169-keenfinity-inicia-operaciones-en-mexico-tras-la-adquisicion-de-bosch.html</span></div></div></section>
-<div class="info-modal" id="infoModal" role="dialog" aria-modal="true" aria-hidden="true"><div class="modal-card"><button class="modal-close" aria-label="Cerrar">×</button><div class="modal-kicker" id="modalKicker"></div><h3 class="modal-title" id="modalTitle"></h3><div class="modal-text" id="modalText"></div><div class="modal-grid" id="modalGrid"></div></div></div>
+<body>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav class="nav">
+
+  <a class="brand brand-lockup" href="#home">
+    <span class="logo-mark">
+      <i class="logo-dot"></i>
+    </span>
+    <span>KEEN<span>FINITY</span></span>
+  </a>
+
+  <div class="navlinks">
+    <a href="Blog.html">Portada</a>
+    <a href="#mindmap2">Mapa mental</a>
+    <a href="#transformation">Transformación</a>
+    <a href="#talent">Talento</a>
+    <a href="#employees">Equipo</a>
+    <a href="#customers">Clientes</a>
+    <a href="#network">Conexiones</a>
+  </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+  <div class="hero-inner reveal">
+
+    <div class="hero-logo">
+      <span class="logo-mark">
+        <i class="logo-dot"></i>
+      </span>
+
+      <span class="logo-word">
+        KEEN<span>FINITY</span>
+      </span>
+    </div>
+
+    <div class="orb"></div>
+
+    <div class="kicker">
+      Talent Organizational Experience
+    </div>
+
+    <h1>
+      KEEN<span class="glow">FINITY</span>
+    </h1>
+
+    <div class="tag">
+      THE PEOPLE BEHIND THE TECHNOLOGY
+    </div>
+
+    <div class="stats-row">
+
+      <div class="stat">
+        <b>4,200+</b>
+        <small>personas</small>
+      </div>
+
+      <div class="stat">
+        <b>50+</b>
+        <small>países con empleados</small>
+      </div>
+
+      <div class="stat">
+        <b>90+</b>
+        <small>países con operaciones</small>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="scroll">
+    SCROLL TO EXPLORE ↓
+  </div>
+
+</section>
+
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<section>
+
+  <div class="container intro-grid">
+
+    <div class="reveal">
+
+      <div class="kicker">
+        01 // THE HUMAN SYSTEM
+      </div>
+
+      <div class="big-quote" style="margin-top:25px">
+        Una empresa de tecnología también es un
+        <span>sistema de personas.</span>
+      </div>
+
+    </div>
+
+    <p>
+      <strong style="color:white">
+        La pregunta central:
+      </strong>
+
+      ¿cómo se atrae, desarrolla, conecta y conserva el talento mientras una organización construye una nueva identidad?
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     TRANSFORMACIÓN
+========================= -->
+
+<section id="transformation">
+
+  <div class="container">
+
+    <div class="kicker reveal">
+      02 // TRANSFORMATION
+    </div>
+
+    <h2 class="reveal" style="margin-top:18px">
+      FROM BOSCH<br>
+      <span class="glow">TO KEENFINITY.</span>
+    </h2>
+
+    <div class="timeline">
+
+      <div class="event reveal">
+
+        <div class="dot"></div>
+
+        <div class="year">
+          2023
+        </div>
+
+        <h3>
+          Revisión del portafolio
+        </h3>
+
+        <p>
+          Bosch decidió vender su división de tecnología de seguridad y comunicaciones como parte de una revisión de sus áreas de negocio y una estrategia enfocada en sus prioridades, incluyendo movilidad.
+        </p>
+
+      </div>
+
+
+      <div class="event reveal">
+
+        <div class="dot"></div>
+
+        <div class="year">
+          12 DIC 2024
+        </div>
+
+        <h3>
+          Adquisición por Triton Partners
+        </h3>
+
+        <p>
+          La división fue adquirida por
+          <strong>Triton Partners</strong>,
+          dando inicio al proceso de transformación hacia una compañía independiente.
+        </p>
+
+      </div>
+
+
+      <div class="event reveal">
+
+        <div class="dot"></div>
+
+        <div class="year">
+          JUL 2025
+        </div>
+
+        <h3>
+          Finaliza el carve-out
+        </h3>
+
+        <p>
+          Keenfinity deja de operar como una división de Bosch y comienza su etapa como empresa independiente, conservando experiencia, talento, tecnologías y marcas del negocio.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     PERFIL
+========================= -->
+
+<section id="profile">
+
+  <div class="container">
+
+    <div class="kicker reveal">
+      03 // PEOPLE PROFILE
+    </div>
+
+    <h2 class="reveal" style="margin-top:18px">
+      EL TALENTO<br>
+      <span class="glow">KEENFINITY.</span>
+    </h2>
+
+    <div class="people-layout">
+
+      <div class="profile-panel reveal">
+
+        <div class="mini-label">
+          CAPITAL HUMANO
+        </div>
+
+        <h3>
+          Herencia técnica + mentalidad ágil
+        </h3>
+
+        <div class="keyword-grid">
+
+          <span class="keyword">Ingeniería</span>
+          <span class="keyword">TI</span>
+          <span class="keyword">Software embebido</span>
+          <span class="keyword">Linux</span>
+          <span class="keyword">RF</span>
+          <span class="keyword">Pruebas de hardware</span>
+          <span class="keyword">Supply Chain global</span>
+          <span class="keyword">Audio / Video</span>
+          <span class="keyword hot">IA</span>
+
+        </div>
+
+      </div>
+
+
+      <div class="profile-panel reveal">
+
+        <div class="mini-label">
+          SEMILLERO
+        </div>
+
+        <h3>
+          Talento joven
+        </h3>
+
+        <div class="keyword-grid">
+
+          <span class="keyword">Prácticas profesionales</span>
+          <span class="keyword">Becarios</span>
+          <span class="keyword">Pro Meritum · México</span>
+          <span class="keyword">Mentorías</span>
+          <span class="keyword">Capacitación</span>
+          <span class="keyword hot">Recién graduados</span>
+          <span class="keyword">Tecnología de última generación</span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     EMPLEADOS
+========================= -->
+
+<section id="employees">
+
+  <div class="container">
+
+    <div class="kicker reveal">
+      04 // EMPLOYEE RELATIONSHIP
+    </div>
+
+    <h2 class="reveal" style="margin-top:18px">
+      LA EXPERIENCIA<br>
+      <span class="glow">DEL EQUIPO.</span>
+    </h2>
+
+    <div class="talent-grid">
+
+      <div class="talent-card reveal">
+
+        <div class="icon">↔</div>
+
+        <h3>
+          Transición
+        </h3>
+
+        <div class="keyword-grid">
+          <span class="keyword">Bosch → independiente</span>
+          <span class="keyword">Triton</span>
+          <span class="keyword">Cambio cultural</span>
+        </div>
+
+      </div>
+
+
+      <div class="talent-card reveal">
+
+        <div class="icon">☼</div>
+
+        <h3>
+          Fortalezas
+        </h3>
+
+        <div class="keyword-grid">
+          <span class="keyword">Work-life balance</span>
+          <span class="keyword">Horarios flexibles</span>
+          <span class="keyword">Compañerismo</span>
+          <span class="keyword">Cooperación técnica</span>
+        </div>
+
+      </div>
+
+
+      <div class="talent-card reveal">
+
+        <div class="icon">!</div>
+
+        <h3>
+          Retos
+        </h3>
+
+        <div class="keyword-grid">
+          <span class="keyword hot">Comunicación directiva</span>
+          <span class="keyword">Burocracia</span>
+          <span class="keyword">Nueva estrategia</span>
+          <span class="keyword">Identidad independiente</span>
+        </div>
+
+      </div>
+
+
+      <div class="talent-card reveal">
+
+        <div class="icon">∞</div>
+
+        <h3>
+          Cultura
+        </h3>
+
+        <div class="keyword-grid">
+          <span class="keyword">Colaboración</span>
+          <span class="keyword">Flexibilidad</span>
+          <span class="keyword">Adaptación</span>
+          <span class="keyword">Innovación</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CLIENTES
+========================= -->
+
+<section id="customers">
+
+  <div class="container">
+
+    <div class="kicker reveal">
+      05 // CUSTOMERS & PARTNERS
+    </div>
+
+    <h2 class="reveal" style="margin-top:18px">
+      RELACIONES<br>
+      <span class="glow">B2B.</span>
+    </h2>
+
+    <div class="people-layout">
+
+      <div class="profile-panel reveal">
+
+        <div class="mini-label">
+          MODELO
+        </div>
+
+        <h3>
+          Business to Business
+        </h3>
+
+        <div class="keyword-grid">
+          <span class="keyword">Confianza industrial</span>
+          <span class="keyword">Socios a largo plazo</span>
+          <span class="keyword">Co-creación</span>
+          <span class="keyword">Ingeniería</span>
+          <span class="keyword">Diseño de precisión</span>
+          <span class="keyword">Validación</span>
+          <span class="keyword">Pruebas de calidad</span>
+          <span class="keyword hot">EMS</span>
+        </div>
+
+      </div>
+
+
+      <div class="profile-panel reveal">
+
+        <div class="mini-label">
+          AMÉRICA LATINA
+        </div>
+
+        <h3>
+          Canales & soporte
+        </h3>
+
+        <div class="keyword-grid">
+          <span class="keyword">Integradores</span>
+          <span class="keyword">Distribuidores</span>
+          <span class="keyword">Soporte técnico</span>
+          <span class="keyword">Capacitación</span>
+          <span class="keyword">Bosch Business Club</span>
+          <span class="keyword hot">Red comercial</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     TALENT MAP
+========================= -->
+
+<section id="talent">
+
+  <div class="container">
+
+    <div class="kicker reveal">
+      06 // TALENT MAP
+    </div>
+
+    <h2 class="reveal" style="margin-top:18px">
+      THE <span class="glow">HUMAN</span><br>
+      SYSTEM.
+    </h2>
+
+    <div class="talent-grid">
+
+      <div class="talent-card reveal">
+
+        <div class="icon">✦</div>
+
+        <h3>
+          Atraer
+        </h3>
+
+        <p>
+          Reclutamiento interno y externo para identificar y seleccionar talento.
+        </p>
+
+      </div>
+
+
+      <div class="talent-card reveal">
+
+        <div class="icon">↗</div>
+
+        <h3>
+          Desarrollar
+        </h3>
+
+        <p>
+          Capacitación, aprendizaje continuo y planes de carrera.
+        </p>
+
+      </div>
+
+
+      <div class="talent-card reveal">
+
+        <div class="icon">◎</div>
+
+        <h3>
+          Desempeñar
+        </h3>
+
+        <p>
+          Objetivos, evaluación del desempeño, compensaciones e incentivos.
+        </p>
+
+      </div>
+
+
+      <div class="talent-card reveal">
+
+        <div class="icon">∞</div>
+
+        <h3>
+          Retener
+        </h3>
+
+        <p>
+          Clima, relaciones laborales, seguridad y una experiencia que favorezca la permanencia.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     NETWORK
+========================= -->
+
+<section id="network">
+
+  <div class="container">
+
+    <div class="kicker reveal">
+      07 // TALENT NETWORK
+    </div>
+
+    <h2 class="reveal" style="margin-top:18px">
+      TALENT<br>
+      <span class="glow">DOESN'T WORK ALONE.</span>
+    </h2>
+
+    <div class="network">
+
+      <div class="area reveal">
+
+        <span class="num">
+          01 / FINANZAS
+        </span>
+
+        <h3>
+          Personas ↔ dinero
+        </h3>
+
+        <p>
+          Compensaciones, contratación, rotación y capacitación deben alinearse con el presupuesto y la sostenibilidad económica.
+        </p>
+
+      </div>
+
+
+      <div class="area reveal">
+
+        <span class="num">
+          02 / OPERACIONES
+        </span>
+
+        <h3>
+          Personas ↔ eficiencia
+        </h3>
+
+        <p>
+          La gestión del talento ayuda a asegurar las competencias, dotación y seguridad necesarias para operar.
+        </p>
+
+      </div>
+
+
+      <div class="area reveal">
+
+        <span class="num">
+          03 / MARKETING
+        </span>
+
+        <h3>
+          Personas ↔ marca
+        </h3>
+
+        <p>
+          Employer branding conecta la promesa externa de la marca con la experiencia interna de los colaboradores.
+        </p>
+
+      </div>
+
+
+      <div class="area reveal">
+
+        <span class="num">
+          04 / CLIENTES
+        </span>
+
+        <h3>
+          Personas ↔ confianza
+        </h3>
+
+        <p>
+          El comportamiento y la experiencia de los colaboradores pueden influir en la percepción del servicio y la marca.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FINAL
+========================= -->
+
+<section class="final">
+
+  <div class="container reveal">
+
+    <div class="kicker">
+      08 // FINAL THOUGHT
+    </div>
+
+    <h2>
+      FROM A BUSINESS UNIT<br>
+      TO A <span class="glow">NEW ORGANIZATION.</span>
+    </h2>
+
+    <p>
+      La transformación de Keenfinity no solo modificó su estructura. También creó el reto de construir identidad, mantener conocimiento, desarrollar personas y conservar la confianza de sus clientes.
+    </p>
+
+    <a class="cta" href="#home">
+      ↑ VOLVER AL INICIO
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     MIND MAP
+========================= -->
+
+<section class="section mindmap-section" id="mindmap2">
+
+  <div class="section-label">
+    09 // THE HUMAN SYSTEM
+  </div>
+
+  <div class="section-head">
+
+    <div>
+
+      <div class="eyebrow">
+        KEENFINITY × TALENTO
+      </div>
+
+      <h2>
+        TODO CONECTA.
+      </h2>
+
+    </div>
+
+    <p class="muted">
+      Haz click en cada nodo para explorar la información.
+    </p>
+
+  </div>
+
+
+  <div class="mindmap-stage">
+
+    <svg
+      class="mm-lines"
+      viewBox="0 0 1000 820"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+    >
+
+      <line class="mm-line"
+        x1="500" y1="410"
+        x2="145" y2="125"/>
+
+      <line class="mm-line hot"
+        x1="500" y1="410"
+        x2="500" y2="75"/>
+
+      <line class="mm-line"
+        x1="500" y1="410"
+        x2="855" y2="125"/>
+
+      <line class="mm-line hot"
+        x1="500" y1="410"
+        x2="115" y2="410"/>
+
+      <line class="mm-line"
+        x1="500" y1="410"
+        x2="885" y2="410"/>
+
+      <line class="mm-line"
+        x1="500" y1="410"
+        x2="190" y2="720"/>
+
+      <line class="mm-line hot"
+        x1="500" y1="410"
+        x2="500" y2="770"/>
+
+      <line class="mm-line"
+        x1="500" y1="410"
+        x2="810" y2="720"/>
+
+    </svg>
+
+
+    <!-- CORE -->
+
+    <button class="mm-core" data-modal="core">
+
+      <div>
+
+        <div class="core-small">
+          HUMAN SYSTEM
+        </div>
+
+        <div class="core-big">
+          KEENFINITY
+        </div>
+
+        <div class="core-sub">
+          TALENTO · PERSONAS · CONEXIONES
+        </div>
+
+      </div>
+
+    </button>
+
+
+    <!-- NODE 1 -->
+
+    <button class="mm-node cyan mm-n1" data-modal="transformation">
+
+      <div class="node-icon">
+        ◈
+      </div>
+
+      <div class="node-title">
+        Transformación
+      </div>
+
+      <div class="node-tags">
+        <span class="tag">Bosch</span>
+        <span class="tag">Triton</span>
+        <span class="tag">2025</span>
+      </div>
+
+    </button>
+
+
+    <!-- NODE 2 -->
+
+    <button class="mm-node blue mm-n2" data-modal="profile">
+
+      <div class="node-icon">
+        ⌁
+      </div>
+
+      <div class="node-title">
+        Talento & Perfil
+      </div>
+
+      <div class="node-tags">
+        <span class="tag">Ingeniería</span>
+        <span class="tag">TI</span>
+        <span class="tag">IA</span>
+      </div>
+
+    </button>
+
+
+    <!-- NODE 3 -->
+
+    <button class="mm-node violet mm-n3" data-modal="development">
+
+      <div class="node-icon">
+        ↗
+      </div>
+
+      <div class="node-title">
+        Desarrollo
+      </div>
+
+      <div class="node-tags">
+        <span class="tag">Becarios</span>
+        <span class="tag">Mentoría</span>
+        <span class="tag">L&amp;D</span>
+      </div>
+
+    </button>
+
+
+    <!-- NODE 4 -->
+
+    <button class="mm-node cyan mm-n4" data-modal="employees">
+
+      <div class="node-icon">
+        ◎
+      </div>
+
+      <div class="node-title">
+        Equipo
+      </div>
+
+      <div class="node-tags">
+        <span class="tag">Flexibilidad</span>
+        <span class="tag">Cultura</span>
+      </div>
+
+    </button>
+
+
+    <!-- NODE 5 -->
+
+    <button class="mm-node blue mm-n5" data-modal="clients">
+
+      <div class="node-icon">
+        ◌
+      </div>
+
+      <div class="node-title">
+        Clientes B2B
+      </div>
+
+      <div class="node-tags">
+        <span class="tag">Confianza</span>
+        <span class="tag">Co-creación</span>
+      </div>
+
+    </button>
+
+
+    <!-- NODE 6 -->
+
+    <button class="mm-node violet mm-n6" data-modal="operations">
+
+      <div class="node-icon">
+        ⌘
+      </div>
+
+      <div class="node-title">
+        Operaciones
+      </div>
+
+      <div class="node-tags">
+        <span class="tag">Supply Chain</span>
+        <span class="tag">EMS</span>
+      </div>
+
+    </button>
+
+
+    <!-- NODE 7 -->
+
+    <button class="mm-node cyan mm-n7" data-modal="network">
+
+      <div class="node-icon">
+        ✦
+      </div>
+
+      <div class="node-title">
+        Conexiones
+      </div>
+
+      <div class="node-tags">
+        <span class="tag">Finanzas</span>
+        <span class="tag">Marketing</span>
+      </div>
+
+    </button>
+
+
+    <!-- NODE 8 -->
+
+    <button class="mm-node blue mm-n8" data-modal="scale">
+
+      <div class="node-icon">
+        ⌖
+      </div>
+
+      <div class="node-title">
+        Escala Global
+      </div>
+
+      <div class="node-tags">
+        <span class="tag">4,200+</span>
+        <span class="tag">50+</span>
+        <span class="tag">90+</span>
+      </div>
+
+    </button>
+
+
+    <!-- FUENTES -->
+
+    <div class="mm-legend">
+
+      <span>
+        Keenfinity Group. (2026, 16 de abril). Keenfinity Group accelerates transformation and introduces simplified management structure.
+      </span>
+
+      <span>
+        TECNOSeguro. (2025, 27 de mayo). Keenfinity: el nuevo capítulo de Bosch Security Systems que promete enfoque, cercanía e innovación.
+      </span>
+
+      <span>
+        Ventas de Seguridad. (s.f.). Keenfinity inicia operaciones en México tras la adquisición de Bosch.
+      </span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     MODAL
+========================= -->
+
+<div
+  class="info-modal"
+  id="infoModal"
+  role="dialog"
+  aria-modal="true"
+  aria-hidden="true"
+>
+
+  <div class="modal-card">
+
+    <button
+      class="modal-close"
+      aria-label="Cerrar"
+    >
+      ×
+    </button>
+
+    <div
+      class="modal-kicker"
+      id="modalKicker"
+    ></div>
+
+    <h3
+      class="modal-title"
+      id="modalTitle"
+    ></h3>
+
+    <div
+      class="modal-text"
+      id="modalText"
+    ></div>
+
+    <div
+      class="modal-grid"
+      id="modalGrid"
+    ></div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
 <script>
 
-  
-const reveals=document.querySelectorAll('.reveal');const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')})},{threshold:.12});reveals.forEach(x=>io.observe(x));
-const modalData={core:{k:'KEENFINITY // HUMAN SYSTEM',t:'El sistema humano',d:'1. Keenfinity Group (Sitio Oficial / Comunicado de Prensa)
-Referencia:
-> Keenfinity Group. (2026, 16 de abril). Keenfinity Group accelerates transformation and introduces simplified management structure. https://www.keenfinity-group.com/xm/en/news/press-room/keenfinity-group-accelerates-transformation-and-introduces-simplified-management-structure/ + > TECNOSeguro. (2025, 27 de mayo). Keenfinity: el nuevo capítulo de Bosch Security Systems que promete enfoque, cercanía e innovación. https://www.tecnoseguro.com/noticias/empresas/keenfinity-bosch-innovacion-seguridad
-> 
- + > Ventas de Seguridad. (s. f.). Keenfinity inicia operaciones en México tras la adquisición de Bosch. https://www.ventasdeseguridad.com/novedades/ultimas-noticias/21-empresas/25169-keenfinity-inicia-operaciones-en-mexico-tras-la-adquisicion-de-bosch.html
-> 
- + estrategia.',p:['Talento','Cultura','Clientes','Operaciones','Innovación','Conexiones']},transformation:{k:'01 // TRANSFORMACIÓN',t:'Bosch → Independiente',d:'Cambio estructural y nueva identidad corporativa.',p:['Bosch','2023','Portfolio review','Triton Partners','12 DIC 2024','Carve-out','JUL 2025','Independencia']},profile:{k:'02 // PERFIL',t:'Talento & Perfil',d:'Capital humano técnico + mentalidad de empresa independiente.',p:['Ingeniería','TI','Software embebido','Linux','RF','Hardware testing','Supply Chain','Audio / Video','IA']},development:{k:'03 // DESARROLLO',t:'Atracción → Desarrollo',d:'Entrada de talento joven + aprendizaje + crecimiento profesional.',p:['Prácticas profesionales','Becarios','Pro Meritum · México','Mentorías','Capacitación','Recién graduados','Tecnología de última generación','Career plans']},employees:{k:'04 // PERSONAS',t:'Experiencia del equipo',d:'Cultura en transición: fortalezas internas + retos de adaptación.',p:['Work-life balance','Horarios flexibles','Compañerismo','Cooperación técnica','Bosch → independiente','Comunicación directiva','Burocracia','Nueva estrategia']},clients:{k:'05 // RELACIÓN',t:'Clientes B2B',d:'Relaciones industriales basadas en confianza, soporte y co-creación.',p:['Business to Business','Confianza industrial','Socios a largo plazo','Co-creación','Diseño de precisión','Validación','Pruebas de calidad','EMS']},operations:{k:'06 // OPERACIONES',t:'Talento en operación',d:'Competencias y equipos conectados con procesos, calidad y cadena de suministro.',p:['Supply Chain global','EMS','Hardware','Audio / Video','Calidad','Ingeniería','Eficiencia','Seguridad']},network:{k:'07 // CONEXIONES',t:'Talento × Empresa',d:'El talento se conecta con las áreas que sostienen el negocio.',p:['Finanzas','Operaciones','Marketing','Clientes','Presupuesto','Productividad','Employer branding','Reputación']},scale:{k:'08 // ALCANCE',t:'Escala global',d:'Una organización internacional con operación y presencia comercial amplia.',p:['4,200+ empleados','50+ países','90+ países comerciales','3 continentes','México','Hermosillo']}};
-const modal=document.getElementById('infoModal'),mk=document.getElementById('modalKicker'),mt=document.getElementById('modalTitle'),mx=document.getElementById('modalText'),mg=document.getElementById('modalGrid');function openModal(key){const d=modalData[key];if(!d)return;mk.textContent=d.k;mt.textContent=d.t;mx.textContent=d.d;mg.innerHTML=d.p.map(x=>`<div class="modal-pill">${x}</div>`).join('');modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow=''}document.querySelectorAll('[data-modal]').forEach(el=>el.addEventListener('click',()=>openModal(el.dataset.modal)));document.querySelector('.modal-close').addEventListener('click',closeModal);modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});document.querySelectorAll('.mm-node').forEach(n=>{n.addEventListener('mouseenter',()=>n.classList.add('active'));n.addEventListener('mouseleave',()=>n.classList.remove('active'))});
-document.addEventListener('mousemove',e=>{const orb=document.querySelector('.orb');if(!orb)return;const x=(e.clientX/window.innerWidth-.5)*2,y=(e.clientY/window.innerHeight-.5)*2;orb.style.transform=`translate(${x*7}px,${y*7}px)`});
+/* =========================
+   ANIMACIONES REVEAL
+========================= */
+
+const reveals = document.querySelectorAll('.reveal');
+
+const io = new IntersectionObserver(
+  entries => {
+
+    entries.forEach(entry => {
+
+      if(entry.isIntersecting){
+        entry.target.classList.add('show');
+      }
+
+    });
+
+  },
+  {
+    threshold:.12
+  }
+);
+
+reveals.forEach(element => {
+  io.observe(element);
+});
+
+
+/* =========================
+   INFORMACIÓN DE LOS MODALES
+========================= */
+
+const modalData = {
+
+  core:{
+    k:'KEENFINITY // HUMAN SYSTEM',
+    t:'El sistema humano',
+    d:'Keenfinity combina talento técnico, cultura organizacional, relaciones con clientes y conexiones entre distintas áreas para construir su identidad como empresa independiente.',
+    p:[
+      'Talento',
+      'Cultura',
+      'Clientes',
+      'Operaciones',
+      'Innovación',
+      'Conexiones'
+    ]
+  },
+
+
+  transformation:{
+    k:'01 // TRANSFORMACIÓN',
+    t:'Bosch → Independiente',
+    d:'Cambio estructural y nueva identidad corporativa.',
+    p:[
+      'Bosch',
+      '2023',
+      'Portfolio review',
+      'Triton Partners',
+      '12 DIC 2024',
+      'Carve-out',
+      'JUL 2025',
+      'Independencia'
+    ]
+  },
+
+
+  profile:{
+    k:'02 // PERFIL',
+    t:'Talento & Perfil',
+    d:'Capital humano técnico + mentalidad de empresa independiente.',
+    p:[
+      'Ingeniería',
+      'TI',
+      'Software embebido',
+      'Linux',
+      'RF',
+      'Hardware testing',
+      'Supply Chain',
+      'Audio / Video',
+      'IA'
+    ]
+  },
+
+
+  development:{
+    k:'03 // DESARROLLO',
+    t:'Atracción → Desarrollo',
+    d:'Entrada de talento joven + aprendizaje + crecimiento profesional.',
+    p:[
+      'Prácticas profesionales',
+      'Becarios',
+      'Pro Meritum · México',
+      'Mentorías',
+      'Capacitación',
+      'Recién graduados',
+      'Tecnología de última generación',
+      'Career plans'
+    ]
+  },
+
+
+  employees:{
+    k:'04 // PERSONAS',
+    t:'Experiencia del equipo',
+    d:'Cultura en transición: fortalezas internas + retos de adaptación.',
+    p:[
+      'Work-life balance',
+      'Horarios flexibles',
+      'Compañerismo',
+      'Cooperación técnica',
+      'Bosch → independiente',
+      'Comunicación directiva',
+      'Burocracia',
+      'Nueva estrategia'
+    ]
+  },
+
+
+  clients:{
+    k:'05 // RELACIÓN',
+    t:'Clientes B2B',
+    d:'Relaciones industriales basadas en confianza, soporte y co-creación.',
+    p:[
+      'Business to Business',
+      'Confianza industrial',
+      'Socios a largo plazo',
+      'Co-creación',
+      'Diseño de precisión',
+      'Validación',
+      'Pruebas de calidad',
+      'EMS'
+    ]
+  },
+
+
+  operations:{
+    k:'06 // OPERACIONES',
+    t:'Talento en operación',
+    d:'Competencias y equipos conectados con procesos, calidad y cadena de suministro.',
+    p:[
+      'Supply Chain global',
+      'EMS',
+      'Hardware',
+      'Audio / Video',
+      'Calidad',
+      'Ingeniería',
+      'Eficiencia',
+      'Seguridad'
+    ]
+  },
+
+
+  network:{
+    k:'07 // CONEXIONES',
+    t:'Talento × Empresa',
+    d:'El talento se conecta con las áreas que sostienen el negocio.',
+    p:[
+      'Finanzas',
+      'Operaciones',
+      'Marketing',
+      'Clientes',
+      'Presupuesto',
+      'Productividad',
+      'Employer branding',
+      'Reputación'
+    ]
+  },
+
+
+  scale:{
+    k:'08 // ALCANCE',
+    t:'Escala global',
+    d:'Una organización internacional con operación y presencia comercial amplia.',
+    p:[
+      '4,200+ empleados',
+      '50+ países',
+      '90+ países comerciales',
+      '3 continentes',
+      'México',
+      'Hermosillo'
+    ]
+  }
+
+};
+
+
+/* =========================
+   ELEMENTOS DEL MODAL
+========================= */
+
+const modal = document.getElementById('infoModal');
+
+const modalKicker =
+  document.getElementById('modalKicker');
+
+const modalTitle =
+  document.getElementById('modalTitle');
+
+const modalText =
+  document.getElementById('modalText');
+
+const modalGrid =
+  document.getElementById('modalGrid');
+
+
+/* =========================
+   ABRIR MODAL
+========================= */
+
+function openModal(key){
+
+  const data = modalData[key];
+
+  if(!data){
+    return;
+  }
+
+  modalKicker.textContent = data.k;
+
+  modalTitle.textContent = data.t;
+
+  modalText.textContent = data.d;
+
+  modalGrid.innerHTML =
+    data.p
+      .map(item => `
+        <div class="modal-pill">
+          ${item}
+        </div>
+      `)
+      .join('');
+
+  modal.classList.add('open');
+
+  modal.setAttribute(
+    'aria-hidden',
+    'false'
+  );
+
+  document.body.style.overflow = 'hidden';
+}
+
+
+/* =========================
+   CERRAR MODAL
+========================= */
+
+function closeModal(){
+
+  modal.classList.remove('open');
+
+  modal.setAttribute(
+    'aria-hidden',
+    'true'
+  );
+
+  document.body.style.overflow = '';
+}
+
+
+/* =========================
+   BOTONES DEL MAPA MENTAL
+========================= */
+
+document
+  .querySelectorAll('[data-modal]')
+  .forEach(element => {
+
+    element.addEventListener(
+      'click',
+      () => {
+        openModal(element.dataset.modal);
+      }
+    );
+
+  });
+
+
+/* =========================
+   BOTÓN CERRAR
+========================= */
+
+document
+  .querySelector('.modal-close')
+  .addEventListener(
+    'click',
+    closeModal
+  );
+
+
+/* =========================
+   CERRAR HACIENDO CLICK FUERA
+========================= */
+
+modal.addEventListener(
+  'click',
+  event => {
+
+    if(event.target === modal){
+      closeModal();
+    }
+
+  }
+);
+
+
+/* =========================
+   CERRAR CON ESC
+========================= */
+
+document.addEventListener(
+  'keydown',
+  event => {
+
+    if(event.key === 'Escape'){
+      closeModal();
+    }
+
+  }
+);
+
+
+/* =========================
+   EFECTO HOVER NODOS
+========================= */
+
+document
+  .querySelectorAll('.mm-node')
+  .forEach(node => {
+
+    node.addEventListener(
+      'mouseenter',
+      () => {
+        node.classList.add('active');
+      }
+    );
+
+    node.addEventListener(
+      'mouseleave',
+      () => {
+        node.classList.remove('active');
+      }
+    );
+
+  });
+
+
+/* =========================
+   MOVIMIENTO DEL ORBE
+========================= */
+
+document.addEventListener(
+  'mousemove',
+  event => {
+
+    const orb =
+      document.querySelector('.orb');
+
+    if(!orb){
+      return;
+    }
+
+    const x =
+      (event.clientX / window.innerWidth - .5) * 2;
+
+    const y =
+      (event.clientY / window.innerHeight - .5) * 2;
+
+    orb.style.transform =
+      `translate(${x * 7}px,${y * 7}px)`;
+
+  }
+);
+
 </script>
-</body></html>
+
+</body>
+</html>
