@@ -1,37 +1,232 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>KEENFINITY // PORTADA</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Educlick - Aprende con Apoyo</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
-:root{--bg:#050812;--text:#eef7ff;--muted:#8ea3b8;--cyan:#35e6ff;--blue:#4f7cff;--violet:#a56cff;--line:rgba(120,190,255,.20)}
-*{box-sizing:border-box;margin:0;padding:0}html,body{min-height:100%;font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--text)}
-body{overflow-x:hidden;overflow-y:auto;background:radial-gradient(circle at 18% 15%,rgba(53,230,255,.13),transparent 27%),radial-gradient(circle at 82% 20%,rgba(165,108,255,.14),transparent 29%),radial-gradient(circle at 50% 90%,rgba(79,124,255,.12),transparent 34%),var(--bg)}
-body:before{content:"";position:fixed;inset:0;opacity:.42;background-image:linear-gradient(rgba(120,190,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(120,190,255,.035) 1px,transparent 1px);background-size:70px 70px;pointer-events:none}
-.page{min-height:100vh;min-height:100svh;display:grid;place-items:center;padding:40px 5vw;position:relative}.corner{position:absolute;width:78px;height:78px;border-color:rgba(53,230,255,.45)}.c1{left:25px;top:25px;border-left:1px solid;border-top:1px solid}.c2{right:25px;top:25px;border-right:1px solid;border-top:1px solid}.c3{left:25px;bottom:25px;border-left:1px solid;border-bottom:1px solid}.c4{right:25px;bottom:25px;border-right:1px solid;border-bottom:1px solid}
-.cover{width:min(1120px,94vw);min-height:min(700px,88vh);padding:44px 54px;position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;border:1px solid var(--line);border-radius:34px;background:linear-gradient(145deg,rgba(12,25,43,.78),rgba(5,9,19,.9));backdrop-filter:blur(18px);box-shadow:0 25px 100px rgba(0,0,0,.4),inset 0 1px rgba(255,255,255,.05)}
-.unit{display:inline-flex;align-items:center;gap:12px;padding:10px 16px;border:1px solid rgba(255,255,255,.12);border-radius:15px;background:rgba(255,255,255,.035);margin-bottom:28px}.unit-mark{width:37px;height:37px;border-radius:9px;display:grid;place-items:center;border:1px solid rgba(53,230,255,.5);color:var(--cyan);font:700 15px "Space Grotesk";box-shadow:0 0 18px rgba(53,230,255,.1)}.unit-name{font:700 21px "Space Grotesk";letter-spacing:.08em}.unit-name span{font-size:8px;display:block;color:var(--muted);letter-spacing:.18em;margin-top:2px}.kicker{font:600 11px "Space Grotesk";letter-spacing:.24em;text-transform:uppercase;color:var(--cyan)}
-h1{font:700 clamp(55px,7.5vw,105px) "Space Grotesk";line-height:.83;letter-spacing:-.075em;margin:18px 0 25px}h1 span{color:var(--cyan);text-shadow:0 0 35px rgba(53,230,255,.35)}.subtitle{font:500 clamp(17px,2vw,26px) "Space Grotesk";color:#d6e2ef}.divider{height:1px;margin:30px 0 23px;background:linear-gradient(90deg,var(--cyan),rgba(53,230,255,.08),transparent)}.meta{display:grid;gap:10px}.meta-row{display:flex;gap:12px;align-items:flex-start}.meta-label{min-width:115px;color:#71859b;font:600 9px "Space Grotesk";letter-spacing:.18em;text-transform:uppercase;padding-top:3px}.meta-value{font-size:13px;color:#e7f1fa}.people{display:grid;gap:6px}.person{padding:7px 10px;border-left:2px solid rgba(53,230,255,.35);background:rgba(255,255,255,.025);border-radius:0 9px 9px 0;color:#d7e3ef;font-size:11px}
-.visual{min-height:500px;display:grid;place-items:center;position:relative}.orbit{width:320px;height:320px;border-radius:50%;border:1px solid rgba(53,230,255,.22);position:relative;box-shadow:0 0 75px rgba(53,230,255,.07)}.orbit:before,.orbit:after{content:"";position:absolute;inset:-37px;border:1px solid rgba(53,230,255,.18);border-radius:50%;transform:rotate(28deg) scaleY(.32)}.orbit:after{inset:-61px;border-color:rgba(165,108,255,.16);transform:rotate(-35deg) scaleY(.24)}.core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:170px;height:170px;border-radius:50%;display:grid;place-items:center;text-align:center;background:radial-gradient(circle at 35% 30%,rgba(53,230,255,.34),rgba(6,13,28,.96) 66%);border:1px solid rgba(53,230,255,.7);box-shadow:0 0 40px rgba(53,230,255,.22),0 0 100px rgba(79,124,255,.13)}.core b{font:700 24px "Space Grotesk";letter-spacing:.08em}.core small{font:600 8px "Space Grotesk";letter-spacing:.2em;color:#92efff}.tag{position:absolute;padding:7px 11px;border:1px solid rgba(255,255,255,.1);border-radius:999px;background:rgba(8,17,30,.82);font:600 8px "Space Grotesk";letter-spacing:.13em;color:#b8c8d8}.t1{top:8%;left:-4%}.t2{top:30%;right:-11%}.t3{bottom:23%;right:-7%}.t4{bottom:7%;left:3%}.back{position:absolute;right:30px;top:25px;padding:9px 13px;border:1px solid rgba(53,230,255,.25);border-radius:999px;color:#9db3c8;font:600 9px "Space Grotesk";letter-spacing:.1em;background:rgba(53,230,255,.035);text-decoration:none}.back:hover{color:white;border-color:var(--cyan)}.footer{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:#657b91;font:500 8px "Space Grotesk";letter-spacing:.17em;text-transform:uppercase;white-space:nowrap}
-@media(max-width:900px){body{overflow-x:hidden;overflow-y:auto}.page{padding:25px 14px}.cover{grid-template-columns:1fr;padding:70px 25px 35px;gap:10px}.visual{min-height:370px}.orbit{width:250px;height:250px}.core{width:140px;height:140px}.tag{display:none}.footer{position:relative;bottom:auto;left:auto;transform:none;margin-top:18px}.back{right:16px;top:16px}}
+:root {
+--primary-color: #1B6E67;
+--secondary-color: #F2C14E;
+--accent-color: #E07A5F;
+--bg-main: #FAF3E0;
+--bg-alt: #E8F6F3;
+--text-color: #2F2D2E;
+--card-bg: #FFFFFF;
+--hover-color: #E07A5F;
+}
+* {
+box-sizing: border-box;
+}
+body {
+margin: 0;
+font-family: 'Poppins', sans-serif;
+background: var(--bg-main);
+color: var(--text-color);
+}
+header {
+background-color: var(--primary-color);
+color: var(--card-bg);
+padding: 2rem;
+text-align: center;
+font-size: 2.2rem;
+font-weight: 700;
+}
+nav {
+background: var(--secondary-color);
+max-width: 900px;
+margin: 1rem auto;
+padding: 0.75rem;
+border-radius: 0.75rem;
+box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+nav ul {
+display: flex;
+justify-content: center;
+gap: 2rem;
+list-style: none;
+margin: 0;
+padding: 0;
+}
+nav ul li a {
+color: var(--text-color);
+text-decoration: none;
+font-weight: 600;
+padding: 0.5rem 1rem;
+border-radius: 0.5rem;
+transition: background 0.3s;
+}
+nav ul li a:hover,
+nav ul li a.active {
+background: var(--hover-color);
+color: #fff;
+}
+.hero {
+background: url('https://source.unsplash.com/1600x900/?education,learning') no-repeat center/cover;
+color: var(--card-bg);
+text-align: center;
+padding: 6rem 1rem;
+font-size: 1.75rem;
+font-weight: 700;
+text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
+}
+.container {
+max-width: 900px;
+margin: auto;
+padding: 2rem 1rem;
+}
+section {
+margin-bottom: 3rem;
+padding: 2rem 1rem;
+border-radius: 1rem;
+}
+section:nth-of-type(even) {
+background: var(--bg-alt);
+}
+h2 {
+color: var(--primary-color);
+margin-bottom: 1rem;
+font-size: 1.8rem;
+}
+p {
+font-size: 1.1rem;
+margin-bottom: 1rem;
+}
+.tarjetas {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+gap: 1.5rem;
+}
+.tarjeta {
+background: var(--card-bg);
+padding: 1.5rem;
+border-radius: 1rem;
+box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+transition: transform 0.3s;
+}
+.tarjeta:hover {
+transform: translateY(-5px);
+}
+.social-media ul {
+list-style: none;
+padding: 0;
+display: flex;
+justify-content: center;
+gap: 1.5rem;
+}
+.social-media ul li a {
+font-size: 1.5rem;
+color: var(--text-color);
+transition: color 0.3s;
+}
+.social-media ul li a:hover {
+color: var(--hover-color);
+}
+.marquesina {
+position: fixed;
+bottom: 0;
+width: 100%;
+background: var(--secondary-color);
+color: var(--text-color);
+text-align: center;
+padding: 0.75rem;
+font-weight: 600;
+animation: scroll-left 15s linear infinite;
+}
+@keyframes scroll-left {
+from { transform: translateX(100%); }
+to { transform: translateX(-100%); }
+}
+footer {
+background: var(--text-color);
+color: var(--card-bg);
+text-align: center;
+padding: 2rem;
+font-size: 0.95rem;
+}
 </style>
 </head>
 <body>
-<div class="page">
-<div class="corner c1"></div><div class="corner c2"></div><div class="corner c3"></div><div class="corner c4"></div>
-<div class="cover">
-<a class="back" href="Blog.html">← MAPA MENTAL</a>
-<div>
-<div class="unit"><div class="unit-mark">U</div><div class="unit-name">UNITEC<span>UNIVERSIDAD TECNOLÓGICA DE MÉXICO</span></div></div>
-<div class="kicker">PROYECTO ACADÉMICO // 2026</div>
-<h1>TALENTO<br>EN LAS <span>ORGANIZACIONES.</span></h1>
-<div class="subtitle">KEENFINITY // HUMAN SYSTEM</div><div class="divider"></div>
-<div class="meta"><div class="meta-row"><div class="meta-label">Profesora</div><div class="meta-value">LILIAN HERNÁNDEZ</div></div>
-<div class="meta-row"><div class="meta-label">Integrantes</div><div class="people"><div class="person">CHIARA STEPHANIA NUÑEZ ESPARZA</div><div class="person">DIEGO MARQUEZ SAUCEDO</div><div class="person">EMILIANO RODRIGUEZ MARTINEZ</div><div class="person">JIMENA VANESSA ALEJANDRE MATA</div><div class="person">JORGE FABIAN VIRRUETA FUENTES</div><div class="person">LEONARDO SANDOVAL VARELA</div><div class="person">MARKO YAEL ALMARAZ GARCIA</div><div class="person">MIA SOFIA ALVAREZ MARQUEZ</div></div></div></div>
+<header>Educlick</header>
+<nav>
+<ul>
+<li><a href="index.html" class="active">Inicio</a></li>
+<li><a href="servicios.html">Servicios</a></li>
+<li><a href="Blog.html">Blog</a></li>
+</ul>
+</nav>
+
+<div class="hero">
+<h1>🧠 Bienvenid@ a Educlick</h1>
+<p>📚 Conectamos aprendizaje con resultados reales</p>
 </div>
-<div class="visual"><div class="orbit"><div class="core"><div><small>HUMAN SYSTEM</small><br><b>KEENFINITY</b><br><small>TALENTO · PERSONAS · CONEXIONES</small></div></div><div class="tag t1">TALENTO</div><div class="tag t2">TECNOLOGÍA</div><div class="tag t3">CLIENTES</div><div class="tag t4">CULTURA</div></div></div>
-</div><div class="footer">TALENTO EN LAS ORGANIZACIONES · KEENFINITY · UNITEC</div></div>
+
+<main class="container">
+<section aria-label="Acerca de Nosotros">
+<h2>Acerca de Nosotros</h2>
+<p>En <strong>Educlick</strong>, somos un equipo de tutores apasionados por la enseñanza. Nuestro objetivo es acompañar a estudiantes de primaria, secundaria y preparatoria en su proceso académico, brindando tutorías personalizadas, apoyo emocional y estrategias efectivas de estudio.</p>
+<p>Ya sea que necesites ayuda puntual con una materia, preparación para exámenes o reforzar tus bases, estamos aquí para apoyarte con clases claras, dinámicas y adaptadas a tu estilo de aprendizaje.</p>
+</section>
+
+<section id="servicios" aria-label="Qué ofrecemos">
+<h2>🔍 ¿Qué ofrecemos?</h2>
+<div class="tarjetas">
+<div class="tarjeta">✅ Matemáticas</div>
+<div class="tarjeta">✅ Biología</div>
+<div class="tarjeta">✅ Historia</div>
+<div class="tarjeta">✅ Física y Química (básico)</div>
+<div class="tarjeta">✅ Español y redacción</div>
+<div class="tarjeta">✅ Inglés (básico-intermedio)</div>
+<div class="tarjeta">✅ Asesoría en tareas, proyectos y organización escolar</div>
+</div>
+<p><strong>Modalidades:</strong> 💻 Online (Zoom, Meet) / 📍 Presenciales según tu ubicación.</p>
+<p><strong>Duración:</strong> ⏱️ 30, 45 o 60 minutos por sesión. Horarios adaptables.</p>
+</section>
+
+<section aria-label="Quiénes somos">
+<h2>🧑‍🏫 ¿Quiénes somos?</h2>
+<p>Somos estudiantes y profesionales comprometidos con la educación personalizada. Contamos con experiencia en docencia, habilidades pedagógicas y verdadera vocación de enseñar.</p>
+<ul>
+<li>• Acompañamiento académico personalizado</li>
+<li>• Técnicas de estudio efectivas</li>
+<li>• Comunicación clara y respetuosa</li>
+<li>• Motivación y confianza continua</li>
+</ul>
+</section>
+
+<section aria-label="Beneficios">
+<h2>⭐ Beneficios de Educlick</h2>
+<div class="tarjetas">
+<div class="tarjeta">✨ Atención individual o grupos reducidos</div>
+<div class="tarjeta">✨ Avances visibles desde la primera sesión</div>
+<div class="tarjeta">✨ Seguimiento constante</div>
+<div class="tarjeta">✨ Precios justos y accesibles</div>
+<div class="tarjeta">✨ Material de apoyo exclusivo</div>
+<div class="tarjeta">✨ Diagnóstico inicial gratuito</div>
+</div>
+</section>
+
+<section aria-label="Preguntas Frecuentes">
+<h2>❓ Preguntas Frecuentes</h2>
+<ul class="tarjetas">
+<li class="tarjeta"><strong>¿Cuál es el costo por sesión?</strong><br>Varía según duración y modalidad. Contáctanos para cotización.</li>
+<li class="tarjeta"><strong>¿Qué niveles atienden?</strong><br>Primaria, secundaria y preparatoria.</li>
+<li class="tarjeta"><strong>¿Sesiones individuales o grupales?</strong><br>Ambas opciones disponibles.</li>
+<li class="tarjeta"><strong>¿Puedo cancelar?</strong><br>Sí, con mínimo 12 h de antelación.</li>
+</ul>
+</section>
+</main>
+
+<!-- Enlaces a redes sociales -->
+<section class="social-media">
+<ul>
+</ul>
+</section>
+
+<div class="marquesina">
+<div>🎉 ¡Bienvenido a Educlick! Mejora tu aprendizaje hoy mismo. 🎓</div>
+</div>
+
+<footer>© 2024 Educlick. Todos los derechos reservados.</footer>
 </body>
 </html>
